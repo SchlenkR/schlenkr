@@ -7,10 +7,6 @@
     list-style-type: none;
 }
 
-meta_date {
-    visibility: collapse
-}
-
 statement {
     display: block;
     padding: 10px;

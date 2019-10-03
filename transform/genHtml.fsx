@@ -1,9 +1,12 @@
 
 #load @".\packages\FSharp.Formatting\FSharp.Formatting.fsx"
 #r @".\packages\Handlebars.Net\lib\net452\Handlebars.dll"
+#r @".\packages\FSharp.Data\lib\net45\FSharp.Data.dll"
 
 open FSharp.Literate
 open FSharp.Formatting.Razor
+
+open FSharp.Data
 
 open HandlebarsDotNet
 
@@ -11,27 +14,43 @@ open System
 open System.IO
 
 
-let ( </> ) a b = a + "\\" + b
+let ( </> ) a b = a + "/" + b
 
 let srcDir = __SOURCE_DIRECTORY__
-let contentDir = srcDir </> ".." </> "content"
-let postsDir = contentDir </> "posts"
-let seriesDir = contentDir </> "series"
 let distDir = srcDir </> ".." </> "dist"
 
+let contentDirName = "content"
+let srcContentDir = srcDir </> ".." </> contentDirName
+let distContentDir = distDir </> contentDirName
+
+let postsDirName = "posts"
+let srcPostDir =  srcContentDir </> postsDirName
+let seriesDirName = "series"
+let srcSeriesDir =  srcContentDir </> seriesDirName
+
+let postFileName = "post.md"
+let postOutputFileName = (Path.GetFileNameWithoutExtension postFileName) + ".html"
+
 let templateDir = srcDir </> "template"
-let templateFile = templateDir </> "template.html"
+let templateFileExtension = ".template.html"
 
 
 [<AutoOpen>]
 module Helper =
 
-    let makeCleanDir dir =
+    let deleteFiles dir pattern searchOption =
+        Directory.GetFiles(dir, pattern, searchOption)
+        |> Array.iter File.Delete
+
+    let deleteDir dir =
         if Directory.Exists dir then
             Directory.Delete(dir, true)
+
+    let makeCleanDir dir =
+        deleteDir dir
         Directory.CreateDirectory dir |> ignore
 
-    let rec copyDir srcPath dstPath =
+    let rec copyDirRec srcPath dstPath =
 
         if not <| Directory.Exists srcPath then
             let msg = sprintf "Source directory does not exist or could not be found: %s" srcPath
@@ -48,46 +67,89 @@ module Helper =
 
         for subdir in srcDir.GetDirectories() do
             let dstSubDir = dstPath </> subdir.Name
-            copyDir subdir.FullName dstSubDir
+            copyDirRec subdir.FullName dstSubDir
 
-    let loadTemplate name = File.ReadAllText (templateDir </> name)
+    let loadTemplate name = File.ReadAllText (templateDir </> name + templateFileExtension)
 
-    let writeFile name content =
-        File.WriteAllText(name, content)
-        name
+    let writeFile name content = File.WriteAllText(name, content)
 
     let openFile (name: string) = System.Diagnostics.Process.Start name
-
-
-let generate() =
-
-    makeCleanDir distDir
 
     let inline render template (model: ^a) =
         let layoutTemplate = loadTemplate template
         Handlebars.Compile(layoutTemplate).Invoke model
 
-    render "layout.html" {| content = render "index.html" (obj()) |}
-    |> writeFile "c:\\temp\\test.html"
-    |> openFile
 
-    // Directory.GetFiles (outputDir, "*.*")
-    // |> Seq.iter File.Delete
+type Post =
+    { distFullName: string;
+      relDir: string;
+      link: string;
+      title: string;
+      summary: string;
+      date: DateTime;
+      content: string }
 
-    // Directory.GetFiles(contentDir, "*.md")
-    // |> Seq.filter (fun x -> Char.IsNumber (Path.GetFileName x).[0])
-    // |> Seq.map File.ReadAllText
-    // |> Seq.reduce (fun curr next -> curr + "\n\n\n" + next)
-    // |> fun content -> File.WriteAllText (mergedFileName, content)
+let generate() =
 
-    // RazorLiterate.ProcessMarkdown
-    //     ( mergedFileName,
-    //       templateFile = projTemplate,
-    //       output = outputFileName,
-    //       format = OutputKind.Html,
-    //       lineNumbers = false,
-    //       replacements = projInfo,
-    //       includeSource = true)
+    let prepare() =
+        // prepare dist and fill with initial stuff
+        do makeCleanDir distDir
+        do copyDirRec templateDir distDir
+        do deleteDir (distDir </> ".bak")
+        do deleteFiles distDir ("*" + templateFileExtension) SearchOption.TopDirectoryOnly
+        
+        // copy content
+        do copyDirRec srcContentDir distContentDir
+        do deleteFiles distContentDir postFileName SearchOption.AllDirectories
+
+    prepare()
+
+    let posts =
+        
+        let createPost postDir =
+
+            let htmlContent =
+                let tmpFile = Path.GetTempFileName()
+                do RazorLiterate.ProcessMarkdown
+                    ( postDir </> postFileName,
+                      output = tmpFile,
+                      format = OutputKind.Html,
+                      lineNumbers = false,
+                      includeSource = true)
+                let res = File.ReadAllText tmpFile
+                File.Delete tmpFile
+                res
+
+            let html = HtmlDocument.Parse htmlContent
+            let date =
+                let value = (html.Descendants ["meta_date"] |> Seq.head).InnerText()
+                DateTime.Parse value
+            let title = (html.Descendants ["h1"] |> Seq.head).InnerText()
+            let summary = (html.Descendants ["p"] |> Seq.head).InnerText()
+
+            let dirName = Path.GetFileName(postDir)
+            let link = dirName </> postOutputFileName
+
+            { distFullName = distContentDir </> postsDirName </> link
+              relDir = dirName
+              link = link
+              title = title
+              summary = summary
+              date = date
+              content = htmlContent }
+
+        Directory.GetDirectories(srcPostDir) |> Array.map createPost |> Array.toList
+
+    let writeIndex() =
+        render "layout" {| content = render "index" (obj()) |}
+        |> writeFile (distDir </> "index.html")
+
+    posts
+    |> List.iter (fun p ->
+        writeFile (distContentDir </> postsDirName </> p.relDir </> postOutputFileName) p.content
+    )
+
+
 
     // System.Diagnostics.Process.Start outputFileName
 
