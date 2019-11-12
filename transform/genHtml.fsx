@@ -12,6 +12,7 @@ open HandlebarsDotNet
 
 open System
 open System.IO
+open System.Linq
 
 
 let ( </> ) a b = a + "/" + b
@@ -21,12 +22,7 @@ let distDir = srcDir </> ".." </> "dist"
 
 let contentDirName = "content"
 let srcContentDir = srcDir </> ".." </> contentDirName
-let distContentDir = distDir </> contentDirName
-
-let postsDirName = "posts"
-let srcPostDir =  srcContentDir </> postsDirName
-let seriesDirName = "series"
-let srcSeriesDir =  srcContentDir </> seriesDirName
+let distContentDir = distDir
 
 let postFileName = "post.md"
 let postOutputFileName = (Path.GetFileNameWithoutExtension postFileName) + ".html"
@@ -69,15 +65,23 @@ module Helper =
             let dstSubDir = dstPath </> subdir.Name
             copyDirRec subdir.FullName dstSubDir
 
-    let loadTemplate name = File.ReadAllText (templateDir </> name + templateFileExtension)
+    let loadTemplate name =
+        File.ReadAllText (templateDir </> "content" </> name + templateFileExtension)
 
-    let writeFile name content = File.WriteAllText(name, content)
+    let writeFile name content =
+        let dir = Path.GetDirectoryName name
+        if not (Directory.Exists dir) then
+            Directory.CreateDirectory dir |> ignore
+        File.WriteAllText(name, content)
 
     let openFile (name: string) = System.Diagnostics.Process.Start name
 
+    let asDict (x: (string * 'a) list) = x.ToDictionary((fun (k,_) -> k), (fun (_,v) -> v :> obj))
+
     let inline render template (model: ^a) =
         let layoutTemplate = loadTemplate template
-        Handlebars.Compile(layoutTemplate).Invoke model
+        let res = Handlebars.Compile(layoutTemplate).Invoke model
+        res + "\n\n\n"
 
 
 type Post =
@@ -89,68 +93,80 @@ type Post =
       date: DateTime;
       content: string }
 
-let generate() =
+let prepare() =
+    // prepare dist and fill with initial stuff
+    do makeCleanDir distDir
+    do
+        let assets = "assets"
+        copyDirRec (templateDir </> assets) (distDir </> assets)
+    
+    // copy content
+    do copyDirRec srcContentDir distContentDir
+    do deleteFiles distContentDir postFileName SearchOption.AllDirectories
+prepare()
 
-    let prepare() =
-        // prepare dist and fill with initial stuff
-        do makeCleanDir distDir
-        do copyDirRec templateDir distDir
-        do deleteDir (distDir </> ".bak")
-        do deleteFiles distDir ("*" + templateFileExtension) SearchOption.TopDirectoryOnly
-        
-        // copy content
-        do copyDirRec srcContentDir distContentDir
-        do deleteFiles distContentDir postFileName SearchOption.AllDirectories
+let posts =
+    
+    let createPost postDir =
 
-    prepare()
+        let htmlContent =
+            let tmpFile = Path.GetTempFileName()
+            do RazorLiterate.ProcessMarkdown
+                ( postDir </> postFileName,
+                  output = tmpFile,
+                  format = OutputKind.Html,
+                  lineNumbers = false,
+                  includeSource = true)
+            let res = File.ReadAllText tmpFile
+            File.Delete tmpFile
+            res
 
-    let posts =
-        
-        let createPost postDir =
+        let html = HtmlDocument.Parse htmlContent
+        let date =
+            let value = (html.Descendants ["meta_date"] |> Seq.head).InnerText()
+            DateTime.Parse value
+        let title = (html.Descendants ["h1"] |> Seq.head).InnerText()
+        let summary = (html.Descendants ["p"] |> Seq.head).InnerText()
 
-            let htmlContent =
-                let tmpFile = Path.GetTempFileName()
-                do RazorLiterate.ProcessMarkdown
-                    ( postDir </> postFileName,
-                      output = tmpFile,
-                      format = OutputKind.Html,
-                      lineNumbers = false,
-                      includeSource = true)
-                let res = File.ReadAllText tmpFile
-                File.Delete tmpFile
-                res
+        let dirName = Path.GetFileName(postDir)
+        let link = dirName </> postOutputFileName
 
-            let html = HtmlDocument.Parse htmlContent
-            let date =
-                let value = (html.Descendants ["meta_date"] |> Seq.head).InnerText()
-                DateTime.Parse value
-            let title = (html.Descendants ["h1"] |> Seq.head).InnerText()
-            let summary = (html.Descendants ["p"] |> Seq.head).InnerText()
+        { distFullName = distContentDir </> link
+          relDir = dirName
+          link = link
+          title = title
+          summary = summary
+          date = date
+          content = htmlContent }
 
-            let dirName = Path.GetFileName(postDir)
-            let link = dirName </> postOutputFileName
+    Directory.GetDirectories(srcContentDir) |> Array.map createPost |> Array.toList
 
-            { distFullName = distContentDir </> postsDirName </> link
-              relDir = dirName
-              link = link
-              title = title
-              summary = summary
-              date = date
-              content = htmlContent }
+let writeIndex() =
+    let postItems =
+        posts
+        |> List.map (render "index_postItem")
+        |> List.reduce (+)
 
-        Directory.GetDirectories(srcPostDir) |> Array.map createPost |> Array.toList
+    render "layout" <| asDict [
+            "content", render "index" <| asDict [ "items", postItems ]
+        ]
+    |> writeFile (distDir </> "_index/index.html")
+writeIndex()
 
-    let writeIndex() =
-        render "layout" {| content = render "index" (obj()) |}
-        |> writeFile (distDir </> "index.html")
-
+let writePosts() =
     posts
     |> List.iter (fun p ->
-        writeFile (distContentDir </> postsDirName </> p.relDir </> postOutputFileName) p.content
+        let fileName = distContentDir </> p.relDir </> postOutputFileName
+        printfn "fn: %s" fileName
+        
+        render "layout" <| dict [
+            "content", render "post" <| dict [
+                "title", p.title
+                "date", p.date.ToString("d")
+                "content", p.content
+            ]
+        ]
+        |> writeFile fileName
     )
+writePosts()
 
-
-
-    // System.Diagnostics.Process.Start outputFileName
-
-generate()
