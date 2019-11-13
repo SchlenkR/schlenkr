@@ -18,7 +18,7 @@ open System.Linq
 let ( </> ) a b = a + "/" + b
 
 let scriptDir = __SOURCE_DIRECTORY__
-let distDir = scriptDir </> ".." </> "dist"
+let distDir = scriptDir </> ".." </> ".dist"
 
 let contentDirName = "content"
 let srcContentDir = scriptDir </> ".." </> contentDirName

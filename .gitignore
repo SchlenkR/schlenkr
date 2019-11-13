@@ -7,6 +7,8 @@ paket-files/
 
 .dist/
 
+.ionide/
+
 # User-specific files
 *.suo
 *.user
