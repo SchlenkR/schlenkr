@@ -17,17 +17,17 @@ open System.Linq
 
 let ( </> ) a b = a + "/" + b
 
-let srcDir = __SOURCE_DIRECTORY__
-let distDir = srcDir </> ".." </> "dist"
+let scriptDir = __SOURCE_DIRECTORY__
+let distDir = scriptDir </> ".." </> "dist"
 
 let contentDirName = "content"
-let srcContentDir = srcDir </> ".." </> contentDirName
+let srcContentDir = scriptDir </> ".." </> contentDirName
 let distContentDir = distDir
 
 let postFileName = "post.md"
 let postOutputFileName = (Path.GetFileNameWithoutExtension postFileName) + ".html"
 
-let templateDir = srcDir </> "template"
+let templateDir = scriptDir </> "template"
 let templateFileExtension = ".template.html"
 
 
@@ -76,8 +76,6 @@ module Helper =
 
     let openFile (name: string) = System.Diagnostics.Process.Start name
 
-    let asDict (x: (string * 'a) list) = x.ToDictionary((fun (k,_) -> k), (fun (_,v) -> v :> obj))
-
     let inline render template (model: ^a) =
         let layoutTemplate = loadTemplate template
         let res = Handlebars.Compile(layoutTemplate).Invoke model
@@ -91,9 +89,83 @@ type Post =
       title: string;
       summary: string;
       date: DateTime;
-      content: string }
+      renderedContent: string }
 
-let prepare() =
+let createPost postDir =
+
+    let htmlContent =
+        let tmpFile = Path.GetTempFileName()
+        do RazorLiterate.ProcessMarkdown
+            ( postDir </> postFileName,
+              output = tmpFile,
+              format = OutputKind.Html,
+              lineNumbers = false,
+              includeSource = true)
+        let res = File.ReadAllText tmpFile
+        File.Delete tmpFile
+        res
+
+    let html = HtmlDocument.Parse htmlContent
+    let date =
+        let value = (html.Descendants ["meta_date"] |> Seq.head).InnerText()
+        DateTime.Parse value
+    let title = (html.Descendants ["h1"] |> Seq.head).InnerText()
+    let summary = (html.Descendants ["p"] |> Seq.head).InnerText()
+
+    let dirName = Path.GetFileName(postDir)
+    let link = dirName </> postOutputFileName
+
+    { distFullName = distContentDir </> link
+      relDir = dirName
+      link = link
+      title = title
+      summary = summary
+      date = date
+      renderedContent = htmlContent }
+
+let posts =
+    Directory.GetDirectories(srcContentDir)
+    |> Array.toList
+    |> List.map createPost
+
+let indexPage =
+    let postItems =
+        posts
+        |> List.map (render "index_postItem")
+        |> List.reduce (+)
+
+    let renderedPage =
+        render "layout" {|
+            content = render "index" {|
+                items = postItems
+            |}
+        |}
+
+    (renderedPage, distDir </> "home/index.html")
+
+let postPages = [
+    for p in posts do
+    let renderedPage =
+        render "layout" {|
+            content = render "post" {|
+                title = p.title
+                date = p.date.ToString("d")
+                content = p.renderedContent
+            |}
+        |}
+    let fileName = distContentDir </> p.relDir </> postOutputFileName
+    yield (renderedPage, fileName)
+]
+
+
+let writeIndex() =
+    let (content,fileName) = indexPage in writeFile fileName content
+
+let writePosts() =
+    postPages
+    |> List.iter (fun (content,fileName) -> writeFile fileName content)
+
+let prepareDist() =
     // prepare dist and fill with initial stuff
     do makeCleanDir distDir
     do
@@ -103,70 +175,8 @@ let prepare() =
     // copy content
     do copyDirRec srcContentDir distContentDir
     do deleteFiles distContentDir postFileName SearchOption.AllDirectories
-prepare()
 
-let posts =
-    
-    let createPost postDir =
 
-        let htmlContent =
-            let tmpFile = Path.GetTempFileName()
-            do RazorLiterate.ProcessMarkdown
-                ( postDir </> postFileName,
-                  output = tmpFile,
-                  format = OutputKind.Html,
-                  lineNumbers = false,
-                  includeSource = true)
-            let res = File.ReadAllText tmpFile
-            File.Delete tmpFile
-            res
-
-        let html = HtmlDocument.Parse htmlContent
-        let date =
-            let value = (html.Descendants ["meta_date"] |> Seq.head).InnerText()
-            DateTime.Parse value
-        let title = (html.Descendants ["h1"] |> Seq.head).InnerText()
-        let summary = (html.Descendants ["p"] |> Seq.head).InnerText()
-
-        let dirName = Path.GetFileName(postDir)
-        let link = dirName </> postOutputFileName
-
-        { distFullName = distContentDir </> link
-          relDir = dirName
-          link = link
-          title = title
-          summary = summary
-          date = date
-          content = htmlContent }
-
-    Directory.GetDirectories(srcContentDir) |> Array.map createPost |> Array.toList
-
-let writeIndex() =
-    let postItems =
-        posts
-        |> List.map (render "index_postItem")
-        |> List.reduce (+)
-
-    render "layout" <| asDict [
-            "content", render "index" <| asDict [ "items", postItems ]
-        ]
-    |> writeFile (distDir </> "_index/index.html")
-writeIndex()
-
-let writePosts() =
-    posts
-    |> List.iter (fun p ->
-        let fileName = distContentDir </> p.relDir </> postOutputFileName
-        printfn "fn: %s" fileName
-        
-        render "layout" <| dict [
-            "content", render "post" <| dict [
-                "title", p.title
-                "date", p.date.ToString("d")
-                "content", p.content
-            ]
-        ]
-        |> writeFile fileName
-    )
-writePosts()
-
+do prepareDist()
+do writeIndex()
+do writePosts()
