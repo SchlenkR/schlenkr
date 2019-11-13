@@ -11,10 +11,6 @@ footer {
     height: 2.5rem; 
 }
 
-article {
-    padding-bottom: 3.5rem;
-}
-
 #toc > ol {
     padding-left: 20px;
 }
