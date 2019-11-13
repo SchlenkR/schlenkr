@@ -106,11 +106,14 @@ let createPost postDir =
         res
 
     let html = HtmlDocument.Parse htmlContent
+
+    let findFirst tag = (html.Descendants [tag] |> Seq.head).InnerText()
+
     let date =
-        let value = (html.Descendants ["meta_date"] |> Seq.head).InnerText()
+        let value = findFirst "meta_date"
         DateTime.Parse value
-    let title = (html.Descendants ["h1"] |> Seq.head).InnerText()
-    let summary = (html.Descendants ["p"] |> Seq.head).InnerText()
+    let title = findFirst "meta_title"
+    let summary = findFirst "p"
 
     let dirName = Path.GetFileName(postDir)
     let link = dirName </> postOutputFileName
