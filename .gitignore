@@ -5,6 +5,8 @@
 
 paket-files/
 
+dist/
+
 # User-specific files
 *.suo
 *.user
