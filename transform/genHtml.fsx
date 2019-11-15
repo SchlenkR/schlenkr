@@ -82,13 +82,16 @@ module Helper =
         res + "\n\n\n"
 
 
+type PostType = Article | Static
+
 type Post =
-    { distFullName: string;
-      relDir: string;
-      link: string;
-      title: string;
-      summary: string;
-      date: DateTime;
+    { distFullName: string
+      relDir: string
+      link: string
+      title: string
+      summary: string
+      dateString: string
+      postType: PostType
       renderedContent: string }
 
 let createPost postDir =
@@ -107,25 +110,33 @@ let createPost postDir =
 
     let html = HtmlDocument.Parse htmlContent
 
-    let findFirst tag = (html.Descendants [tag] |> Seq.head).InnerText()
+    let tryFindFirst tag =
+        match (html.Descendants [tag] |> Seq.tryHead) with
+        | Some v -> Some (v.InnerText())
+        | None -> None
+    let findFirst tag = (tryFindFirst tag).Value
 
     let date =
-        let value = findFirst "meta_date"
-        DateTime.Parse value
+        match tryFindFirst "meta_date" with
+        | Some v -> (DateTime.Parse v).ToString("d")
+        | None -> ""
     let title = findFirst "meta_title"
     let summary = findFirst "p"
 
     let dirName = Path.GetFileName(postDir)
     let link = dirName </> postOutputFileName
 
-    { distFullName = distContentDir </> link
-      relDir = dirName
-      link = link
-      title = title
-      summary = summary
-      date = date
-      renderedContent = htmlContent }
-
+    let post =
+        { distFullName = distContentDir </> link
+          relDir = dirName
+          link = link
+          title = title
+          summary = summary
+          dateString = date
+          postType = if Char.IsNumber (dirName.[0]) then Article else Static
+          renderedContent = htmlContent }
+    post
+    
 let posts =
     Directory.GetDirectories(srcContentDir)
     |> Array.toList
@@ -134,28 +145,33 @@ let posts =
 let indexPage =
     let postItems =
         posts
+        |> List.filter (fun p -> p.postType = Article)
         |> List.map (render "index_postItem")
         |> List.reduce (+)
 
     let renderedPage =
-        render "layout" {|
-            content = render "index" {|
-                items = postItems
+        render "layout"
+            {|
+                content = render "index" {| items = postItems |}
             |}
-        |}
 
     (renderedPage, distDir </> "home/index.html")
 
 let postPages = [
     for p in posts do
     let renderedPage =
-        render "layout" {|
-            content = render "post" {|
-                title = p.title
-                date = p.date.ToString("d")
-                content = p.renderedContent
-            |}
+        render "layout" 
+            {|
+                content =
+                    render
+                        "post"
+                        {|
+                            title = p.title
+                            date = p.dateString
+                            content = p.renderedContent
+                        |}
         |}
+
     let fileName = distContentDir </> p.relDir </> postOutputFileName
     yield (renderedPage, fileName)
 ]
