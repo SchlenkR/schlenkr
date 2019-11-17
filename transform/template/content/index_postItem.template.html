@@ -3,10 +3,10 @@
 	<div class="media">
 		<img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="../{{relDir}}/postImage.jpg" width="110" height="110" alt="image" />
 		<div class="media-body">
-			<h3 class="title mb-1"><a href="../{{postLink}}">{{title}}</a></h3>
+			<h3 class="title mb-1"><a href="../{{postLink}}">{{metadata.title}}</a></h3>
 			<!-- <div class="meta mb-1"><span class="date">Published: {{date}}</span><span class="time">2 min read</span><span class="comment"><a href="#">1 comment</a></span></div> -->
 			<div class="meta mb-1"><span class="date">Published: {{dateString}}</span></div>
-			<div class="intro">{{summary}}</div>
+			<div class="intro">{{metadata.summary}}</div>
 			<a class="more-link" href="../{{postLink}}">Read more &rarr;</a>
 		</div><!--//media-body-->
 	</div><!--//media-->

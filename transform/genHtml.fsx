@@ -23,11 +23,13 @@ let contentDirName = "content"
 let srcContentDir = scriptDir </> ".." </> contentDirName
 let distContentDir = distDir
 
-let postFileName = "post.md"
-let postOutputFileName = (Path.GetFileNameWithoutExtension postFileName) + ".html"
+let defaultPostFileName = "post.md"
+let defaultSeriesMetaFileName = "_series.md"
 
 let templateDir = scriptDir </> "template"
 let templateFileExtension = ".template.html"
+
+let fsharpMarkdownTemplateFileName = templateDir </> contentDirName </> "fsharpMarkdownTemplate.html"
 
 
 [<AutoOpen>]
@@ -83,87 +85,122 @@ module Helper =
 
 type PostType = BlogPost | Static
 
-type Post =
-    { distFullName: string
-      relDir: string
-      postLink: string
-      title: string
+type PostMetadata =
+    { title: string
       summary: string
       date: DateTime
+      postType: PostType }
+
+type Post =
+    { postLink: string
+      postOutputFileName: string
+      metadata: PostMetadata
       dateString : string
-      postType: PostType
       renderedContent: string }
 
-let createPost postDir =
+type Series =
+    { relDir: string
+      posts: Post list }
 
-    let htmlContent =
-        let tmpFile = Path.GetTempFileName()
-        do RazorLiterate.ProcessMarkdown
-            ( postDir </> postFileName,
-              output = tmpFile,
-              format = OutputKind.Html,
-              lineNumbers = false,
-              includeSource = true)
-        let res = File.ReadAllText tmpFile
-        File.Delete tmpFile
-        res
+let series =
 
-    let html = HtmlDocument.Parse htmlContent
+    let readMetadata postFullFileName =
 
-    let findFirst tag = (html.Descendants [tag] |> Seq.head).InnerText()
+        let html = HtmlDocument.Parse (File.ReadAllText postFullFileName)
+        let findFirst tag = (html.Descendants [tag] |> Seq.head).InnerText()
 
-    let date = findFirst "meta_date" |> (fun d -> DateTime.Parse(d, CultureInfo.InvariantCulture))
-    let title = findFirst "meta_title"
-    let summary = findFirst "meta_preview"
-    let postTypeString = findFirst "meta_type"
-
-    let relDir = Path.GetFileName(postDir)
-    let postLink = relDir </> postOutputFileName
-
-    let post =
-        { distFullName = distContentDir </> postLink
-          relDir = relDir
-          postLink = postLink
-          title = title
-          summary = summary
-          date = date
-          dateString = date.ToString("m")
-          postType =
+        {
+            title = findFirst "meta_title"
+            summary = findFirst "meta_preview"
+            date = findFirst "meta_date" |> (fun d -> DateTime.Parse(d, CultureInfo.InvariantCulture))
+            postType =
+                let postTypeString = findFirst "meta_type"
                 match postTypeString with
                 | "post" -> BlogPost
                 | "static" -> Static
-                | _ -> failwith (sprintf "Unknown post type in file %s: %s" postLink postTypeString)
-          renderedContent = htmlContent }
-    post
+                | _ -> failwith (sprintf "Unknown post type in file %s: %s" postFullFileName postTypeString)
+        }
+
+    let createPost postMetadata relPostDir postFullFileName =
+
+        // printfn "generating post: %s" postFullFileName
+        // do Console.ReadLine() |> ignore
+
+        let projInfo =
+            [ "page-description", "TODO"
+              "page-author", "Ronald Schlenker"
+              "github-link", "https://github.com/TODO"
+              "project-name", "TODO" ]
+
+        let htmlContent =
+            let tmpFile = Path.GetTempFileName()
+            do RazorLiterate.ProcessMarkdown
+                ( postFullFileName,
+                  templateFile = fsharpMarkdownTemplateFileName,
+                  output = tmpFile,
+                  format = OutputKind.Html,
+                  lineNumbers = false,
+                  replacements = projInfo,
+                  includeSource = true)
+            let res = File.ReadAllText tmpFile
+            File.Delete tmpFile
+            res
+
+        let postOutputFileName = (Path.GetFileNameWithoutExtension postFullFileName) + ".html"
+        let postLink = relPostDir </> postOutputFileName
+
+        {
+            postLink = postLink
+            postOutputFileName = postOutputFileName
+            metadata = postMetadata
+            dateString = postMetadata.date.ToString("m")
+            renderedContent = htmlContent
+        }
     
-let posts =
-    Directory.GetDirectories(srcContentDir)
-    |> Array.toList
-    |> List.map createPost
+    [
+        for postDir in Directory.GetDirectories(srcContentDir) do
+            let postFiles,metaFile =
+                let defaultPostFullFileName = postDir </> defaultPostFileName
+                if File.Exists defaultPostFullFileName then
+                    ([defaultPostFullFileName], defaultPostFullFileName)
+                else
+                    let seriesPostFiles =
+                        Directory.GetFiles(postDir, "*.md", SearchOption.TopDirectoryOnly)
+                        |> Array.sort
+                        |> Array.toList
+                    (seriesPostFiles, postDir </> defaultSeriesMetaFileName)
+            let relDir = Path.GetFileName(postDir)
+            for postFileName in postFiles do
+                let postMetadata = readMetadata metaFile
+                let post = createPost postMetadata relDir postFileName
+                yield { relDir = relDir; posts = [post] }
+    ]
 
 let generateIndexPage() =
     let postItems =
-        posts
-        |> List.filter (fun p -> p.postType = BlogPost)
+        series
+        |> List.map (fun s -> s.posts.Head)
+        |> List.filter (fun p -> p.metadata.postType = BlogPost)
         |> List.map (render "index_postItem")
         |> List.reduce (+)
 
     let renderedPage =
         render "layout"
             {|
-                content = render "index" {| items = postItems |}
+                content = render "index"
+                    {| items = postItems |}
             |}
 
     (renderedPage, distDir </> "home/index.html")
 
-let generatePostPages() = [
-    for p in posts do
-    let renderedPage =
-        render "layout" {| content = render "post" p |}
-
-    let fileName = distContentDir </> p.relDir </> postOutputFileName
-    yield (renderedPage, fileName)
-]
+let generatePostPages() =
+    [
+        for s in series do
+        for p in s.posts do
+            let renderedPage = render "layout" {| content = render "post" p |}
+            let fileName = distContentDir </> s.relDir </> p.postOutputFileName
+            yield (renderedPage, fileName)
+    ]
 
 
 let prepareDist() =
@@ -172,10 +209,7 @@ let prepareDist() =
     do
         let assets = "assets"
         copyDirRec (templateDir </> assets) (distDir </> assets)
-    
-    // copy content
     do copyDirRec srcContentDir distContentDir
-    do deleteFiles distContentDir postFileName SearchOption.AllDirectories
 
 let writeIndex() =
     let (content,fileName) = generateIndexPage()
