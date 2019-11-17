@@ -1,4 +1,8 @@
 
+meta_date, meta_title, meta_type {
+    visibility: collapse
+}
+
 .main-wrapper {
     position: relative;
     min-height: 100vh;
@@ -11,17 +15,13 @@ footer {
     height: 2.5rem; 
 }
 
-#toc > ol {
+/* #toc > ol {
     padding-left: 20px;
 }
 
 #toc > ol > li {
     list-style-type: none;
-}
-
-meta_date, meta_title {
-    visibility: collapse
-}
+} */
 
 statement {
     display: block;

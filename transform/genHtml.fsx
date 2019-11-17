@@ -11,9 +11,8 @@ open FSharp.Data
 open HandlebarsDotNet
 
 open System
+open System.Globalization
 open System.IO
-open System.Linq
-
 
 let ( </> ) a b = a + "/" + b
 
@@ -82,15 +81,16 @@ module Helper =
         res + "\n\n\n"
 
 
-type PostType = Article | Static
+type PostType = BlogPost | Static
 
 type Post =
     { distFullName: string
       relDir: string
-      link: string
+      postLink: string
       title: string
       summary: string
-      dateString: string
+      date: DateTime
+      dateString : string
       postType: PostType
       renderedContent: string }
 
@@ -110,30 +110,29 @@ let createPost postDir =
 
     let html = HtmlDocument.Parse htmlContent
 
-    let tryFindFirst tag =
-        match (html.Descendants [tag] |> Seq.tryHead) with
-        | Some v -> Some (v.InnerText())
-        | None -> None
-    let findFirst tag = (tryFindFirst tag).Value
+    let findFirst tag = (html.Descendants [tag] |> Seq.head).InnerText()
 
-    let date =
-        match tryFindFirst "meta_date" with
-        | Some v -> (DateTime.Parse v).ToString("d")
-        | None -> ""
+    let date = findFirst "meta_date" |> (fun d -> DateTime.Parse(d, CultureInfo.InvariantCulture))
     let title = findFirst "meta_title"
-    let summary = findFirst "p"
+    let summary = findFirst "meta_preview"
+    let postTypeString = findFirst "meta_type"
 
-    let dirName = Path.GetFileName(postDir)
-    let link = dirName </> postOutputFileName
+    let relDir = Path.GetFileName(postDir)
+    let postLink = relDir </> postOutputFileName
 
     let post =
-        { distFullName = distContentDir </> link
-          relDir = dirName
-          link = link
+        { distFullName = distContentDir </> postLink
+          relDir = relDir
+          postLink = postLink
           title = title
           summary = summary
-          dateString = date
-          postType = if Char.IsNumber (dirName.[0]) then Article else Static
+          date = date
+          dateString = date.ToString("m")
+          postType =
+                match postTypeString with
+                | "post" -> BlogPost
+                | "static" -> Static
+                | _ -> failwith (sprintf "Unknown post type in file %s: %s" postLink postTypeString)
           renderedContent = htmlContent }
     post
     
@@ -142,10 +141,10 @@ let posts =
     |> Array.toList
     |> List.map createPost
 
-let indexPage =
+let generateIndexPage() =
     let postItems =
         posts
-        |> List.filter (fun p -> p.postType = Article)
+        |> List.filter (fun p -> p.postType = BlogPost)
         |> List.map (render "index_postItem")
         |> List.reduce (+)
 
@@ -157,32 +156,15 @@ let indexPage =
 
     (renderedPage, distDir </> "home/index.html")
 
-let postPages = [
+let generatePostPages() = [
     for p in posts do
     let renderedPage =
-        render "layout" 
-            {|
-                content =
-                    render
-                        "post"
-                        {|
-                            title = p.title
-                            date = p.dateString
-                            content = p.renderedContent
-                        |}
-        |}
+        render "layout" {| content = render "post" p |}
 
     let fileName = distContentDir </> p.relDir </> postOutputFileName
     yield (renderedPage, fileName)
 ]
 
-
-let writeIndex() =
-    let (content,fileName) = indexPage in writeFile fileName content
-
-let writePosts() =
-    postPages
-    |> List.iter (fun (content,fileName) -> writeFile fileName content)
 
 let prepareDist() =
     // prepare dist and fill with initial stuff
@@ -194,6 +176,13 @@ let prepareDist() =
     // copy content
     do copyDirRec srcContentDir distContentDir
     do deleteFiles distContentDir postFileName SearchOption.AllDirectories
+
+let writeIndex() =
+    let (content,fileName) = generateIndexPage()
+    writeFile fileName content
+
+let writePosts() =
+    generatePostPages() |> List.iter (fun (content,fileName) -> writeFile fileName content)
 
 
 do prepareDist()
