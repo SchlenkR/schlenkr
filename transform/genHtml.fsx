@@ -181,17 +181,15 @@ let series =
     ]
 
 let generateIndexPage() =
-
     let renderedPostItems =
         query {
             for s in series do
             let p = s.posts.Head
             where (p.metadata.postType = BlogPost)
-            let postViewModel = {| p with relDir = s.relDir |}
-            select (render "index_postItem" postViewModel)
+            let viewPost = {| p with relDir = s.relDir |}
+            select (render "index_postItem" viewPost)
         }
-        |> Seq.toList
-        |> List.reduce (+)
+        |> Seq.reduce (+)
 
     let renderedPage =
         render "layout"
@@ -207,9 +205,23 @@ let generateIndexPage() =
 let generatePostPages() =
     [
         for s in series do
-            for p in s.posts do
-                let renderedPage = render "layout" {| content = render "post" p |}
-                let fileName = distContentDir </> s.relDir </> p.postOutputFileName
+            let postCount = List.length s.posts
+            let renderedPosts =
+                s.posts
+                |> List.mapi (fun i p ->
+                    let hasSuccessor = i > 0
+                    let hasPredecessor = i + 1 < postCount
+                    {| p with
+                        hasNav = postCount > 1
+                        hasSuccessor = hasSuccessor
+                        prevPost = if hasSuccessor then (s.posts.[i-1].postOutputFileName) else ""
+                        hasPredecessor = hasPredecessor
+                        nextPost = if hasPredecessor then (s.posts.[i+1].postOutputFileName) else ""
+                    |})
+            
+            for postViewModel in renderedPosts do
+                let renderedPage = render "layout" {| content = render "post" postViewModel |}
+                let fileName = distContentDir </> s.relDir </> postViewModel.postOutputFileName
                 yield (renderedPage, fileName)
     ]
 
