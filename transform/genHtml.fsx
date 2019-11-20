@@ -126,11 +126,11 @@ let series =
         // printfn "generating post: %s" postFullFileName
         // do Console.ReadLine() |> ignore
 
-        let projInfo =
-            [ "page-description", "TODO"
-              "page-author", "Ronald Schlenker"
-              "github-link", "https://github.com/TODO"
-              "project-name", "TODO" ]
+        // let projInfo =
+        //     [ "page-description", "TODO"
+        //       "page-author", "Ronald Schlenker"
+        //       "github-link", "https://github.com/TODO"
+        //       "project-name", "TODO" ]
 
         let htmlContent =
             let tmpFile = Path.GetTempFileName()
@@ -140,7 +140,7 @@ let series =
                   output = tmpFile,
                   format = OutputKind.Html,
                   lineNumbers = false,
-                  replacements = projInfo,
+                //   replacements = projInfo,
                   includeSource = true)
             let res = File.ReadAllText tmpFile
             File.Delete tmpFile
@@ -170,25 +170,36 @@ let series =
                         |> Array.toList
                     (seriesPostFiles, postDir </> defaultSeriesMetaFileName)
             let relDir = Path.GetFileName(postDir)
-            for postFileName in postFiles do
-                let postMetadata = readMetadata metaFile
-                let post = createPost postMetadata relDir postFileName
-                yield { relDir = relDir; posts = [post] }
+            yield
+                { 
+                    relDir = relDir
+                    posts = [ for postFileName in postFiles do
+                              let postMetadata = readMetadata metaFile
+                              yield createPost postMetadata relDir postFileName ]
+                }
+            
     ]
 
 let generateIndexPage() =
-    let postItems =
-        series
-        |> List.map (fun s -> s.posts.Head)
-        |> List.filter (fun p -> p.metadata.postType = BlogPost)
-        |> List.map (render "index_postItem")
+
+    let renderedPostItems =
+        query {
+            for s in series do
+            let p = s.posts.Head
+            where (p.metadata.postType = BlogPost)
+            let postViewModel = {| p with relDir = s.relDir |}
+            select (render "index_postItem" postViewModel)
+        }
+        |> Seq.toList
         |> List.reduce (+)
 
     let renderedPage =
         render "layout"
             {|
-                content = render "index"
-                    {| items = postItems |}
+                content = render "index" 
+                    {|
+                        items = renderedPostItems
+                    |}
             |}
 
     (renderedPage, distDir </> "home/index.html")
@@ -196,10 +207,10 @@ let generateIndexPage() =
 let generatePostPages() =
     [
         for s in series do
-        for p in s.posts do
-            let renderedPage = render "layout" {| content = render "post" p |}
-            let fileName = distContentDir </> s.relDir </> p.postOutputFileName
-            yield (renderedPage, fileName)
+            for p in s.posts do
+                let renderedPage = render "layout" {| content = render "post" p |}
+                let fileName = distContentDir </> s.relDir </> p.postOutputFileName
+                yield (renderedPage, fileName)
     ]
 
 
