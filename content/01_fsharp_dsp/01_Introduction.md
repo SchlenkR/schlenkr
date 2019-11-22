@@ -1,11 +1,4 @@
 
-<div>
-    <p>You can find this article on <a href="https://github.com/ronaldschlenker/applied_fsharp_challenge">GitHub</a>.</p>
-    <p><a href="http://binarygears.de/impressum">Impressum</a></p>
-    <p>(c) Ronald Schlenker, May 2019</p>
-    <hr />
-</div>
-
 
 # Digital Signal Processing with F#
 
@@ -14,11 +7,6 @@ Making music with the help of computers is not new. It started with the [MUSIC/M
 Because developing software is my profession and my hobby, I wanted to understand why there are so many different tools and languages out there. I started my own work in C#, since this is the main language I work in, with a focus on sample-based generation and processing of audio signals (the code is available [here](https://archive.codeplex.com/?p=byond), but it is not maintained anymore). But I soon began to realize that there are disadvantages: I had to deal with aspects that had nothing to do with describing signal flows, and I had to write a lot more boilerplate code. That all smelled like [accidental complexity](https://en.wikipedia.org/wiki/No_Silver_Bullet), and I asked myself how I could find abstractions that would help me write code that was readable and understandable, and that focused solely on signal processing.
 
 After evaluating several languages, I decided to use F#, mainly due to its "in-built" flexibility without dealing with macros or other hardcore meta programming techniques or compiler hooks (although I find them very interesting). Also, I'm quite familiar with .NET, but that turned out to be not important at all. One thing I can state is that I learned a lot, and I have never regretted my choice to use F#.
-
-## Table of Contents
-
-<div id="toc">
-</div>
 
 ## Introduction
 
