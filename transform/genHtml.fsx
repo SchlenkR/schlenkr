@@ -159,13 +159,15 @@ let series =
     
     [
         for postDir in Directory.GetDirectories(srcContentDir) do
+            let defaultPostFullFileName = postDir </> defaultPostFileName
+            let isSeries = File.Exists defaultPostFullFileName |> not
             let postFiles,metaFile =
-                let defaultPostFullFileName = postDir </> defaultPostFileName
-                if File.Exists defaultPostFullFileName then
+                if not isSeries then
                     ([defaultPostFullFileName], defaultPostFullFileName)
                 else
                     let seriesPostFiles =
                         Directory.GetFiles(postDir, "*.md", SearchOption.TopDirectoryOnly)
+                        |> Array.filter (fun file -> Path.GetFileNameWithoutExtension(file).[0] |> Char.IsDigit)
                         |> Array.sort
                         |> Array.toList
                     (seriesPostFiles, postDir </> defaultSeriesMetaFileName)
@@ -175,7 +177,22 @@ let series =
                     relDir = relDir
                     posts = [ for postFileName in postFiles do
                               let postMetadata = readMetadata metaFile
-                              yield createPost postMetadata relDir postFileName ]
+                              let normalizedPostMetadata =
+                                if isSeries then
+                                    let title =
+                                        let segments =
+                                            Path.GetFileNameWithoutExtension postFileName
+                                            |> fun s -> s.Split [|'_'|]
+                                        let text =
+                                            segments
+                                            |> Array.skip 1
+                                            |> String.concat " "
+                                        let number = segments.[0] |> Int32.Parse
+                                        sprintf "%d - %s" number text
+                                    { postMetadata with title = title}
+                                else
+                                    postMetadata
+                              yield createPost normalizedPostMetadata relDir postFileName ]
                 }
             
     ]
@@ -202,27 +219,52 @@ let generateIndexPage() =
 
     (renderedPage, distDir </> "home/index.html")
 
-let generatePostPages() =
-    [
-        for s in series do
-            let postCount = List.length s.posts
-            let renderedPosts =
-                s.posts
-                |> List.mapi (fun i p ->
-                    let hasSuccessor = i > 0
-                    let hasPredecessor = i + 1 < postCount
+let generatePostPages() = [
+    for s in series do
+
+        let postCount = List.length s.posts
+
+        // let wholeArticle =
+        //     let wholeContentn = s.posts
+        //         |> List.map (fun p -> p.renderedContent) |> List
+
+        let renderedPosts =
+            s.posts
+            |> List.mapi (fun i p ->
+
+                let hasSuccessor = i > 0
+                let hasPredecessor = i + 1 < postCount
+
+                let postViewModel =
                     {| p with
-                        hasNav = postCount > 1
+                        isSeries = postCount > 1
                         hasSuccessor = hasSuccessor
-                        prevPost = if hasSuccessor then (s.posts.[i-1].postOutputFileName) else ""
+                        prevPost = ""
+                        prevPostTitle = ""
                         hasPredecessor = hasPredecessor
-                        nextPost = if hasPredecessor then (s.posts.[i+1].postOutputFileName) else ""
-                    |})
-            
-            for postViewModel in renderedPosts do
-                let renderedPage = render "layout" {| content = render "post" postViewModel |}
-                let fileName = distContentDir </> s.relDir </> postViewModel.postOutputFileName
-                yield (renderedPage, fileName)
+                        nextPost = ""
+                        nextPostTitle = "" |}
+                    |> fun p ->
+                        if hasSuccessor then
+                            let successor = s.posts.[i-1]
+                            {| p with
+                                prevPost = successor.postOutputFileName
+                                prevPostTitle = successor.metadata.title |}
+                        else p
+                    |> fun p ->
+                        if hasPredecessor then
+                            let predecessor = s.posts.[i+1]
+                            {| p with
+                                nextPost = predecessor.postOutputFileName
+                                nextPostTitle = predecessor.metadata.title |}
+                        else p
+                
+                postViewModel )
+
+        for postViewModel in renderedPosts do
+            let renderedPage = render "layout" {| content = render "post" postViewModel |}
+            let fileName = distContentDir </> s.relDir </> postViewModel.postOutputFileName
+            yield (renderedPage, fileName)
     ]
 
 

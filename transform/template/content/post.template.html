@@ -12,17 +12,30 @@
             
         </div>
 
-        {{#if hasNav}}
-        <nav class="blog-nav nav nav-justified my-5">
+    {{#if isSeries}}
+
+        <div id="nav">
+
+            <hr />
+
+            <p>
+                <a href="article.html">Read the whole article on one page</a>
+            </p>
+
+            <nav class="blog-nav nav nav-justified my-5">
             {{#if hasSuccessor}}
-            <a class="nav-link-prev nav-item nav-link rounded-left" href="{{prevPost}}">Previous<i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+                <a class="nav-link-prev nav-item nav-link rounded-left" href="{{prevPost}}"><span>{{prevPostTitle}}</span><i class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
             {{/if}}
-            
+                
+            <a class="nav-item nav-link rounded-left rounded-right" href="#">{{metadata.title}}</a>
+
             {{#if hasPredecessor}}
-            <a class="nav-link-next nav-item nav-link rounded-right" href="{{nextPost}}">Next<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+                <a class="nav-link-next nav-item nav-link rounded-right" href="{{nextPost}}">{{nextPostTitle}}<i class="arrow-next fas fa-long-arrow-alt-right"></i></a>
             {{/if}}
-        </nav>
-        {{/if}}
+            </nav>
+        </div>
+
+    {{/if}}
         
         
     </div><!--//container-->
