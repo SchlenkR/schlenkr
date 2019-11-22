@@ -3,7 +3,7 @@
     <div class="container">
         <header class="blog-post-header">
             <h2 class="title mb-2">{{metadata.title}}</h2>
-            <div class="meta mb-3"><span class="date">{{dateString}}</span></div>
+            <div class="meta mb-3"><span class="date">{{metadata.dateString}}</span></div>
         </header>
         
         <div class="blog-post-body">
@@ -18,9 +18,9 @@
 
             <hr />
 
-            <p>
+            <!-- <p>
                 <a href="article.html">Read the whole article on one page</a>
-            </p>
+            </p> -->
 
             <nav class="blog-nav nav nav-justified my-5">
             {{#if hasSuccessor}}

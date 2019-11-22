@@ -5,9 +5,12 @@
 		<div class="media-body">
 			<h3 class="title mb-1"><a href="../{{postLink}}">{{metadata.title}}</a></h3>
 			<!-- <div class="meta mb-1"><span class="date">Published: {{date}}</span><span class="time">2 min read</span><span class="comment"><a href="#">1 comment</a></span></div> -->
-			<div class="meta mb-1"><span class="date">Published: {{dateString}}</span></div>
+			<div class="meta mb-1"><span class="date">Published: {{metadata.dateString}}</span></div>
 			<div class="intro">{{metadata.summary}}</div>
-			<a class="more-link" href="../{{postLink}}">Read more &rarr;</a>
+			<a class="more-link" href="../{{postLink}}">Read all &rarr;</a>
+			{{#each pages}}
+			<br /><a href="../{{link}}">{{title}}</a>
+			{{/each}}
 		</div><!--//media-body-->
 	</div><!--//media-->
 </div><!--//item-->

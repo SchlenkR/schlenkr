@@ -89,17 +89,18 @@ type PostMetadata =
     { title: string
       summary: string
       date: DateTime
+      dateString : string
       postType: PostType }
 
 type Post =
     { postLink: string
       postOutputFileName: string
       metadata: PostMetadata
-      dateString : string
       renderedContent: string }
 
 type Series =
     { relDir: string
+      metadata: PostMetadata
       posts: Post list }
 
 let series =
@@ -108,11 +109,13 @@ let series =
 
         let html = HtmlDocument.Parse (File.ReadAllText postFullFileName)
         let findFirst tag = (html.Descendants [tag] |> Seq.head).InnerText()
+        let date = findFirst "meta_date" |> (fun d -> DateTime.Parse(d, CultureInfo.InvariantCulture))
 
         {
             title = findFirst "meta_title"
             summary = findFirst "meta_preview"
-            date = findFirst "meta_date" |> (fun d -> DateTime.Parse(d, CultureInfo.InvariantCulture))
+            date = date
+            dateString = date.ToString("m")
             postType =
                 let postTypeString = findFirst "meta_type"
                 match postTypeString with
@@ -121,7 +124,7 @@ let series =
                 | _ -> failwith (sprintf "Unknown post type in file %s: %s" postFullFileName postTypeString)
         }
 
-    let createPost postMetadata relPostDir postFullFileName =
+    let createPost metadata relPostDir postFullFileName =
 
         // printfn "generating post: %s" postFullFileName
         // do Console.ReadLine() |> ignore
@@ -152,8 +155,7 @@ let series =
         {
             postLink = postLink
             postOutputFileName = postOutputFileName
-            metadata = postMetadata
-            dateString = postMetadata.date.ToString("m")
+            metadata = metadata
             renderedContent = htmlContent
         }
     
@@ -172,27 +174,27 @@ let series =
                         |> Array.toList
                     (seriesPostFiles, postDir </> defaultSeriesMetaFileName)
             let relDir = Path.GetFileName(postDir)
+            let metadata = readMetadata metaFile
             yield
-                { 
-                    relDir = relDir
-                    posts = [ for postFileName in postFiles do
-                              let postMetadata = readMetadata metaFile
-                              let normalizedPostMetadata =
-                                if isSeries then
-                                    let title =
-                                        let segments =
-                                            Path.GetFileNameWithoutExtension postFileName
-                                            |> fun s -> s.Split [|'_'|]
-                                        let text =
-                                            segments
-                                            |> Array.skip 1
-                                            |> String.concat " "
-                                        let number = segments.[0] |> Int32.Parse
-                                        sprintf "%d - %s" number text
-                                    { postMetadata with title = title}
-                                else
-                                    postMetadata
-                              yield createPost normalizedPostMetadata relDir postFileName ]
+                {  relDir = relDir
+                   metadata = metadata
+                   posts = [ for postFileName in postFiles do
+                             let normalizedPostMetadata =
+                               if isSeries then
+                                   let title =
+                                       let segments =
+                                           Path.GetFileNameWithoutExtension postFileName
+                                           |> fun s -> s.Split [|'_'|]
+                                       let text =
+                                           segments
+                                           |> Array.skip 1
+                                           |> String.concat " "
+                                       let number = segments.[0] |> Int32.Parse
+                                       sprintf "%d - %s" number text
+                                   { metadata with title = title}
+                               else
+                                   metadata
+                             yield createPost normalizedPostMetadata relDir postFileName ]
                 }
             
     ]
@@ -201,9 +203,17 @@ let generateIndexPage() =
     let renderedPostItems =
         query {
             for s in series do
-            let p = s.posts.Head
-            where (p.metadata.postType = BlogPost)
-            let viewPost = {| p with relDir = s.relDir |}
+            where (s.metadata.postType = BlogPost)
+            let firstPost = s.posts.Head
+            let viewPost = {|
+                postLink = firstPost.postLink
+                metadata = s.metadata
+                relDir = s.relDir
+                pages =
+                    if s.posts.Length > 1 then
+                        s.posts |> List.map (fun p -> {| link = p.postLink; title = p.metadata.title |} )
+                    else []
+                |}
             select (render "index_postItem" viewPost)
         }
         |> Seq.reduce (+)
