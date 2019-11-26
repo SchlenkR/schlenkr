@@ -41,7 +41,7 @@ let blendedDistortion2 drive input =
 
 That's better! Now compare this code with the desired code from:
 
-<div class="col-2">
+<div class="compare">
 
 ```fsharp
 let blendedDistortion drive input =
@@ -81,7 +81,7 @@ let (>>=) = bind
 
 ...and remove the parenthesis:
 
-<div class="col-2">
+<div class="compare">
 
 ```fsharp
 let blendedDistortion drive input =
@@ -161,7 +161,7 @@ let blendedDistortion drive input = patch {
 This looks almost similar to what we wanted to achieve. We only have to wrap our code in the "patch" and use let! instead of let every time we deal with blocks instead of pure functions. The F# compiler translates this syntax into the form we have seen above. Compare the desired form and the final form:
 
 
-<div class="col-2">
+<div class="compare">
 
 ```fsharp
 let blendedDistortion drive input =

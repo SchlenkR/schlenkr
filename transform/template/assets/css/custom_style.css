@@ -53,6 +53,28 @@ pre.fssnip {
     margin-top: 24px;
 }
 
+.compare {
+    display: flow-root;
+}
+.compare pre.fssnip {
+    width: 49%;
+    float: left;
+}
+.compare pre.fssnip:first-child {
+    margin-right: 2%;
+}
+
+@media (max-width: 1200px) {
+    .compare pre.fssnip {
+        width: 100%;
+        float: none;
+    }
+    .compare pre.fssnip:first-child {
+        margin-right: 0;
+    }
+}
+
+
 /* #toc > ol {
     padding-left: 20px;
 }
