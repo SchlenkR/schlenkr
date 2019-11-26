@@ -9,6 +9,8 @@ paket-files/
 
 .ionide/
 
+symbolCache.db
+
 # User-specific files
 *.suo
 *.user
