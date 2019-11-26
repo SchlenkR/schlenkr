@@ -106,6 +106,17 @@ type Series =
       metadata: PostMetadata
       posts: Post list }
 
+type IndexPageView = 
+    { link: string
+      title: string }
+
+type IndexPostItemView =
+    { postLink: string
+      title: string
+      summary: string
+      dateString : string
+      relDir: string
+      pages: IndexPageView list }
 
 let readMetadata directory =
 
@@ -196,27 +207,22 @@ let generateIndexPage() =
             for s in series do
             where (s.metadata.postType = BlogPost)
             let firstPost = s.posts.Head
-            let viewPost = {|
+            let viewPost = {
                 postLink = firstPost.postLink
-                metadata = s.metadata
+                title = s.metadata.title
+                dateString = s.metadata.dateString
+                summary = s.metadata.summary
                 relDir = s.relDir
                 pages =
                     if s.posts.Length > 1 then
-                        s.posts |> List.map (fun p -> {| link = p.postLink; title = p.metadata.title |} )
+                        s.posts |> List.map (fun p -> { link = p.postLink; title = p.metadata.title } )
                     else []
-                |}
+                }
             select (render "index_postItem" viewPost)
         }
         |> Seq.reduce (+)
 
-    let renderedPage =
-        render "layout"
-            {|
-                content = render "index" 
-                    {|
-                        items = renderedPostItems
-                    |}
-            |}
+    let renderedPage = render "layout" {| content = render "index" {| items = renderedPostItems |} |}
 
     (renderedPage, distDir </> "home/index.html")
 
@@ -235,10 +241,11 @@ let generatePostPages() = [
 
                 let hasSuccessor = i > 0
                 let hasPredecessor = i + 1 < postCount
+                let isSeries = postCount > 1
 
                 let postViewModel =
                     {| p with
-                        isSeries = postCount > 1
+                        isSeries = isSeries
                         hasSuccessor = hasSuccessor
                         prevPost = ""
                         prevPostTitle = ""
