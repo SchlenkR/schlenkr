@@ -246,6 +246,8 @@ let generatePostPages() = [
                 let postViewModel =
                     {| p with
                         isSeries = isSeries
+                        seriesTitle = if isSeries then s.metadata.title else null
+                        postTitle = if isSeries then p.metadata.title else s.metadata.title
                         hasSuccessor = hasSuccessor
                         prevPost = ""
                         prevPostTitle = ""

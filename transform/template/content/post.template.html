@@ -2,8 +2,11 @@
 <article class="blog-post px-3 py-5 p-md-5">
     <div class="container">
         <header class="blog-post-header">
-            <h2 class="title mb-2">{{metadata.title}}</h2>
+            {{#if seriesTitle}}
+            <h1 class="mb-3">{{seriesTitle}}</h1>
+            {{/if}}
             <div class="meta mb-3"><span class="date">{{metadata.dateString}}</span></div>
+            <h2 class="title mb-2">{{postTitle}}</h2>
         </header>
         
         <div class="blog-post-body">
