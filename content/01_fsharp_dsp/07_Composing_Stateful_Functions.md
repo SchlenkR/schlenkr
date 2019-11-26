@@ -1,6 +1,4 @@
 
-## Composing Stateful Functions
-
 <hint>
 
 See [src/3_Stateful_FP.fsx] as sample source.

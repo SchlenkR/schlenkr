@@ -1,6 +1,4 @@
 
-## Appendix
-
 In this section, some more concepts are covered in a loose and very brief way.
 
 

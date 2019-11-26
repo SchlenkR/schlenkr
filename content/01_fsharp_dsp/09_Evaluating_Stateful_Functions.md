@@ -1,6 +1,4 @@
 
-## Evaluating Stateful Functions
-
 <hint>
 
 See [src/4_Optional_Initial_Values.fsx] and [src/5_Evaluation.fsx] as sample source.

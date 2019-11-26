@@ -1,6 +1,4 @@
 
-## Writing Stateful Functions
-
 First, let's look again at the block diagram that defines a stateful function:
 
 ![Block with state](./bs_block_with_state.png)

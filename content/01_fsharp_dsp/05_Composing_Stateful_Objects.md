@@ -1,6 +1,4 @@
 
-## Composing Stateful Objects
-
 <hint>
 
 See [src/2_Stateful_OOP.fsx] as sample source.

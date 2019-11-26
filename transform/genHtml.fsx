@@ -2,6 +2,7 @@
 #load @".\packages\FSharp.Formatting\FSharp.Formatting.fsx"
 #r @".\packages\Handlebars.Net\lib\net452\Handlebars.dll"
 #r @".\packages\FSharp.Data\lib\net45\FSharp.Data.dll"
+#r @"System.Xml.Linq.dll"
 
 open FSharp.Literate
 open FSharp.Formatting.Razor
@@ -13,6 +14,9 @@ open HandlebarsDotNet
 open System
 open System.Globalization
 open System.IO
+open System.Linq
+open System.Xml.Linq
+
 
 let ( </> ) a b = a + "/" + b
 
@@ -23,8 +27,7 @@ let contentDirName = "content"
 let srcContentDir = scriptDir </> ".." </> contentDirName
 let distContentDir = distDir
 
-let defaultPostFileName = "post.md"
-let defaultSeriesMetaFileName = "_series.md"
+let metadataFileName = "_meta.xml"
 
 let templateDir = scriptDir </> "template"
 let templateFileExtension = ".template.html"
@@ -103,100 +106,88 @@ type Series =
       metadata: PostMetadata
       posts: Post list }
 
-let series =
 
-    let readMetadata postFullFileName =
+let readMetadata directory =
 
-        let html = HtmlDocument.Parse (File.ReadAllText postFullFileName)
-        let findFirst tag = (html.Descendants [tag] |> Seq.head).InnerText()
-        let date = findFirst "meta_date" |> (fun d -> DateTime.Parse(d, CultureInfo.InvariantCulture))
+    let xml = XDocument.Parse (File.ReadAllText (directory </> metadataFileName))
+    let findFirst tag = (xml.Root.Descendants() |> Seq.find (fun x -> x.Name.LocalName = tag)).Value
+    let date = findFirst "date" |> (fun d -> DateTime.Parse(d, CultureInfo.InvariantCulture))
 
-        {
-            title = findFirst "meta_title"
-            summary = findFirst "meta_preview"
-            date = date
-            dateString = date.ToString("m")
-            postType =
-                let postTypeString = findFirst "meta_type"
-                match postTypeString with
-                | "post" -> BlogPost
-                | "static" -> Static
-                | _ -> failwith (sprintf "Unknown post type in file %s: %s" postFullFileName postTypeString)
-        }
+    {
+        title = findFirst "title"
+        summary = findFirst "preview"
+        date = date
+        dateString = date.ToString("MMMM yyyy", new CultureInfo("en-US"))
+        postType =
+            let postTypeString = findFirst "type"
+            match postTypeString with
+            | "post" -> BlogPost
+            | "static" -> Static
+            | _ -> failwith (sprintf "Unknown post type in dir %s: %s" directory postTypeString)
+    }
 
-    let createPost metadata relPostDir postFullFileName =
+let createPost metadata relPostDir postFullFileName =
 
-        // printfn "generating post: %s" postFullFileName
-        // do Console.ReadLine() |> ignore
+    // printfn "generating post: %s" postFullFileName
+    // do Console.ReadLine() |> ignore
 
-        // let projInfo =
-        //     [ "page-description", "TODO"
-        //       "page-author", "Ronald Schlenker"
-        //       "github-link", "https://github.com/TODO"
-        //       "project-name", "TODO" ]
+    // let projInfo =
+    //     [ "page-description", "TODO"
+    //       "page-author", "Ronald Schlenker"
+    //       "github-link", "https://github.com/TODO"
+    //       "project-name", "TODO" ]
 
-        let htmlContent =
-            let tmpFile = Path.GetTempFileName()
-            do RazorLiterate.ProcessMarkdown
-                ( postFullFileName,
-                  templateFile = fsharpMarkdownTemplateFileName,
-                  output = tmpFile,
-                  format = OutputKind.Html,
-                  lineNumbers = false,
-                //   replacements = projInfo,
-                  includeSource = true)
-            let res = File.ReadAllText tmpFile
-            File.Delete tmpFile
-            res
+    let htmlContent =
+        let tmpFile = Path.GetTempFileName()
+        do RazorLiterate.ProcessMarkdown
+            ( postFullFileName,
+              templateFile = fsharpMarkdownTemplateFileName,
+              output = tmpFile,
+              format = OutputKind.Html,
+              lineNumbers = false,
+            //   replacements = projInfo,
+              includeSource = true)
+        let res = File.ReadAllText tmpFile
+        File.Delete tmpFile
+        res
 
-        let postOutputFileName = (Path.GetFileNameWithoutExtension postFullFileName) + ".html"
-        let postLink = relPostDir </> postOutputFileName
+    let postOutputFileName = (Path.GetFileNameWithoutExtension postFullFileName) + ".html"
+    let postLink = relPostDir </> postOutputFileName
 
-        {
-            postLink = postLink
-            postOutputFileName = postOutputFileName
-            metadata = metadata
-            renderedContent = htmlContent
-        }
-    
-    [
-        for postDir in Directory.GetDirectories(srcContentDir) do
-            let defaultPostFullFileName = postDir </> defaultPostFileName
-            let isSeries = File.Exists defaultPostFullFileName |> not
-            let postFiles,metaFile =
-                if not isSeries then
-                    ([defaultPostFullFileName], defaultPostFullFileName)
-                else
-                    let seriesPostFiles =
-                        Directory.GetFiles(postDir, "*.md", SearchOption.TopDirectoryOnly)
-                        |> Array.filter (fun file -> Path.GetFileNameWithoutExtension(file).[0] |> Char.IsDigit)
-                        |> Array.sort
-                        |> Array.toList
-                    (seriesPostFiles, postDir </> defaultSeriesMetaFileName)
-            let relDir = Path.GetFileName(postDir)
-            let metadata = readMetadata metaFile
-            yield
-                {  relDir = relDir
-                   metadata = metadata
-                   posts = [ for postFileName in postFiles do
-                             let normalizedPostMetadata =
-                               if isSeries then
-                                   let title =
-                                       let segments =
-                                           Path.GetFileNameWithoutExtension postFileName
-                                           |> fun s -> s.Split [|'_'|]
-                                       let text =
-                                           segments
-                                           |> Array.skip 1
-                                           |> String.concat " "
-                                       let number = segments.[0] |> Int32.Parse
-                                       sprintf "%d - %s" number text
-                                   { metadata with title = title}
-                               else
-                                   metadata
-                             yield createPost normalizedPostMetadata relDir postFileName ]
-                }
-            
+    {
+        postLink = postLink
+        postOutputFileName = postOutputFileName
+        metadata = metadata
+        renderedContent = htmlContent
+    }
+
+
+let series = [
+    for postDir in Directory.GetDirectories(srcContentDir) do
+        let postFiles =
+            Directory.GetFiles(postDir, "*.md", SearchOption.TopDirectoryOnly)
+            |> Array.sort
+            |> Array.toList
+        let relDir = Path.GetFileName(postDir)
+        let metadata = readMetadata postDir
+        yield { relDir = relDir
+                metadata = metadata
+                posts = [
+                    for postFileName in postFiles do
+                        let normalizedPostMetadata =
+                            let title =
+                                let segments =
+                                    Path.GetFileNameWithoutExtension postFileName
+                                    |> fun s -> s.Split [|'_'|]
+                                let text =
+                                    segments
+                                    |> Array.skip 1
+                                    |> String.concat " "
+                                let number = segments.[0] |> Int32.Parse
+                                sprintf "%d - %s" number text
+                            { metadata with title = title}
+                        yield createPost normalizedPostMetadata relDir postFileName ]
+            }
     ]
 
 let generateIndexPage() =
