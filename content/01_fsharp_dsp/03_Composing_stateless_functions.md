@@ -1,6 +1,4 @@
 
-## Composing Stateless Functions
-
 ### Serial Composition
 
 The `amp` and `limit` functions are so small that we won't break them into smaller pieces to reuse them. They are kind of "atoms" in our context. But of course, we want to do the opposite: to compose them to larger, higher-level functions (that themselves can be composed again to higher-level functions, and so on).

@@ -1,6 +1,4 @@
 
-## Analysis
-
 <hint>
 
 See [src/6_Retracing_Stateful_FP.fsx] as sample source.
