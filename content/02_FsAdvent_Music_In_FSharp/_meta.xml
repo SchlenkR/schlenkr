@@ -1,0 +1,12 @@
+
+<meta>
+    <date>2019-12-26</date>
+    <title>Jingle Bells: Music in F#</title>
+    <type>post</type>
+    <preview>
+        In my contribution to the 2019 F# Advent Calendar, I'm going
+        to pick up the "Local State" computation from my F# DSP post
+        to actually create a synthesizer, compose a song (it's stolen, to be honest)
+        and play a nice melody. Have Fun!
+    </preview>
+</meta>

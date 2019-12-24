@@ -174,7 +174,7 @@ let createPost metadata relPostDir postFullFileName =
 
 
 let series = [
-    for postDir in Directory.GetDirectories(srcContentDir) do
+    for postDir in Directory.GetDirectories(srcContentDir) |> Array.sortDescending do
         let postFiles =
             Directory.GetFiles(postDir, "*.md", SearchOption.TopDirectoryOnly)
             |> Array.sort
