@@ -3,8 +3,13 @@ First of all, I'm happy to be part of this year's [F# Advent Calendar](https://s
 
 I've been doing some work in the digital signal processing domain, coming from C#, but then moved to F# because I missed ways of abstracting certain aspects that are hard to achieve using an object oriented language, and I hope to attract one or another person to have a look at F# and see what it can do.
 
+The main part of my FsAdvent contribution is - beside this article - is source code that you can find in [this Github Repo](https://github.com/ronaldschlenker/compost). The Readme describes the setup and everything you need to know to run the use cases described here. It is all based on **F# Interactive**, so that you can play around if you want to.
 
-## Mission Goal
+**Important**
+
+Please keep in mind that the source code provided here and on GitHub is only a proof of concept and it is only in a raw draft state. It's not production ready and there are a lot of things to do (concept work as well as code quality).
+
+## Goals
 
 The basis of this article is my [contribution](http://schlenkr.binarygears.de/01_fsharp_dsp/01_Introduction.html) for the [Applied F# challenge 2019](http://foundation.fsharp.org/applied_fsharp_challenge). Here, I discuss how functions that are based on a local state can be composed in a convenient and pure way. This technique that I call **Local State Computation** (in contrast to the state monad, that works on a _global_ state) is useful in digital signal processing
 
@@ -14,17 +19,6 @@ In this article, we will try to achieve several things (in mixed order):
 2. **Synthesis:** We are going to model a [Monophone AM Synthesizer](https://de.wikipedia.org/wiki/Synthesizer) using this technique.
 3. **Composition:** We look at a way of describing note patterns so that we can actually compose a tiny melody.
 4. **Audio Out:** We finally use this to generate sound that you can hear.
-
-
-## Setup / GitHub Repo
-
-I set up a [Github Repo](https://github.com/ronaldschlenker/compost) where you can find the sources that are the basis of this article. The Readme.md describes the setup. It is all based on **F# Interactive**, so that you can play around if you want to.
-
-**Important**
-
-Please keep in mind that the source code provided here and on GitHub is only a proof of concept and it is only in a raw draft state. It's not production ready and there are a lot of things to do (concept work as well as code quality).
-
-So, let's get our hands on...
 
 
 ## "Local State" Computations
@@ -458,15 +452,4 @@ sequencer synthVoice 90.0 16.0 jingleBells
 ```
 
 TODO: Embed twitter video
-
-## TODO
-
-* Github
-    * Audio geht nur unter Windows
-    * Order of Files
-    * Demo Files und lib Ordner
-    * Readme.md im GitHub Repo machen
-* Polyphony
-// TODO: Pattern should tell when it's "done" instead of specifying seconds to play
-// Naming, code quality ist nicht so geil
 
