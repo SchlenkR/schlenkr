@@ -55,7 +55,15 @@ In my [post](http://schlenkr.binarygears.de/01_fsharp_dsp/01_Introduction.html),
 **Example:**
 
 ```fsharp
-// File: ./src/0_localStateDemo.fsx
+// Have a look at: ./src/0_localStateDemo.fsx
+
+// a simple block that toggles ongoing from true to false with each evaluation
+let invertGenerator seed =
+    fun s r ->
+        let v = not s
+        { value = v; state = v }
+    |> liftSeed seed
+    |> Block
 ```
 
 In this sample, we want to generate a sequence of alterning `true` `false` values. Of course this can be achieved in a lot of ways without using local state, but I use this sample to give you an idea of how it works.
@@ -75,6 +83,15 @@ If we look at the `invertGenerator` function, we can see how a stateful function
 We can use this `block` to evaluate it n times - and get a sequence of n values. If you want to know how exactly this is done, have a look at the repo in the `Eval` module.
 
 ```fsharp
+// Have a look at: ./src/0_localStateDemo.fsx
+
+let invertGenerator seed =
+    fun s r ->
+        let v = not s
+        { value = v; state = v }
+    |> liftSeed seed
+    |> Block
+
 Core.Eval.Test.evalN (invertGenerator false) 10
 // val it : bool list =
 //     [true; false; true; false; true; false; true; false; true; false]
@@ -85,6 +102,40 @@ Core.Eval.Test.evalN (invertGenerator false) 10
 Of course, we usually want to chain several blocks together. Here is our goal: We want to generate n values and transform their output. When the n values are done, we want to "mute" the channel:
 
 ```fsharp
+// Have a look at: ./src/0_localStateDemo.fsx
+
+let invertGenerator seed =
+    fun s r ->
+        let v = not s
+        { value = v; state = v }
+    |> liftSeed seed
+    |> Block
+
+let countEffect =
+    fun s r ->
+        { value = s; state = s + 1 }
+    |> liftSeed 0
+    |> Block
+
+// goal: count n values, then mute.
+let countUntil n =
+    blockBase {
+        let! value = invertGenerator false
+        let! count = countEffect
+        let output =
+            if count < n then
+                match value with
+                | true -> "Oh Yeah!"
+                | false -> "Oh no."
+            else
+                "That's it."
+        return output
+    }
+    
+Core.Eval.Test.evalN (countUntil 5) 10
+// val it : string list =
+//     ["Oh Yeah!"; "Oh no."; "Oh Yeah!"; "Oh no."; "Oh Yeah!"; "That's it.";
+//      "That's it."; "That's it."; "That's it."; "That's it."]
 ```
 
 
@@ -101,7 +152,6 @@ Let's begin with a very simple tone generator: A sine wave. Now that it comes to
 So, we need a generator that outputs floats. Here it is:
 
 ```fsharp
-
 // Have a look at: ./src/lib/blocks.fsx - Osc module
 
 let sin (frq: float) =
@@ -140,7 +190,23 @@ Let's "hear" our synth: There's a **windows-only** implementation in the file `.
 Anyway: In the 55 LoC is all you need to play our sinus tone:
 
 ```fsharp
-// File: ./src/1_playSimpleSinus.fsx
+// Have a look at: ./src/1_playSimpleSinus.fsx
+
+#load "./lib/playback.fsx"
+
+open Microsoft.FSharp.Data.UnitSystems.SI.UnitSymbols
+
+open Core
+open Blocks
+open Playback
+
+// 1 - play a simple sin wave for 2.5 seconds
+block {
+    let! x = Osc.sin 2000.0
+    return x * 0.5 
+}
+|> playSync 2.5<s>
+
 ```
 
 We will use the `playSync` function to evaluate a `generator block` and send it's output to the soundcard for some seconds.
