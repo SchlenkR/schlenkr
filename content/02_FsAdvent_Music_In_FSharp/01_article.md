@@ -3,7 +3,7 @@ First of all, I'm happy to be part of this year's [F# Advent Calendar](https://s
 
 I've been doing some work in the digital signal processing domain, coming from C#, but then moved to F# because I missed ways of abstracting certain aspects that are hard to achieve using an object oriented language, and I hope to attract one or another person to have a look at F# and see what it can do.
 
-The main part of my FsAdvent contribution is - beside this article - is source code that you can find in [this Github Repo](https://github.com/ronaldschlenker/compost). The Readme describes the setup and everything you need to know to run the use cases described here. It is all based on **F# Interactive**, so that you can play around if you want to.
+The main part of my FsAdvent contribution - beside this article - is source code that you can find in [this Github Repo](https://github.com/ronaldschlenker/compost). The Readme describes the setup and everything you need to know to run the use cases described here. It is all based on **F# Interactive**, so that you can play around if you want to.
 
 **Important**
 
@@ -273,14 +273,6 @@ The envelope itself has parameters:
 * Depending on the `a` and `r` (attack - release) values, the opening and closing happens slower or faster.
 * A `resetTrigger` value: We will see later why this is important, but we can retrigger the same tone, like hitting the same key on a piano, and we hear 2 different key strokes.
 
-Putting the sine tone generator and the envelope together:
-
-```fsharp
-
-// TODO: Play for 0.5 seconds, then release
-
-```
-
 ### 2 - Composition and Notes
 
 Now we can play a nicely shaped sound, but we want more: We need a way of composing a melody. Before we can do that, we have to look at our building blocka once again, and see what we have:
@@ -292,42 +284,49 @@ We can now put this together in 2 types:
 
 ```fsharp
 type Synth<'s> = Synth of (float -> Block<float, 's, Env>)
+
 type Envelope<'s> = Envelope of (bool -> bool -> Block<float, 's, Env>)
 ```
 
-We can now build a function that combines these 2:
+Now we need something to combine these 2 in this way:
 
-```fsharp
-let inline buildInstrument (Envelope envelope) (Synth synth) note resetTrigger =
-    let initialFrq = 0.0
-    
-    // ( +-> ) This is a "feedback with no reader state". 
-    // Why? -> We are able to feed back state not only
-    // inside a block, but over a whole block composition.
-    initialFrq +-> fun lastFrq ->
-        block {
-            let frq, isTriggered =
-                match note with
-                | None -> lastFrq, false
-                | Some frq -> frq, true
-            let! s = synth frq
-            let! e = envelope isTriggered resetTrigger
-            return { out = s * e
-                        feedback = frq }
-        }
-```
+"Take an envelope and a synth. Use them to build a monophone tone generator (**Voice**) that can be (re)triggered by a key."
 
-The `buildInstrument` basically takes an envelope and a synth and combines them to a `Block`, that can again be evaluated.
-
-There are 2 more parameters: `Note` and `resetTrigger`:
-
-* `Note`: This gives us a frequency when something should be played (Some frq), or None when there should be silence (key is released).
-* `resetTrigger`: A bool that represents if there happened a retrigger of the key (in case the same key is hit 2 times after another).
-
-We can encode this as a curried function:
+We can encode this as a function:
 
 ```fsharp
 type Voice<'s> = Voice of (float option -> bool -> Block<float, 's, Env>)
+```
+
+There are 2 input parameters:
+
+* The first is a `float option` gives us a frequency when something should be played (`Some frq`), or `None` when there should be silence (key is released).
+* The second (a `bool`) that there happened a retrigger of the key (in case the same key is hit 2 times after another) so that we can "hard reset" the envelope between 2 equal notes.
+
+The output is - of course - again a `Block`, that can again be evaluated.
+
+We can now write a function that builds a voice:
+
+```fsharp
+let inline buildVoice (Envelope envelope) (Synth synth) =
+    fun note resetTrigger ->
+        let initialFrq = 0.0
+        
+        // ( +-> ) This is a "feedback with no reader state". 
+        //         Why? -> We are able to feed back state not only
+        //         inside a block, but over a whole block composition.
+        initialFrq +-> fun lastFrq ->
+            block {
+                let frq, isTriggered =
+                    match note with
+                    | None -> lastFrq, false
+                    | Some frq -> frq, true
+                let! s = synth frq
+                let! e = envelope isTriggered resetTrigger
+                return { out = s * e
+                         feedback = frq }
+            }
+    |> Voice
 ```
 
 Now, we need something for composition - a "sequencer": A sequencer will be parametrized with a list of "commands" how it has to trigger the voice. The commands are:
@@ -451,5 +450,12 @@ sequencer synthVoice 90.0 16.0 jingleBells
 |> playSync 12.0<s>
 ```
 
-TODO: Embed twitter video
+### Finally
 
+Have a look at [this video](https://twitter.com/SchlenkR/status/1209963700452577280) to see the result:
+
+<blockquote class="twitter-tweet" data-lang="de"><p lang="en" dir="ltr">This is my <a href="https://twitter.com/hashtag/FsAdvent?src=hash&amp;ref_src=twsrc%5Etfw">#FsAdvent</a> contribution: „Music in F#“, where we build synthesizers, effects and composition.<br> <br>Blog is here (26th of December): <a href="https://t.co/XxlkuwMXWX">https://t.co/XxlkuwMXWX</a><br> <br>Github repo is here: <a href="https://t.co/wFgjCyloU5">https://t.co/wFgjCyloU5</a><br> <br>I wish you a mery Christmas, and thank you ⁦<a href="https://twitter.com/sergey_tihon?ref_src=twsrc%5Etfw">@sergey_tihon</a>⁩ <a href="https://t.co/QHWxzdjfqC">pic.twitter.com/QHWxzdjfqC</a></p>&mdash; Ronald Schlenker (@SchlenkR) <a href="https://twitter.com/SchlenkR/status/1209963700452577280?ref_src=twsrc%5Etfw">25. Dezember 2019</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+I hope you enjoyed reading, and I wish you a mery christmas.
