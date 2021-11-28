@@ -1,2 +1,0 @@
-* BinaryGears Logo und link
-* 
