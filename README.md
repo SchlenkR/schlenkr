@@ -4,10 +4,10 @@
 ## About Me
 
 * I know how to build software that is performant, maintainable over years, scalable and affordable.
-* It's a pleasure for me teaching this to others.
+* :book: It's a pleasure for me teaching this to others and vice versa.
 * I'm a freelancer - you can hire me. 🚀
 * Improve skills so that annoying problems don't arise anymore and you have time to focus on the interesting things!
-* 💬 Connect? Follow and contact me 👉🏼 [Twitter](https://twitter.com/schlenkr)
+* :phone: Connect? Follow and contact me 👉🏼 [Twitter](https://twitter.com/schlenkr)
 
 > If you need to pull a carriage through the mud, and you have one cat, you cannot solve the problem. Having **onehundred** cats won't work either! You need a horse, because a horse is an "pulling carriages through the mud"-expert. 🐴
 
