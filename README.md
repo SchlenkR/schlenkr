@@ -1,9 +1,26 @@
+<h1 align="center">Hi 👋, I'm Ronald Schlenker</h1>
+<h4 align="center">F# ❤️ developer | Tech consultant | OSS maintainer | Conference speaker</h4>
 
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=ronaldschlenker&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
+## About Me
 
-## OSS Development
+* I know how to build software that is performant, maintainable over years, scalable and affordable
+* It's a pleasure for me teaching this to others.
+* I'm a freelancer - you can hire me 🚀
+* Improve skills so that annoying problems don't arise anymore and you have time to focus on the interesting things :)
+* 💬 Connect? Follow and contact me 👉🏼 [Twitter](https://twitter.com/schlenkr)
 
-Here's a list of projects that I
+> If you need to pull a carriage through the mud, and you have one cat, you cannot solve the problem. Having **onehundred** cats won't work either! You need a horse, because a horse is an "pulling carriages through the mud"-expert. 🐴
+
+### Technologies
+
+Although techologies, stacks, tools matter, it's the first sentence from the list above that really matters. For anything else:
+
+* Using .Net, C#, TypeScript, and many, many more buzzwords on a daily basis.
+* I recommend to forget all that and use F# only.
+
+## OSS
+
+Here's a list of the open source projects that I initially created and maintain:
 
 [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=fsprojects&repo=FsHttp)](https://github.com/fsprojects/FsHttp)
 [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=ronaldschlenker&repo=Trulla)](https://github.com/ronaldschlenker/Trulla)
@@ -13,11 +30,3 @@ Here's a list of projects that I
 [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=ronaldschlenker&repo=applied_fsharp_challenge)](https://github.com/ronaldschlenker/applied_fsharp_challenge)
 [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=fsprojects&repo=LocSta)](https://github.com/fsprojects/LocSta)
 [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=ronaldschlenker&repo=FsLSA)](https://github.com/ronaldschlenker/FsLSA)
-
-
-![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=RonaldSchlenker.RonaldSchlenker)
-
-<!--
-[![My Awesome Stats](https://awesome-github-stats.azurewebsites.net/user-stats/ronaldschlenker?cardType=level)](stats)
-![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=ronaldschlenker)
--->
