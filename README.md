@@ -4,8 +4,8 @@
 ## About Me
 
 * I know how to build software that is performant, maintainable over years, scalable and affordable.
-* :book: It's a pleasure for me teaching this to others and vice versa.
-* I'm a freelancer - you can hire me. 🚀
+* :book: Exchange of knowledge and discourse is valuable.
+* 🚀 As a freelancer, you can hire me.
 * Improve skills so that annoying problems don't arise anymore and you have time to focus on the interesting things!
 * :phone: Connect? Follow and contact me 👉🏼 [Twitter](https://twitter.com/schlenkr)
 
