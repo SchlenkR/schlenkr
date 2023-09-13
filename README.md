@@ -1,5 +1,7 @@
 <h1 align="center">Hi 👋, I'm Ronald Schlenker</h1>
-<h4 align="center">F# ❤️ developer | Tech consultant | OSS maintainer | Conference speaker</h4>
+<h4 align="center">F# ❤️ Developer | Tech Consultant | OSS Creator | Conference Speaker</h4>
+
+## OSS Development
 
 * Creator of [FsHttp](https://github.com/fsprojects/FsHttp): A lightweight F# HTTP library.
 * Creator of [Vide UI](https://github.com/RonaldSchlenker/Vide/tree/main/Vide.UI): Create reactive UIs in F# for Fable (Web), Avalonia (Mobile/Desktop) and more.
