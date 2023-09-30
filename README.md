@@ -1,7 +1,7 @@
 <h1 align="center">Hi 👋, I'm Ronald Schlenker</h1>
 <h4 align="center">F# ❤️ Developer | Tech Consultant | OSS Creator | Conference Speaker</h4>
 
-> I'm a member of the F# Software Foundation and [Recognized F# Expert](https://foundation.fsharp.org/results_applied_fsharp_2019)
+> I'm a member of Amplifying F# and [Recognized F# Expert](https://foundation.fsharp.org/results_applied_fsharp_2019)
 
 ## OSS Development
 
