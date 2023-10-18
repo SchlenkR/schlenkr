@@ -5,7 +5,7 @@
 
 ## OSS Development
 
-<img src='./img/FsHttp_logo.png' alt='logo' height='100' align="left" />
+<img src='./img/FsHttp_logo.png' alt='logo' width='120' align="left" />
 
 ### FsHttp
 
@@ -15,7 +15,7 @@ Creator of [FsHttp](https://github.com/fsprojects/FsHttp) - a lightweight C# and
 
 
 
-<img src='./img/TheBlunt_logo.png' alt='logo' height='100' align="left" />
+<img src='./img/TheBlunt_logo.png' alt='logo' width='120' align="left" />
 
 ### The Blunt
 
@@ -25,7 +25,7 @@ Creator of [The Blunt](https://github.com/ronaldschlenker/TheBlunt) - A a one-fi
 
 
 
-<img src='./img/Trulla_logo.png' alt='logo' height='100' align="left" />
+<img src='./img/Trulla_logo.png' alt='logo' width='120' align="left" />
 
 ### Trulla Templates
 
@@ -35,7 +35,7 @@ Creator of [Trulla Templates](https://github.com/ronaldschlenker/Trulla) - It's 
 
 
 
-<img src='./img/Vide/logo.png' alt='logo' height='100' align="left" />
+<img src='./img/Vide/logo.png' alt='logo' width='120' align="left" />
 
 ### Vide Collabo
 
