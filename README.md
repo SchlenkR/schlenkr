@@ -5,8 +5,16 @@
 
 ## OSS Development
 
-* Creator of [FsHttp](https://github.com/fsprojects/FsHttp): A lightweight F# HTTP library.
-* Creator of [Vide UI](https://github.com/RonaldSchlenker/Vide/tree/main/Vide.UI): Create reactive UIs in F# for Fable (Web), Avalonia (Mobile/Desktop) and more.
+<p align="left">
+    <img src='./img/FsHttp/logo.png' alt='logo' height='50' />
+    <strong>FsHttp</strong>
+
+    Creator of [FsHttp](https://github.com/fsprojects/FsHttp): A lightweight F# HTTP library.
+</p>
+
+<br clear='left' />
+
+ Creator of [Vide UI](https://github.com/RonaldSchlenker/Vide/tree/main/Vide.UI): Create reactive UIs in F# for Fable (Web), Avalonia (Mobile/Desktop) and more.
 * Creator of [Vide DSP](https://github.com/RonaldSchlenker/Vide/tree/main/Vide.UI): A convenient F# library for continuous digital signal processing and analysis.
 * Creator of [Trulla](https://github.com/RonaldSchlenker/Trulla) : Strongly typed text templates usable as type provider (F#) or source generator (C#)
 
