@@ -5,17 +5,51 @@
 
 ## OSS Development
 
-<img src='./img/FsHttp/logo.png' alt='logo' height='100' align="left" />
+<img src='./img/FsHttp_logo.png' alt='logo' height='100' align="left" />
 
 ### FsHttp
 
-Creator of [FsHttp](https://github.com/fsprojects/FsHttp): A lightweight F# HTTP library.
+Creator of [FsHttp](https://github.com/fsprojects/FsHttp) - a lightweight C# and F# HTTP library
 
 <br clear='left' />
 
- Creator of [Vide UI](https://github.com/RonaldSchlenker/Vide/tree/main/Vide.UI): Create reactive UIs in F# for Fable (Web), Avalonia (Mobile/Desktop) and more.
-* Creator of [Vide DSP](https://github.com/RonaldSchlenker/Vide/tree/main/Vide.UI): A convenient F# library for continuous digital signal processing and analysis.
-* Creator of [Trulla](https://github.com/RonaldSchlenker/Trulla) : Strongly typed text templates usable as type provider (F#) or source generator (C#)
+
+
+<img src='./img/TheBlunt_logo.png' alt='logo' height='100' align="left" />
+
+### The Blunt
+
+Creator of [The Blunt](https://github.com/ronaldschlenker/TheBlunt) - A a one-file recursive parser combinator library for F# and Fable.
+
+<br clear='left' />
+
+
+
+<img src='./img/Trulla_logo.png' alt='logo' height='100' align="left" />
+
+### Trulla Templates
+
+Creator of [Trulla Templates](https://github.com/ronaldschlenker/Trulla) - It's like Handlebars or Mustache, but statically typed and safe!
+
+<br clear='left' />
+
+
+
+<img src='./img/Vide/logo.png' alt='logo' height='100' align="left" />
+
+### Vide Collabo
+
+Creator of [Vide](https://github.com/vide-collabo)
+
+Vide offers a unique approach for writing state-aware functions and composing them in a convenient and easy way. It is used for UI libraries targeting various platforms and technologies, streaming / DSP, workflow engines and perhaps more.
+
+* [Vide UI](https://github.com/RonaldSchlenker/Vide/tree/main/Vide.UI): Create reactive UIs in F# for Fable (Web), Avalonia (Mobile/Desktop) and more.
+
+* [Vide DSP](https://github.com/RonaldSchlenker/Vide/tree/main/Vide.UI): A convenient F# library for continuous digital signal processing and analysis.
+
+<br clear='left' />
+
+
 
 ## About Me
 
