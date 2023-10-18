@@ -5,12 +5,11 @@
 
 ## OSS Development
 
-<p align="left">
-    <img src='./img/FsHttp/logo.png' alt='logo' height='50' />
-    <strong>FsHttp</strong>
+<img src='./img/FsHttp/logo.png' alt='logo' height='100' align="left" />
 
-    Creator of [FsHttp](https://github.com/fsprojects/FsHttp): A lightweight F# HTTP library.
-</p>
+### FsHttp
+
+Creator of [FsHttp](https://github.com/fsprojects/FsHttp): A lightweight F# HTTP library.
 
 <br clear='left' />
 
