@@ -35,7 +35,7 @@ Creator of [Trulla Templates](https://github.com/ronaldschlenker/Trulla) - It's 
 
 
 
-<img src='./img/Vide/logo.png' alt='logo' width='120' align="left" />
+<img src='./img/Vide_logo.png' alt='logo' width='120' align="left" />
 
 ### Vide Collabo
 
