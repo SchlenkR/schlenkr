@@ -25,7 +25,7 @@ Although techologies, stacks, tools matter, it's the first sentence from the lis
 
 
 
-<img src='./img/Vide_logo.png' alt='logo' width='120' align="left" />
+<img src='./img/Vide_logo.png' alt='logo' width='160' align="left" />
 <br />
 
 Creator of **[Vide](https://github.com/vide-collabo/vide)** - For  Reactive UIs (Web / Desktop / Mobile), Digital Signal Processing and More!
@@ -36,7 +36,7 @@ Creator of **[Vide](https://github.com/vide-collabo/vide)** - For  Reactive UIs 
 
 <br />
 <br />
-<img src='./img/FsHttp_logo.png' alt='logo' width='120' align="left" />
+<img src='./img/FsHttp_logo.png' alt='logo' width='160' align="left" />
 
 Creator of **[FsHttp](https://github.com/fsprojects/FsHttp)**  - A lightweight C# and F# HTTP library
 
@@ -48,7 +48,7 @@ Creator of **[FsHttp](https://github.com/fsprojects/FsHttp)**  - A lightweight C
 
 <br />
 <br />
-<img src='./img/TheBlunt_logo.png' alt='logo' width='120' align="left" />
+<img src='./img/TheBlunt_logo.png' alt='logo' width='160' align="left" />
 
 Creator of **[The Blunt](https://github.com/ronaldschlenker/TheBlunt)** - A a one-file recursive parser combinator library for F# and Fable.
 
@@ -60,7 +60,7 @@ Creator of **[The Blunt](https://github.com/ronaldschlenker/TheBlunt)** - A a on
 
 <br />
 <br />
-<img src='./img/Trulla_logo.png' alt='logo' width='120' align="left" />
+<img src='./img/Trulla_logo.png' alt='logo' width='160' align="left" />
 
 
 Creator of **[Trulla Templates](https://github.com/ronaldschlenker/Trulla)** - It's like Handlebars or Mustache, but statically typed and safe!
