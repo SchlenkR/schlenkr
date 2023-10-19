@@ -7,10 +7,13 @@
 
 ## What I do
 
-* Build software that is performant, maintainable over years, scalable and affordable.
-* Helping people to improve their skills - together.
-* 🚀 As a freelancer, you can hire me.
-* :phone: Contact me on 👉🏼 [Twitter](https://twitter.com/schlenkr)
+> Build software that is performant, maintainable over years, scalable and affordable.
+
+> Helping people to improve their skills - together.
+
+> 🚀 As a freelancer, you can hire me.
+
+> :phone: Contact me on 👉🏼 [Twitter](https://twitter.com/schlenkr)
 
 > :book: Exchanging knowledge and discourse are valuable.
 
