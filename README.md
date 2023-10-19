@@ -53,7 +53,7 @@ Creator of **[FsHttp](https://github.com/fsprojects/FsHttp)**  - A lightweight C
 <br />
 <img src='./img/TheBlunt_logo.png' alt='logo' width='160' align="left" />
 
-Creator of **[The Blunt](https://github.com/ronaldschlenker/TheBlunt)** - A a one-file recursive parser combinator library for F# and Fable.
+Creator of **[The Blunt](https://github.com/ronaldschlenker/TheBlunt)** - A a one-file recursive descent parser combinator library for F# and Fable.
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/ronaldschlenker/TheBlunt?style=social)
 
