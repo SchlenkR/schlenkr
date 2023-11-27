@@ -2,7 +2,7 @@
 <h4 align="center">F# ❤️ Developer | Tech Consultant | OSS Creator | Conference Speaker</h4>
 
 <p align="center">
-  Member of <a href="https://amplifying-fsharp.github.io/">Amplifying F#</a> | <a href="https://foundation.fsharp.org/results_applied_fsharp_2019">Recognized F# Expert</a>
+    <a href="https://foundation.fsharp.org/results_applied_fsharp_2019">Recognized F# Expert</a>
 </p>
 
 ## What I do
