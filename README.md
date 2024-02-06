@@ -9,6 +9,10 @@
 
 If you wanna know a little bit more than the usual stuff, if you wanna level up your skills and change your way of thinking about programming, then visit my YouTube channel <a href="https://www.youtube.com/@ThePureState">The Pure State</a>!
 
+👍Postman? ❤️ FsHttp!
+
+https://youtu.be/F508wQu7ET0
+
 ## What I do
 
 > Build software that is performant, **maintainable** over years, **scalable** and **affordable**.
