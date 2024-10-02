@@ -31,9 +31,9 @@ Although techologies, stacks, tools matter, it's the first sentence from the lis
 <img src='./img/Vide_logo.png' alt='logo' width='160' align="left" />
 <br />
 
-Creator of **[Vide](https://github.com/vide-collabo/vide)** - For  Reactive UIs (Web / Desktop / Mobile), Digital Signal Processing and More!
+Creator of **[Vide](https://github.com/schlenkr/vide)** - For  Reactive UIs (Web / Desktop / Mobile), Digital Signal Processing and More!
 
-![GitHub Repo stars](https://img.shields.io/github/stars/vide-collabo/Vide?style=social)
+![GitHub Repo stars](https://img.shields.io/github/stars/schlenkr/Vide?style=social)
 
 <br clear='left' />
 
@@ -41,9 +41,9 @@ Creator of **[Vide](https://github.com/vide-collabo/vide)** - For  Reactive UIs 
 <br />
 <img src='./img/FsHttp_logo.png' alt='logo' width='160' align="left" />
 
-Creator of **[FsHttp](https://github.com/fsprojects/FsHttp)**  - A lightweight C# and F# HTTP library
+Creator of **[FsHttp](https://github.com/schlenkr/FsHttp)**  - A lightweight C# and F# HTTP library
 
-![GitHub Repo stars](https://img.shields.io/github/stars/fsprojects/FsHttp?style=social)
+![GitHub Repo stars](https://img.shields.io/github/stars/schlenkr/FsHttp?style=social)
 
 <br clear='left' />
 
@@ -53,9 +53,9 @@ Creator of **[FsHttp](https://github.com/fsprojects/FsHttp)**  - A lightweight C
 <br />
 <img src='./img/TheBlunt_logo.png' alt='logo' width='160' align="left" />
 
-Creator of **[The Blunt](https://github.com/ronaldschlenker/TheBlunt)** - A a one-file recursive descent parser combinator library for F# and Fable.
+Creator of **[The Blunt](https://github.com/schlenkr/TheBlunt)** - A a one-file recursive descent parser combinator library for F# and Fable.
 
-![GitHub Repo stars](https://img.shields.io/github/stars/ronaldschlenker/TheBlunt?style=social)
+![GitHub Repo stars](https://img.shields.io/github/stars/schlenkr/TheBlunt?style=social)
 
 <br clear='left' />
 
@@ -66,8 +66,8 @@ Creator of **[The Blunt](https://github.com/ronaldschlenker/TheBlunt)** - A a on
 <img src='./img/Trulla_logo.png' alt='logo' width='160' align="left" />
 
 
-Creator of **[Trulla Templates](https://github.com/ronaldschlenker/Trulla)** - It's like Handlebars or Mustache, but statically typed and safe!
+Creator of **[Trulla Templates](https://github.com/schlenkr/Trulla)** - It's like Handlebars or Mustache, but statically typed and safe!
 
-![GitHub Repo stars](https://img.shields.io/github/stars/ronaldschlenker/Trulla?style=social)
+![GitHub Repo stars](https://img.shields.io/github/stars/schlenkr/Trulla?style=social)
 
 <br clear='left' />
