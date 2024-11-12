@@ -3,6 +3,8 @@
 
 <p align="center">
     <a href="https://foundation.fsharp.org/results_applied_fsharp_2019">Recognized F# Expert</a>
+    <br />
+    <a href="https://linktr.ee/SchlenkR">My linktr.ee</a>
 </p>
 
 ## What I do
