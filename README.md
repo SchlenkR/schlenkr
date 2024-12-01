@@ -13,13 +13,8 @@
    <p>YouTube</p>
 </div>
 
-**tl;dr - How does it work?**
-
-- Fork the Repo
-- Program your own PXL-Apps
-- Use the simulator to test your apps
-- Submit your app via a pull request
-- The creators of the 3 nicest app (by our jury preference) can win a PXL-Clock Mk1!
+The PXL PAM 2024 is a fun and engaging way to come together and have a joyful time!
+Watch the video or check out our [PXL-JAM repo](https://github.com/CuminAndPotato/PXL-JAM/)!
 
 
 ## What I do
