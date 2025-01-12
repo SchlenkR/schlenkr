@@ -9,14 +9,22 @@
 
 ---
 
-<div align="center">
-   <h2>🎁 <strong>Win a PXL-Clock - Watch How on YouTube</strong> 🎁</h2>
-   <a href="https://youtu.be/q5-QTpEMGdU"><img src="https://img.youtube.com/vi/q5-QTpEMGdU/0.jpg" alt="Watch the PXL-JAM video" style="width: 60%;"></a>
-   <p>YouTube</p>
-</div>
+## PXL-Clock
 
-The PXL PAM 2024 is a fun and engaging way to come together and have a joyful time!
-Watch the video or check out our [PXL-JAM repo](https://github.com/CuminAndPotato/PXL-JAM/)!
+Allow me a bit of advertising for the PXL-Clock! It's a fun device, made with ❤️ - and it's programmable in an easy and quick way.
+
+<p align="center">
+  <img width="340" alt="image" src="https://github.com/user-attachments/assets/4c898f7e-56ae-4a8b-be34-464ad83a5ffb" />
+</p>
+
+Find out more info on the [PXL-Clock Discord Server](https://discord.gg/KDbVdKQh5j) or check out the [PXL-Clock Repo on GitHub](https://github.com/CuminAndPotato/PXL-Clock).
+
+<p align="center">
+  <h3>Join the PXL-Clock Community on Discord</h3>
+  <a href="https://discord.gg/KDbVdKQh5j">
+    <img src="https://img.shields.io/badge/Discord-Join%20Server-blue?style=flat-square&logo=discord" alt="Join Our Discord">
+  </a>
+</p>
 
 ---
 
