@@ -14,13 +14,19 @@
 Allow me a bit of advertising for the PXL-Clock! It's a fun device, made with ❤️ - and it's programmable in an easy and quick way.
 
 <p align="center">
-  <img width="340" alt="image" src="https://github.com/user-attachments/assets/4c898f7e-56ae-4a8b-be34-464ad83a5ffb" />
+  <a href="https://www.pxlclock.com">
+    <img width="842" height="832" alt="468354531-9b92c9d7-b20b-4316-8104-ac980fa449d5" src="https://github.com/user-attachments/assets/0a5a495d-731b-4f65-ac8f-3719f9b9010a" />
+  </a>
 </p>
 
-Find out more info on the [PXL-Clock Discord Server](https://discord.gg/KDbVdKQh5j) or check out the [PXL-Clock Repo on GitHub](https://github.com/CuminAndPotato/PXL-Clock).
+Find out more:
+
+- On the [PXL Clock Discord Server](https://discord.gg/KDbVdKQh5j)
+- check out the [PXL Clock Repo on GitHub](https://github.com/CuminAndPotato/PXL-Clock)
+- Visit the official [PXL Clock Store](https://www.pxlclock.com)
 
 <p align="center">
-  <h3>Join the PXL-Clock Community on Discord</h3>
+  <h3>Join the PXL Clock Community on Discord</h3>
   <a href="https://discord.gg/KDbVdKQh5j">
     <img src="https://img.shields.io/badge/Discord-Join%20Server-blue?style=flat-square&logo=discord" alt="Join Our Discord">
   </a>
