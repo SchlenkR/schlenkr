@@ -11,10 +11,17 @@
 
 ## PXL-Clock
 
-Allow me a bit of advertising for the PXL-Clock! It's a fun device, made with ❤️ - and it's programmable in an easy and quick way.
+*Support my Work*
+
+Buy a **PXL Clock** and help me create more videos like this!
+Use code **RONALD** for a **25€ discount**:
+
+[https://www.pxlclock.com/?ref=RONALD](https://www.pxlclock.com/?ref=RONALD)
+
+PXL Clock is a fun device, made with ❤️ - and it's programmable in an easy and quick way.
 
 <p align="center">
-  <a href="https://www.pxlclock.com">
+  <a href="https://www.pxlclock.com/?ref=RONALD">
     <img width="842" height="832" alt="468354531-9b92c9d7-b20b-4316-8104-ac980fa449d5" src="https://github.com/user-attachments/assets/0a5a495d-731b-4f65-ac8f-3719f9b9010a" />
   </a>
 </p>
@@ -23,7 +30,7 @@ Find out more:
 
 - On the [PXL Clock Discord Server](https://discord.gg/KDbVdKQh5j)
 - check out the [PXL Clock Repo on GitHub](https://github.com/CuminAndPotato/PXL-Clock)
-- Visit the official [PXL Clock Store](https://www.pxlclock.com)
+- Visit the official [PXL Clock Store](https://www.pxlclock.com/?ref=RONALD)
 
 <p align="center">
   <h3>Join the PXL Clock Community on Discord</h3>
