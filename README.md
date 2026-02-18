@@ -107,3 +107,10 @@ Creator of **[Trulla Templates](https://github.com/schlenkr/Trulla)** - It's lik
 ![GitHub Repo stars](https://img.shields.io/github/stars/schlenkr/Trulla?style=social)
 
 <br clear='left' />
+
+<br />
+<br />
+
+Creator of **[LocSta](https://github.com/fsprojects/LocSta)** - **Loc**al **Sta**te — A stateful stream processing library for F#. Composable signal blocks with automatic state threading. ([Live Demo](https://fsprojects.github.io/LocSta/))
+
+![GitHub Repo stars](https://img.shields.io/github/stars/fsprojects/LocSta?style=social)
