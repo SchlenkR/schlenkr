@@ -11,7 +11,14 @@
     "v9": { "color": "#2f6e5e" },
     "v10": { "color": "#b13d2b" },
     "v11": { "color": "#2563eb" },
-    "v12": { "color": "#d946ef" }
+    "v12": { "color": "#d946ef" },
+    "v14": { "color": "#f5a524" },
+    "v15": { "color": "#2f53d9" },
+    "v16": { "color": "#f59e0b" },
+    "v17": { "color": "#6d28d9" },
+    "v18": { "color": "#10b981" },
+    "v19": { "color": "#15803d" },
+    "v20": { "color": "#d48f3b" }
   },
   "versions": {
     "v1": {
@@ -118,6 +125,62 @@
       "phaseTag": "Phase 2",
       "by": "Claude",
       "parent": "v1"
+    },
+    "v14": {
+      "num": 14,
+      "title": "The Making",
+      "desc": "PXL Clock two-person maker-journey as proof-of-craft. Timeline, pinned milestones, image placeholders, customer-first reframe.",
+      "style": "Storytelling / Maker",
+      "phaseTag": "Phase 3",
+      "by": "Claude"
+    },
+    "v15": {
+      "num": 15,
+      "title": "Horizontal Tour",
+      "desc": "Vertical scroll pins the viewport; five engagement shapes slide past horizontally. GSAP ScrollTrigger pin.",
+      "style": "Horizontal Scroll",
+      "phaseTag": "Phase 2",
+      "by": "Claude"
+    },
+    "v16": {
+      "num": 16,
+      "title": "Image Sequence",
+      "desc": "Canvas scroll-scrubbed 24-frame particle sequence. 576 dots morph ring -> grid -> letterform. Apple-style scrub.",
+      "style": "Scroll-Scrub Canvas",
+      "phaseTag": "Phase 2",
+      "by": "Claude"
+    },
+    "v17": {
+      "num": 17,
+      "title": "Type Atlas",
+      "desc": "Six customer-frames as huge SVG-text stations, stroke-drawn on scroll via DrawSVG. Motif morphs at section boundaries.",
+      "style": "SVG / DrawSVG",
+      "phaseTag": "Phase 2",
+      "by": "Claude"
+    },
+    "v18": {
+      "num": 18,
+      "title": "Scrub Video",
+      "desc": "Pinned hero where scroll progress scrubs through five customer-pain phrases. CSS custom property drive, no real video.",
+      "style": "Scroll-Scrub Type",
+      "phaseTag": "Phase 2",
+      "by": "Claude"
+    },
+    "v19": {
+      "num": 19,
+      "title": "Reverse Typewriter",
+      "desc": "Six full-viewport chapters whose characters scatter out and assemble back in between frames. GSAP SplitText.",
+      "style": "SplitText Chapters",
+      "phaseTag": "Phase 2",
+      "by": "Claude"
+    },
+    "v20": {
+      "num": 20,
+      "title": "Cursor Diorama",
+      "desc": "2.5D workshop scene in six stacked SVG layers with cursor-XY parallax and scroll-Z dolly. Desktop-only interaction.",
+      "style": "Parallax / Illustration",
+      "phaseTag": "Phase 2",
+      "by": "Claude"
     }
   }
 }

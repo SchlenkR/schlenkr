@@ -84,6 +84,13 @@ All shipped variants, sorted by stable `num`.
 |  11 | `v11/` | —      | Interactive / Dev          | Phase 2 | **Live Playground** — CodeMirror 6 editor hero, live inferred-shape panel. |
 |  12 | `v12/` | —      | WebGL / Shader             | Phase 2 | **Mesh** — Three.js cursor-attracted WebGL fluid gradient hero, customer-first copy layered. |
 |  13 | `v1-pragmatic/` | v1 | Editorial / Customer-First | Phase 2 | **Editorial · Pragmatic** — v1's magazine shell, new customer-first content. Same designer, different article. |
+|  14 | `v14/` | —      | Storytelling / Maker       | Phase 3 | **The Making** — PXL Clock two-person maker-journey as proof-of-craft. Timeline + pinned milestones + 16 image slots. |
+|  15 | `v15/` | —      | Horizontal Scroll          | Phase 2 | **Horizontal Tour** — pinned viewport, five engagement shapes slide horizontally. GSAP ScrollTrigger pin. |
+|  16 | `v16/` | —      | Scroll-Scrub Canvas        | Phase 2 | **Image Sequence** — 576 canvas particles morph ring → grid → letterform across 24 scroll-scrubbed frames. |
+|  17 | `v17/` | —      | SVG / DrawSVG              | Phase 2 | **Type Atlas** — six customer-frames as huge stroked SVG-text stations, drawn on scroll. Motif morphs between. |
+|  18 | `v18/` | —      | Scroll-Scrub Type          | Phase 2 | **Scrub Video** — pinned hero scrubs five customer-pain phrases via CSS custom property. No real video. |
+|  19 | `v19/` | —      | SplitText Chapters         | Phase 2 | **Reverse Typewriter** — six full-viewport chapters scatter out and assemble in between frames. GSAP SplitText. |
+|  20 | `v20/` | —      | Parallax / Illustration    | Phase 2 | **Cursor Diorama** — 2.5D workshop in six stacked SVG layers, cursor XY parallax + scroll Z dolly. Desktop-only. |
 
 ---
 

@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Making — Ronald Schlenker · PureState IT Consulting</title>
+  <meta name="description" content="The PXL Clock maker journey as proof of craft. Two people, two years, 100 hand-built units — and the engineering discipline Ronald brings to your team." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,30..100;1,9..144,300..700,30..100&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+  <!-- ============ MASTHEAD ============ -->
+  <header class="masthead">
+    <div class="brand">The Making — v14</div>
+    <nav>
+      <a href="#timeline">Timeline</a>
+      <a href="#hard">What's hard</a>
+      <a href="#reframe">For your team</a>
+      <a href="#cta">Talk</a>
+    </nav>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="kicker">A 24×24 programmable LED display. Two people. Two years.</p>
+
+      <h1>A small team shipping <em>real things</em> — in public.</h1>
+
+      <div class="lede reveal">
+        <p>
+          Starting in 2023, Ronald and <strong>Sefa</strong>, a hardware specialist, began building a 24×24 programmable LED display you could code in C# or F#, with a browser simulator that works before any hardware arrives.
+        </p>
+        <p>
+          Two years of weekends later: firmware rewritten three times, PCBs hand-soldered, 3D-printed dome parts produced in-house, CE certification completed, packaging designed end-to-end, photography commissioned from a professional studio.
+        </p>
+        <p>
+          One limited batch of 100 units — each assembled by the two of them.
+        </p>
+
+        <em class="pivot">This is not a startup story. It's the discipline Ronald brings to your team.</em>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CAST ============ -->
+  <section class="cast" id="cast">
+    <div class="wrap">
+      <p class="eyebrow">The cast</p>
+      <h2 class="reveal">Two makers, one company.</h2>
+
+      <div class="cast-grid">
+        <article class="cast-card reveal">
+          <div class="portrait">
+            <!-- Replace with: Produkt/Produktbilder/merchant/Ronald_portrait.jpg (public, safe) -->
+            <img
+              src="https://placehold.co/600x750/ece4d2/5c5a55?text=Ronald+%E2%80%94+portrait"
+              alt="Portrait placeholder — Ronald Schlenker"
+              loading="lazy"
+            />
+          </div>
+          <p class="role">Engineer · API · Firmware · Cloud</p>
+          <h3>Ronald Schlenker</h3>
+          <p>
+            C#/F#/TypeScript. Designs the developer-facing C# API for the PXL Clock, the F# daemon that runs on the device, the cloud backend with signed OTA, the VS Code simulator. Also: community Discord, PXL-JAM, and the consulting practice this page exists to describe.
+          </p>
+        </article>
+
+        <article class="cast-card reveal">
+          <div class="portrait">
+            <!-- Replace with: Produkt/Produktbilder/Sefas_Entwicklungsfotos/IMG_7357.jpeg (HiDrive, ask Ronald first) -->
+            <img
+              src="https://placehold.co/600x750/ece4d2/5c5a55?text=Sefa+%E2%80%94+portrait"
+              alt="Portrait placeholder — Sefa"
+              loading="lazy"
+            />
+          </div>
+          <p class="role">Hardware · Production · Assembly</p>
+          <h3>Sefa</h3>
+          <p>
+            PCB design, component sourcing, soldering, power management, mechanical assembly, 3D-printing workflow, batch production. The reason 100 units actually leave the workshop — crimped, soldered, and press-fit by hand.
+            <!-- Sefa's full surname [to verify]. GitHub handle `silkimen` per social mentions. -->
+          </p>
+        </article>
+
+        <article class="cast-card reveal">
+          <div class="portrait">
+            <!-- Replace with: Produkt/Produktbilder/merchant/Workshop_wide.jpg (public, safe) -->
+            <img
+              src="https://placehold.co/600x750/ece4d2/5c5a55?text=Cumin+%26+Potato+GmbH"
+              alt="Workshop placeholder — Cumin & Potato GmbH"
+              loading="lazy"
+            />
+          </div>
+          <p class="role">The company</p>
+          <h3>Cumin &amp; Potato GmbH</h3>
+          <p>
+            Hand-built limited batches, 100 units per run. No factory. The constraint is not money — it is care.
+            <!-- Founding date [to verify]. -->
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TIMELINE ============ -->
+  <section class="timeline" id="timeline">
+    <div class="wrap">
+      <p class="eyebrow">The timeline</p>
+      <h2 class="reveal">From Raspberry Pi experiments to first shipment.</h2>
+
+      <ol class="timeline-list">
+
+        <li class="milestone reveal">
+          <div class="when">~2023 – early 2024</div>
+          <div class="what">
+            <h3>First prototypes.</h3>
+            <p>Raspberry Pi + WS2812B LED strip experiments. PWM vs. PCM vs. SPI tradeoffs worked out on paper and in hand.</p>
+          </div>
+          <div class="shot">
+            <!-- Replace with: Produkt/Produktbilder/Prototyp_01.jpg (HiDrive, ask Ronald first) -->
+            <img src="https://placehold.co/520x390/ece4d2/5c5a55?text=Prototype+01" alt="Prototype 01 placeholder" loading="lazy" />
+          </div>
+        </li>
+
+        <li class="milestone reveal">
+          <div class="when">Mid 2024</div>
+          <div class="what">
+            <h3>Frame + glass sourcing; 3D-printed dome pilot.</h3>
+            <p>Float-glass and Polycarbonat/PETG/ASA from Lithuanian suppliers. CraftCloud pilots: €63–160 per 10-unit run.</p>
+          </div>
+          <div class="shot">
+            <!-- Replace with: Produkt/Produktbilder/Rahmen_3.JPEG (HiDrive, ask Ronald first) -->
+            <img src="https://placehold.co/520x390/ece4d2/5c5a55?text=Frame+%2B+Glass" alt="Frame and glass placeholder" loading="lazy" />
+          </div>
+        </li>
+
+        <li class="milestone reveal">
+          <div class="when">Aug–Sep 2024</div>
+          <div class="what">
+            <h3>LED matrix + electronics finalized.</h3>
+            <p>Power budget set at 60 W. Bill of materials locked.</p>
+          </div>
+          <div class="shot">
+            <!-- Replace with: Produkt/Produktbilder/Matrix_Oberseite.JPEG (HiDrive, ask Ronald first) -->
+            <img src="https://placehold.co/520x390/ece4d2/5c5a55?text=LED+Matrix" alt="LED matrix placeholder" loading="lazy" />
+          </div>
+        </li>
+
+        <li class="milestone reveal">
+          <div class="when">Sep–Oct 2024</div>
+          <div class="what">
+            <h3>First working firmware.</h3>
+            <p>F# daemon ran the render loop. The C# simulator's hot-reload began returning results in under a second.</p>
+          </div>
+          <div class="shot">
+            <!-- Replace with: Produkt/Produktbilder/merchant/Pxl_clock_14_hero.jpg (public, safe) -->
+            <img src="https://placehold.co/520x390/ece4d2/5c5a55?text=First+firmware" alt="First firmware placeholder" loading="lazy" />
+          </div>
+        </li>
+
+        <li class="milestone reveal">
+          <div class="when">Nov 2024</div>
+          <div class="what">
+            <h3>3D-printed cases + assembly workflow.</h3>
+            <p>Black or white frame? High-tech production powered by .NET, WhatsApp'd from the printer farm.</p>
+          </div>
+          <div class="shot">
+            <!-- Replace with: Produkt/Produktbilder/3D Drucker - WhatsApp Video 2024-11-24 at 18.23.32.mp4 (HiDrive, ask Ronald first) -->
+            <img src="https://placehold.co/520x390/ece4d2/5c5a55?text=3D+Printer+Farm" alt="3D printer farm placeholder" loading="lazy" />
+          </div>
+        </li>
+
+        <li class="milestone reveal">
+          <div class="when">Dec 1, 2024</div>
+          <div class="what">
+            <h3>PXL-JAM 2024 announced.</h3>
+            <p>Community hackathon for C#/F# pixel-art apps. Three clocks given away. F# Advent Calendar slot.</p>
+          </div>
+          <div class="shot">
+            <!-- Replace with: Produkt/Produktbilder/merchant/Pxl_clock_21_hero.jpg (public, safe) -->
+            <img src="https://placehold.co/520x390/ece4d2/5c5a55?text=PXL-JAM+2024" alt="PXL-JAM 2024 placeholder" loading="lazy" />
+          </div>
+        </li>
+
+        <li class="milestone reveal">
+          <div class="when">Jan 9, 2025</div>
+          <div class="what">
+            <h3>OTA update system live.</h3>
+            <p>Users could set their own apps as default clock / sleep app. Tested without the real device. Nothing bricked.</p>
+          </div>
+          <div class="shot">
+            <!-- Replace with: Produkt/Produktbilder/merchant/Pxl_clock_8_hero.jpg (public, safe) -->
+            <img src="https://placehold.co/520x390/ece4d2/5c5a55?text=OTA+live" alt="OTA live placeholder" loading="lazy" />
+          </div>
+        </li>
+
+        <li class="milestone reveal">
+          <div class="when">Feb 17, 2025</div>
+          <div class="what">
+            <h3>Simulator + GitHub repo public.</h3>
+            <p>Three minutes from <code>git clone</code> to a first pixel visible. C# and F# first; TypeScript and JavaScript in the roadmap.</p>
+          </div>
+          <div class="shot">
+            <!-- Replace with: Produkt/Produktbilder/merchant/Pxl_clock_2_hero.jpg (public, safe) -->
+            <img src="https://placehold.co/520x390/ece4d2/5c5a55?text=Simulator+public" alt="Simulator public placeholder" loading="lazy" />
+          </div>
+        </li>
+
+        <li class="milestone reveal">
+          <div class="when">May–Jul 2025</div>
+          <div class="what">
+            <h3>CE certification completed.</h3>
+            <p>EMC test report May. Safety test report July 4. Declaration of Conformity drafted. Six months of back-and-forth with an outsourced lab.</p>
+          </div>
+          <div class="shot">
+            <!-- Replace with: Produkt/Produktbilder/merchant/Pxl_clock_20_hero.jpg (public, safe) -->
+            <img src="https://placehold.co/520x390/ece4d2/5c5a55?text=CE+certified" alt="CE certified placeholder" loading="lazy" />
+          </div>
+        </li>
+
+        <li class="milestone reveal">
+          <div class="when">Jul–Aug 2025</div>
+          <div class="what">
+            <h3>Packaging designed and produced.</h3>
+            <p>Custom cardboard (28×28×9 cm), foam inserts, branded Avery stickers, A5 printed manuals in DE/EN. No contract packaging.</p>
+          </div>
+          <div class="shot">
+            <!-- Replace with: Produkt/Produktbilder/merchant/Pxl_clock_65_lifestyle.jpg (public, safe) -->
+            <img src="https://placehold.co/520x390/ece4d2/5c5a55?text=Packaging" alt="Packaging placeholder" loading="lazy" />
+          </div>
+        </li>
+
+        <li class="milestone reveal">
+          <div class="when">Sep–Oct 2025</div>
+          <div class="what">
+            <h3>Professional photo + video session with Wabaki.</h3>
+            <p>1.5-day studio session; 80+ clips, 121 edited stills. Hero photography for the launch.</p>
+          </div>
+          <div class="shot">
+            <!-- Replace with: Produkt/Produktbilder/Wabaki_Session1_bearbeitetFotos/... (HiDrive, ask Ronald first) -->
+            <img src="https://placehold.co/520x390/ece4d2/5c5a55?text=Wabaki+session" alt="Wabaki session placeholder" loading="lazy" />
+          </div>
+        </li>
+
+        <li class="milestone reveal">
+          <div class="when">Nov 4, 2025</div>
+          <div class="what">
+            <h3>First units shipped.</h3>
+            <p>Hand-built and crafted, 576 glowing 3D pixels, 100 units available — made with care, not mass-produced.</p>
+          </div>
+          <div class="shot">
+            <!-- Replace with: Produkt/Produktbilder/merchant/Pxl_clock_72_lifestyle.jpg (public, safe) -->
+            <img src="https://placehold.co/520x390/ece4d2/5c5a55?text=First+shipment" alt="First shipment placeholder" loading="lazy" />
+          </div>
+        </li>
+
+        <li class="milestone reveal">
+          <div class="when">Jan 3, 2026</div>
+          <div class="what">
+            <h3>App ecosystem expansion.</h3>
+            <p>Clock app appearance reworked. TypeScript SDK in beta. Python API in planning.</p>
+          </div>
+          <div class="shot">
+            <!-- Replace with: Produkt/Produktbilder/merchant/Pxl_clock_58_lifestyle.jpg (public, safe) -->
+            <img src="https://placehold.co/520x390/ece4d2/5c5a55?text=App+ecosystem" alt="App ecosystem placeholder" loading="lazy" />
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ PINNED CHAPTER (3 states) ============ -->
+  <section class="chapter" aria-label="Three moments that mattered">
+    <div class="chapter-pin">
+      <div class="chapter-stage">
+        <div class="chapter-counter">Chapter 01 / 03</div>
+
+        <div class="chapter-states">
+          <article class="chapter-state" data-active>
+            <p class="tag">2023 · Origin</p>
+            <h3>First prototypes. Raspberry Pi. A strip of LEDs. A question.</h3>
+            <p>A 24×24 matrix you can program in C# or F#. No shortcut, no vendor stack. If it works on paper — build it. Two people, weekends, a soldering iron.</p>
+          </article>
+
+          <article class="chapter-state">
+            <p class="tag">Jan 2025 · Trust</p>
+            <h3>OTA updates live. The device stopped being a toy.</h3>
+            <p>Signed firmware, rollback-safe, remote. From that day forward the clock was a product, not a hobby. The consulting discipline — "don't brick the customer" — applied to our own hardware first.</p>
+          </article>
+
+          <article class="chapter-state">
+            <p class="tag">Nov 2025 · Ship</p>
+            <h3>First units shipped. 100, hand-built, every one.</h3>
+            <p>Two years of side-project hustle. Solder, crimp, print, press-fit, screw, box. Two to four hours per device. No factory between us and the customer. The constraint is care.</p>
+          </article>
+        </div>
+
+        <div class="chapter-progress" aria-hidden="true">
+          <div class="chapter-progress-fill"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT'S GENUINELY HARD ============ -->
+  <section class="hard" id="hard">
+    <div class="wrap">
+      <p class="eyebrow">What's genuinely hard</p>
+      <h2 class="reveal">What looks simple — 576 LEDs in a pretty frame — is not.</h2>
+
+      <div class="hard-grid">
+
+        <article class="hard-item reveal">
+          <h3>576 addressable RGB LEDs (WS2812B).</h3>
+          <p>14 A worst-case at full white, clamped to a 60 W PSU. PWM timing via SPI/PCM; no flicker tolerated. Thermal management matters for certification.</p>
+        </article>
+
+        <article class="hard-item reveal">
+          <h3>F# firmware daemon on Raspberry Pi.</h3>
+          <p>Render loop locked to 60 FPS while WiFi reconnect, OTA download, and temperature throttling run alongside. State-aware rendering on an embedded device — deliberate, not clever.</p>
+        </article>
+
+        <article class="hard-item reveal">
+          <h3>A C# developer API that reads like React.</h3>
+          <p>Stateful components, async/await, hooks-style patterns — compiled to run deterministically on the embedded host.</p>
+        </article>
+
+        <article class="hard-item reveal">
+          <h3>Browser simulator with hot reload.</h3>
+          <p>Three minutes from <code>git clone</code> to first pixel visible. Zero hardware required to start. Removes the single biggest friction that kills hobbyist hardware platforms.</p>
+        </article>
+
+        <article class="hard-item reveal">
+          <h3>Cloud backend with OTA and mobile apps.</h3>
+          <p>TypeScript/Express + PostgreSQL + Auth0 + React/Ionic/Capacitor on iOS and Android. Signed OTA firmware, user accounts, app storage, device management.
+            <!-- Stack details partly inferred from repo notes; backend repo is private. [to verify] -->
+          </p>
+        </article>
+
+        <article class="hard-item reveal">
+          <h3>Signed OTA with rollback.</h3>
+          <p>Watchdog plus dual-partition strategy. A bad update does not brick the device.
+            <!-- Exact mechanism [to verify]. -->
+          </p>
+        </article>
+
+        <article class="hard-item reveal">
+          <h3>CE certification.</h3>
+          <p>EMC (emissions + immunity), RoHS, product safety. Six months of back-and-forth; outsourced lab, in-house compliance docs.</p>
+        </article>
+
+        <article class="hard-item reveal">
+          <h3>Self-manufacturing.</h3>
+          <p>Every unit hand-assembled: solder two PCBs, crimp AC adapter cables, 3D-print ~200 dome parts, press-fit LEDs, screw frame, box. Two to four hours per device. The 100-unit cap is a time budget, not a business decision.</p>
+        </article>
+
+        <article class="hard-item reveal">
+          <h3>Packaging design + production.</h3>
+          <p>Custom branded cardboard, foam inserts, Avery stickers, printed DE/EN A5 manuals. No contract packaging — every choice our own.</p>
+        </article>
+
+        <article class="hard-item reveal">
+          <h3>Brand identity, end-to-end.</h3>
+          <p>Logo in-house and polished with Wabaki. Professional photo + video shoot. Pixel-art avatars by Marc Duiker. Community showcase apps by Urs Enzler.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUOTES ============ -->
+  <section class="quotes">
+    <div class="wrap">
+      <p class="eyebrow">Signal, not noise</p>
+      <h2 class="reveal">In our own words, publicly, dated.</h2>
+
+      <div class="quote-grid">
+
+        <figure class="quote reveal">
+          <p>We started #pxlclock as two good friends — Sefa &amp; me… 100 units selling soon — Who with us for party?</p>
+          <cite>— Bluesky · 2025-08-12</cite>
+        </figure>
+
+        <figure class="quote reveal">
+          <p>Why we only sell 100 #pxlclock units? Main one is: we are manufacturing the clock all by ourselves. PXL Clock is hand-made manufacturing work.</p>
+          <cite>— Bluesky · 2025-08-12</cite>
+        </figure>
+
+        <figure class="quote reveal">
+          <p>When I tell that #pxlclock is hand-made, this means: Man, it's hand-made. You see Sefa in Action — life and in color, soldering the 2 boards for the clock. Thank god I'm a programmer…</p>
+          <cite>— Bluesky · 2025-11-09</cite>
+        </figure>
+
+        <figure class="quote reveal">
+          <p>#pxlclock is finally here 🎉 Hand-built and crafted, with 576 glowing 3D pixels. Only 100 units available right now — made with care, not mass-produced.</p>
+          <cite>— Bluesky · 2025-11-04</cite>
+        </figure>
+
+        <figure class="quote reveal">
+          <p>#pxlclock update is online. You can now set your own app as the default. I can currently only test it without the real device, so in case anything goes wrong, tell me :)</p>
+          <cite>— Bluesky · 2025-01-09</cite>
+        </figure>
+
+        <figure class="quote reveal">
+          <p>After 2 years of serious side-project hustle, we've built a limited batch of 100 PXL Clocks — a programmable clock for developers and design lovers.</p>
+          <cite>— Bluesky · 2025-11-08</cite>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REFRAME ============ -->
+  <section class="reframe" id="reframe">
+    <div class="wrap">
+      <p class="eyebrow" style="color: var(--amber);">The reframe</p>
+      <h2 class="reveal">Why that is the point.</h2>
+
+      <div class="lede reveal">
+        <p>
+          This is the consulting pitch made literal. Ronald didn't buy his way to "pragmatic engineering" as a slogan — he practices it where nobody is paying him. When he recommends that your team keep the know-how in-house instead of outsourcing to fifty contractors, he is recommending what he does with Sefa.
+        </p>
+        <p>
+          When he argues against buzzword compliance, against the Scrum industry, against the "two-week shine" of expensive consulting, he is arguing from a side-project that shipped because it didn't do those things.
+        </p>
+        <p class="turn">
+          If your team wants that same clarity — AI adoption that actually sticks, a codebase that survives the quarter, a team that stays sharper after he's gone — that is the engagement.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ENGAGEMENT SHAPES ============ -->
+  <section class="shapes" id="shapes">
+    <div class="wrap">
+      <p class="eyebrow">How we work together</p>
+      <h2 class="reveal">Five shapes. Each is an outcome, not a deliverable.</h2>
+
+      <div class="shapes-grid">
+
+        <article class="shape reveal">
+          <p class="num">01</p>
+          <h3>AI Adoption Review</h3>
+          <p>A diagnostic for product teams that know AI belongs in the roadmap but aren't sure where. Output: a shortlist of AI moves that fit your product, your stack, your team — with effort and risk estimates you can defend in the next board meeting.</p>
+        </article>
+
+        <article class="shape reveal">
+          <p class="num">02</p>
+          <h3>In-House Upskilling Sprints</h3>
+          <p>A short, high-bandwidth engagement that leaves your developers able to ship the next thing without outside help. Pair-programming, reviews, dedicated spikes around a real problem — on your codebase, with your people.</p>
+        </article>
+
+        <article class="shape reveal">
+          <p class="num">03</p>
+          <h3>Architecture Second Opinion</h3>
+          <p>A neutral, time-boxed read of where your system is heading. You get a written argument — what's working, what's decaying, what moves next — plus a senior voice who is neither selling you a replatform nor defending the status quo.</p>
+        </article>
+
+        <article class="shape reveal">
+          <p class="num">04</p>
+          <h3>Pragmatic Delivery Review</h3>
+          <p>For teams stuck in ceremony theater. We identify the two or three practices that actually produce value and recommend what to drop — starting from the Agile Manifesto, not the framework textbook.</p>
+        </article>
+
+        <article class="shape reveal">
+          <p class="num">05</p>
+          <h3>Hands-on Engineering (selective)</h3>
+          <p>When the problem is so nested — AI + functional architecture + DSL + developer tooling — that a tool-hire makes sense, I take on the build, pair with your team, and hand it back fully documented.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about">
+    <div class="wrap">
+      <p class="eyebrow">About</p>
+      <h2 class="reveal">Why listen to me about your team.</h2>
+
+      <div class="lede reveal">
+        <p>
+          Fifteen years in .NET. Creator of FsHttp (invited by Don Syme to <code>fsprojects</code>) and several OSS libraries the F# community uses. Recognized F# Expert, 2019.
+        </p>
+        <p>
+          Co-founder — with <strong>Sefa</strong> — of the PXL Clock, a programmable 24×24 LED display shipping via Cumin &amp; Potato GmbH. Real hardware, real firmware, real customers. Small team. Shipped without a framework textbook.
+        </p>
+        <p>
+          Based in Frankfurt. Work with DACH and remote-EU teams. Trading as PureState IT Consulting.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="cta" id="cta">
+    <div class="wrap">
+      <p class="eyebrow">The next step</p>
+      <h2 class="reveal">Let's talk through your situation.</h2>
+      <a class="primary" href="mailto:hello@schlenkr.dev">hello@schlenkr.dev</a>
+      <p class="note">No calendar link, no "book a slot". A conversation first.</p>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="foot-wrap">
+      <div class="social">
+        <a href="https://github.com/SchlenkR" rel="noopener">GitHub</a>
+        <a href="https://youtube.com/@ThePureState" rel="noopener">YouTube</a>
+        <a href="https://bsky.app/profile/schlenkr.bsky.social" rel="noopener">Bluesky</a>
+        <a href="https://x.com/schlenkr" rel="noopener">X</a>
+      </div>
+      <div class="legal">
+        <a href="./impressum.html">Impressum</a>
+        <a href="./datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

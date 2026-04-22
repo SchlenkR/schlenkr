@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Pragmatic Path — Ronald Schlenker · PureState IT Consulting</title>
+  <meta name="description" content="Wrestling with a software project that no longer ships? A pragmatic path out — engineering judgement, rented short-term, kept forever.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- HERO: pinned canvas + customer-voice overlay -->
+  <section class="hero" id="hero" aria-labelledby="hero-heading">
+    <div class="hero__stage" aria-hidden="true">
+      <canvas id="sequence" class="hero__canvas"></canvas>
+      <div class="hero__fallback" id="heroFallback" hidden>
+        <!-- Static fallback for mobile / reduced-motion -->
+        <svg viewBox="-120 -120 240 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <g fill="#f59e0b">
+            <!-- 24×24 grid silhouette, static -->
+          </g>
+        </svg>
+      </div>
+      <div class="hero__gradient" aria-hidden="true"></div>
+    </div>
+
+    <div class="hero__overlay" id="heroOverlay">
+      <p class="hero__eyebrow">PureState IT Consulting</p>
+      <h1 id="hero-heading" class="hero__headline">
+        Wrestling with a software project that <em>no longer ships</em>?
+      </h1>
+      <p class="hero__lede">
+        You've tried the expensive consultant. You've tried the two-week training.
+        You've tried the ceremony framework with the certificate. Yet, here you are.
+      </p>
+      <p class="hero__lede hero__lede--dim">
+        There's a pragmatic path out. It doesn't involve a framework you buy.
+      </p>
+      <div class="hero__cta-row">
+        <a class="btn btn--amber" href="mailto:hello@schlenkr.dev">Let's talk through your situation</a>
+        <span class="hero__scroll-hint" aria-hidden="true">scroll</span>
+      </div>
+    </div>
+  </section>
+
+  <main id="main">
+
+    <!-- SOUND FAMILIAR? empathy block -->
+    <section class="section section--empathy">
+      <div class="wrap">
+        <p class="kicker">Sound familiar?</p>
+        <h2 class="h2">
+          Your team is smart. Your product is good.
+          Something is <em>off</em> anyway.
+        </h2>
+        <p class="body-lead">
+          The deadlines slip. The standups feel like a tax. The latest demo
+          from that AI vendor keeps not quite fitting. And every quarter
+          another decision gets outsourced to someone who won't be there
+          when it breaks.
+        </p>
+        <p class="body-lead body-lead--dim">
+          That's the shape of almost every engagement worth taking.
+        </p>
+      </div>
+    </section>
+
+    <!-- SIX CUSTOMER-FRAMES -->
+    <section class="section section--frames">
+      <div class="wrap">
+        <p class="kicker">Six frames · the ones that keep coming up</p>
+        <h2 class="h2 h2--tight">
+          Read the frame that sounds like <em>you</em>.
+        </h2>
+
+        <ol class="frames" aria-label="Six customer frames">
+
+          <li class="frame">
+            <div class="frame__num" aria-hidden="true">01</div>
+            <div class="frame__body">
+              <p class="frame__quote">"AI is obviously important. We just don't know how to use it for us."</p>
+              <p>
+                You've shipped a ChatGPT wrapper nobody uses. Management wants AI in
+                the product by Q3 and hasn't said what problem it solves. The vendor
+                demos keep promising the same three things.
+              </p>
+              <p class="frame__reframe">
+                <strong>What's actually missing is the bridge</strong> — from
+                "AI is capable" to "AI delivers measurable value <em>in your product</em>,
+                on your codebase, maintained by your team". The bridge is engineering,
+                not a platform.
+              </p>
+            </div>
+          </li>
+
+          <li class="frame">
+            <div class="frame__num" aria-hidden="true">02</div>
+            <div class="frame__body">
+              <p class="frame__quote">"Our people are good. They just can't keep up in daily business."</p>
+              <p>
+                Your developers build the product that pays the bills. They don't
+                have 10 hours a week to read about vector databases, agent
+                frameworks, or Computation Expressions. So the gap widens: the
+                tools move, the team holds the fort.
+              </p>
+              <p class="frame__reframe">
+                <strong>What you need is not a replacement team.</strong> You need
+                <em>know-how transfer into the team you already have</em> — so your
+                product carries your team's fingerprints, not a consultant's.
+              </p>
+            </div>
+          </li>
+
+          <li class="frame">
+            <div class="frame__num" aria-hidden="true">03</div>
+            <div class="frame__body">
+              <p class="frame__quote">"Fifty cheap developers won't solve this."</p>
+              <p>
+                You've seen the offshore model. You've seen the staffing agency.
+                You end up managing more contracts than code. Quality is a lottery.
+                The knowledge leaves with the contract.
+              </p>
+              <p class="frame__reframe">
+                <strong>In-house stays. Boost is brought in.</strong> Software
+                craftsmanship is not an arbitrage play. Pair-program with senior
+                help for a quarter, keep the result forever.
+              </p>
+            </div>
+          </li>
+
+          <li class="frame">
+            <div class="frame__num" aria-hidden="true">04</div>
+            <div class="frame__body">
+              <p class="frame__quote">"The expensive consultant worked. For two weeks."</p>
+              <p>
+                You paid. Everyone was inspired. There was a deck. Then the normal
+                gravity resumed and you were back where you started — minus a
+                budget line.
+              </p>
+              <p class="frame__reframe">
+                <strong>A useful engagement ends with something your team owns:</strong>
+                an architectural decision they can defend, a tooling chain they can
+                rerun, a piece of code they wrote with help and now maintain alone.
+                Not a certificate. Not slide 42.
+              </p>
+            </div>
+          </li>
+
+          <li class="frame">
+            <div class="frame__num" aria-hidden="true">05</div>
+            <div class="frame__body">
+              <p class="frame__quote">"We added tests, coverage, analyzers. The project is still broken."</p>
+              <p>
+                Automated tests on a cold project don't revive it. Coverage
+                dashboards are a green light on a dead engine. Unit tests around
+                broken architecture preserve the breakage.
+              </p>
+              <p class="frame__reframe">
+                <strong>When a project has fallen in the well, ropes from above
+                are the answer</strong> — not more metrics. The pragmatic question
+                is always the same: <em>does this change produce value now, or
+                over time? If neither — cut it.</em>
+              </p>
+            </div>
+          </li>
+
+          <li class="frame">
+            <div class="frame__num" aria-hidden="true">06</div>
+            <div class="frame__body">
+              <p class="frame__quote">"We're agile. Why doesn't it feel like it?"</p>
+              <p>
+                The Agile Manifesto was 17 developers saying one thing: <em>trust
+                motivated people and let understanding emerge from the work.</em>
+                The industry that grew on top of it sells the opposite — rigid
+                ceremonies, certified process police, velocity dashboards, rigid
+                frameworks stamped onto teams that don't fit them.
+              </p>
+              <p>
+                <em>Schema-F Scrum is not agile.</em> That is the mistake being
+                repeated for forty years in German engineering teams.
+              </p>
+              <p class="frame__reframe">
+                <strong>Consulting for agility. Not for the Agile Industrial Complex.</strong>
+              </p>
+
+              <figure class="pullquote">
+                <blockquote>
+                  "It breaks my heart to see the ideas we wrote about in the Agile
+                  Manifesto used to make developers' lives worse, instead of better."
+                </blockquote>
+                <figcaption>
+                  — Ron Jeffries, Agile Manifesto signatory ·
+                  <a href="https://ronjeffries.com/articles/018-01ff/abandon-1/" rel="noopener">ronjeffries.com</a>
+                </figcaption>
+              </figure>
+
+              <figure class="pullquote">
+                <blockquote>
+                  "The Agile Industrial Complex imposing methods on people is an
+                  absolute travesty."
+                </blockquote>
+                <figcaption>
+                  — Martin Fowler, Agile Manifesto signatory ·
+                  <a href="https://martinfowler.com/articles/agile-aus-2018.html" rel="noopener">martinfowler.com</a>
+                </figcaption>
+              </figure>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <!-- ENGAGEMENT SHAPES -->
+    <section class="section section--shapes">
+      <div class="wrap">
+        <p class="kicker">How we work together</p>
+        <h2 class="h2">
+          Five shapes. Each one ends with something <em>your team owns</em>.
+        </h2>
+
+        <div class="shapes">
+          <article class="shape">
+            <h3 class="shape__title">AI Adoption Review</h3>
+            <p>
+              A diagnostic engagement for product teams that know AI belongs in
+              the roadmap but aren't sure where. Output: a shortlist of AI moves
+              that fit <em>your</em> product, <em>your</em> stack, <em>your</em>
+              team — with effort and risk estimates you can defend in the next
+              board meeting.
+            </p>
+          </article>
+
+          <article class="shape">
+            <h3 class="shape__title">In-House Upskilling Sprints</h3>
+            <p>
+              A short, high-bandwidth engagement that leaves your own developers
+              able to ship the next thing without outside help. Pair-programming,
+              reviews, dedicated spikes around a real problem — not a workshop
+              deck. Delivered on your codebase, with your people.
+            </p>
+          </article>
+
+          <article class="shape">
+            <h3 class="shape__title">Architecture Second Opinion</h3>
+            <p>
+              A neutral, time-boxed read of where your system is heading. You get
+              a written argument — what's working, what's decaying, what moves
+              next — plus a conversation with a senior voice who is neither
+              selling you a replatform nor defending the status quo.
+            </p>
+          </article>
+
+          <article class="shape">
+            <h3 class="shape__title">Pragmatic Delivery Review</h3>
+            <p>
+              For teams stuck in ceremony theater. We identify the two or three
+              practices that actually produce value and recommend what to drop —
+              starting from the Agile Manifesto, not the framework textbook.
+            </p>
+          </article>
+
+          <article class="shape">
+            <h3 class="shape__title">Hands-on Engineering <span class="shape__tag">selective</span></h3>
+            <p>
+              When the problem is so nested — AI + functional architecture + DSL
+              + developer tooling — that a tool-hire makes sense, I take on the
+              build, pair with your team, and hand it back fully documented.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROOF -->
+    <section class="section section--proof">
+      <div class="wrap">
+        <p class="kicker">Things I've already built and shipped</p>
+        <h2 class="h2">
+          I'd rather <em>show</em> than claim.
+        </h2>
+
+        <ul class="proof">
+          <li>
+            <strong>Recognized F# Expert</strong>, F# Software Foundation —
+            <em>Applied F# 2019</em>.
+            <a href="https://foundation.fsharp.org/results_applied_fsharp_2019" rel="noopener">foundation.fsharp.org</a>
+          </li>
+          <li>
+            <strong>FsHttp</strong> — invited by Don Syme (creator of F#) to the
+            official <code>fsprojects</code> organisation. 499&#9733;, 128
+            dependent packages.
+            <a href="https://github.com/fsprojects/FsHttp" rel="noopener">fsprojects/FsHttp</a>
+          </li>
+          <li>
+            <strong>TypeFighter</strong> — a research language with structural
+            types and inference-first design.
+            <a href="https://github.com/SchlenkR/TypeFighter" rel="noopener">SchlenkR/TypeFighter</a>
+          </li>
+          <li>
+            <strong>PXL Clock</strong> — a 24×24 programmable LED display
+            shipping via Cumin &amp; Potato GmbH. Real hardware, real firmware,
+            real customers.
+            <a href="https://www.pxlclock.com/?ref=RONALD" rel="noopener">pxlclock.com</a>
+          </li>
+          <li>
+            <strong>BobKonf 2024</strong> — <em>Computation Expressions in F#</em>,
+            full tutorial track.
+            <a href="https://bobkonf.de/2024/schaefer-schlenker.html" rel="noopener">bobkonf.de</a>
+          </li>
+          <li>
+            Recurring features in <strong>F# Weekly</strong> (Sergey Tihon,
+            Microsoft MVP). Co-host at <strong>Amplifying F#</strong> — community
+            format with G-Research OSS.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- OBJECTION FAQ -->
+    <section class="section section--faq">
+      <div class="wrap">
+        <p class="kicker">Objections, handled</p>
+        <h2 class="h2">The usual questions.</h2>
+
+        <dl class="faq">
+          <div>
+            <dt>"Sounds expensive."</dt>
+            <dd>Less than hiring a senior full-time. Scoped explicitly; no retainer trap.</dd>
+          </div>
+          <div>
+            <dt>"Can you do this remotely?"</dt>
+            <dd>DACH and remote EU, both supported. Onsite workshop possible for team-facing engagements.</dd>
+          </div>
+          <div>
+            <dt>"We already have an agency."</dt>
+            <dd>An agency builds more capacity. I make your existing team capable. Different job.</dd>
+          </div>
+          <div>
+            <dt>"We don't use F#."</dt>
+            <dd>Good — most client work is C#/.NET, TypeScript, and the mix everyone actually has. F# is how I think; it's not a prerequisite.</dd>
+          </div>
+          <div>
+            <dt>"We only need help for two weeks."</dt>
+            <dd>Then you don't need me. I'm interested in engagements that leave something standing after I'm gone.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ABOUT — LAST -->
+    <section class="section section--about">
+      <div class="wrap">
+        <p class="kicker">Why me for this problem</p>
+        <h2 class="h2">
+          A short <em>about</em>, placed last on purpose.
+        </h2>
+
+        <div class="about-body">
+          <p>
+            Ronald Schlenker — fifteen years in .NET, creator of FsHttp,
+            TypeFighter, and several other OSS libraries the F# community uses.
+            Recognized F# Expert (F# Foundation, 2019). Co-founder of the PXL
+            Clock — a programmable hardware product that is itself a working
+            example of pragmatic engineering: small team, in-house discipline,
+            shipped without a framework textbook.
+          </p>
+          <p>
+            The reason this page is written the way it is: every time I see a
+            dying software project, it died the same way — buzzword compliance
+            replacing engineering judgement. The consulting I sell is the
+            opposite of that.
+          </p>
+          <p class="about-body__meta">
+            Based in Frankfurt. Work with DACH and remote-EU teams. Trading as
+            PureState IT Consulting.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA REPEAT -->
+    <section class="section section--cta">
+      <div class="wrap wrap--centered">
+        <h2 class="cta-headline">
+          Let's talk through <em>your</em> situation.
+        </h2>
+        <p class="cta-sub">
+          A short mail is plenty. Tell me what's stuck.
+        </p>
+        <a class="btn btn--amber btn--lg" href="mailto:hello@schlenkr.dev">hello@schlenkr.dev</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__wrap">
+      <div class="footer__col">
+        <p class="footer__brand">PureState IT Consulting</p>
+        <p class="footer__dim">Ronald Schlenker · Frankfurt</p>
+      </div>
+      <div class="footer__col">
+        <p class="footer__label">Elsewhere</p>
+        <ul class="footer__links">
+          <li><a href="https://github.com/SchlenkR" rel="noopener">GitHub</a></li>
+          <li><a href="https://youtube.com/@ThePureState" rel="noopener">YouTube</a></li>
+          <li><a href="https://bsky.app/profile/schlenkr.bsky.social" rel="noopener">Bluesky</a></li>
+          <li><a href="https://x.com/schlenkr" rel="noopener">X</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <p class="footer__label">Legal</p>
+        <ul class="footer__links">
+          <li><a href="./impressum.html">Impressum</a></li>
+          <li><a href="./datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll stack: GSAP 3.15 + ScrollTrigger + Lenis 1.3.23 (UMD globals) -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.23/dist/lenis.min.js"></script>
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
