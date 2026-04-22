@@ -71,7 +71,11 @@ All shipped variants, sorted by stable `num`.
 
 | num | Folder | Parent | Style | Phase | Idea |
 |----:|--------|--------|-------|-------|------|
-| —   | —      | —      | —     | —     | *no variants shipped yet — first Roots batch in progress* |
+|   1 | `v1/`  | —      | Editorial         | Root | Magazine-style, serif display, cream + ink + ochre. |
+|   2 | `v2/`  | —      | Terminal / Monospace | Root | Amber-CRT tmux session feel, ASCII dividers, blinking caret. |
+|   3 | `v3/`  | —      | Manifesto / Big Type | Root | Five theses as full-viewport statements, electric red accent. |
+|   4 | `v4/`  | —      | Swiss / Modernist | Root | Strict 12-col grid, numbered sections, Swiss red marker. |
+|   5 | `v5/`  | —      | Pixel / Retro     | Root | 24×24 pixel motif from PXL Clock, LED palette, CRT overlay. |
 
 ---
 

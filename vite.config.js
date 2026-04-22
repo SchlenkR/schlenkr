@@ -13,11 +13,21 @@ function regenerateOverview() {
 
 regenerateOverview();
 
+const VARIANT_PAGES = ['index.html', 'impressum.html', 'datenschutz.html'];
+
 const versionEntries = Object.fromEntries(
   readdirSync(VERSIONS_DIR, { withFileTypes: true })
     .filter((d) => d.isDirectory() && /^v\d+/.test(d.name))
-    .map((d) => [d.name, resolve(VERSIONS_DIR, d.name, 'index.html')])
-    .filter(([, path]) => existsSync(path))
+    .flatMap((d) =>
+      VARIANT_PAGES
+        .map((page) => {
+          const full = resolve(VERSIONS_DIR, d.name, page);
+          if (!existsSync(full)) return null;
+          const key = page === 'index.html' ? d.name : `${d.name}-${page.replace(/\.html$/, '')}`;
+          return [key, full];
+        })
+        .filter(Boolean)
+    )
 );
 
 const overviewRegenPlugin = {

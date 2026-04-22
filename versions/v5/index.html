@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ronald Schlenker · AI-era engineering, built on fifteen years of functional craft</title>
+  <meta name="description" content="Ronald Schlenker — independent tech consultant in Frankfurt, trading as PureState IT Consulting. Training, consulting, engineering for AI-assisted development and functional programming in .NET." />
+  <!--
+    v5 — Pixel
+    A 24x24 LED-display motif echoing Ronald's PXL Clock product.
+    Pixel display fonts (Press Start 2P / VT323) for display only.
+    Body set in Inter for readability.
+    Palette: deep off-black #0e0e12 + saturated LED accents.
+  -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Silkscreen:wght@400;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./css/style.css" />
+  <script type="module" src="./js/main.js"></script>
+</head>
+<body>
+  <!-- CRT scanline overlay (disabled under prefers-reduced-motion via CSS) -->
+  <div class="crt" aria-hidden="true"></div>
+
+  <header class="topbar" role="banner">
+    <div class="wrap">
+      <a href="#top" class="brand" aria-label="Ronald Schlenker — home">
+        <span class="dot" aria-hidden="true"></span>
+        R.S. // PURESTATE
+      </a>
+      <nav aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#theses">Theses</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============================================================
+         HERO
+         24x24 pixel display + headline + positioning paragraph
+         ============================================================ -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="wrap hero-inner">
+        <div class="display-frame">
+          <div
+            id="hero-display"
+            class="display"
+            role="img"
+            aria-label="Pixel-art RS monogram rendered on a 24 by 24 LED grid"
+          ></div>
+          <div class="power-row">
+            <span class="led blink" aria-hidden="true"></span>
+            <span>Power · 24&times;24 · Ready</span>
+          </div>
+        </div>
+
+        <div class="hero-copy">
+          <p class="eyebrow">&gt; Independent tech consultant · Frankfurt</p>
+          <h1 id="hero-heading">
+            <span class="accent-mint">AI-era</span> engineering,<br />
+            built on fifteen years of<br />
+            <span class="accent-pink">functional craft</span>.
+          </h1>
+          <p class="lead">
+            I help technically ambitious teams build AI-assisted workflows that
+            stay reproducible, maintainable, and honest about their limits.
+            I bring F#, .NET, and compiler-level thinking to problems most
+            people try to solve with prompt templates. You get craft, not hype.
+          </p>
+          <p class="identity">
+            Ronald Schlenker
+            <span class="pipe">//</span>
+            PureState IT Consulting
+            <span class="pipe">//</span>
+            Cumin &amp; Potato GmbH
+          </p>
+          <div class="alt-lines" aria-label="Alternate taglines">
+            <span>Structure wins — in types, and in AI workflows.</span>
+            <span>Vibe coding, without the &ldquo;vibe&rdquo; excuse.</span>
+            <span>I build tools. Train teams. Ship software that survives the quarter.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SERVICES
+         Training · Consulting · Engineering
+         ============================================================ -->
+    <section id="services" aria-labelledby="services-heading">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="tag">[01] Services</span>
+          <h2 id="services-heading">Three screens. Equal weight.</h2>
+        </div>
+
+        <div class="services">
+          <article class="screen" data-accent="pink">
+            <span class="screen-tag">&gt; RUN training.exe</span>
+            <!-- Book / workshop icon, 16x16 SVG on 48px canvas -->
+            <svg class="icon" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true">
+              <!-- book cover -->
+              <rect x="2" y="2" width="12" height="12" fill="#ff3b7a"/>
+              <rect x="3" y="3" width="10" height="10" fill="#0e0e12"/>
+              <!-- spine -->
+              <rect x="2" y="2" width="2" height="12" fill="#7affd0"/>
+              <!-- lines of text -->
+              <rect x="5" y="5" width="7" height="1" fill="#ececf2"/>
+              <rect x="5" y="7" width="7" height="1" fill="#ececf2"/>
+              <rect x="5" y="9" width="5" height="1" fill="#ececf2"/>
+              <rect x="5" y="11" width="6" height="1" fill="#ececf2"/>
+            </svg>
+            <h3>Training</h3>
+            <p>
+              Workshops, live-coding sessions, and conference talks on
+              AI-augmented development, functional programming in .NET, type
+              inference, and language-/DSL-design. Delivered in-house or
+              remote.
+            </p>
+          </article>
+
+          <article class="screen" data-accent="mint">
+            <span class="screen-tag">&gt; RUN consult.exe</span>
+            <!-- Gauge / audit icon -->
+            <svg class="icon" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true">
+              <!-- frame -->
+              <rect x="2" y="3" width="12" height="10" fill="#0e0e12" stroke="#7affd0"/>
+              <!-- tick marks -->
+              <rect x="4" y="5" width="1" height="1" fill="#7affd0"/>
+              <rect x="7" y="4" width="1" height="1" fill="#7affd0"/>
+              <rect x="10" y="5" width="1" height="1" fill="#7affd0"/>
+              <rect x="11" y="7" width="1" height="1" fill="#7affd0"/>
+              <!-- needle (diagonal-ish) -->
+              <rect x="8" y="10" width="1" height="1" fill="#ff3b7a"/>
+              <rect x="7" y="9" width="1" height="1" fill="#ff3b7a"/>
+              <rect x="6" y="8" width="1" height="1" fill="#ff3b7a"/>
+              <rect x="5" y="7" width="1" height="1" fill="#ff3b7a"/>
+              <!-- pivot -->
+              <rect x="8" y="10" width="1" height="2" fill="#ffd400"/>
+            </svg>
+            <h3>Consulting</h3>
+            <p>
+              Audits, architecture reviews, and sparring for teams deciding
+              how (and whether) to bring AI into their engineering process —
+              or whether F# / a functional architecture would pay off.
+            </p>
+          </article>
+
+          <article class="screen" data-accent="yellow">
+            <span class="screen-tag">&gt; RUN build.exe</span>
+            <!-- Wrench / hammer icon -->
+            <svg class="icon" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true">
+              <!-- hammer head -->
+              <rect x="2" y="3" width="7" height="3" fill="#ffd400"/>
+              <rect x="2" y="3" width="7" height="1" fill="#ececf2"/>
+              <!-- handle -->
+              <rect x="7" y="6" width="2" height="2" fill="#ff6633"/>
+              <rect x="8" y="8" width="2" height="2" fill="#ff6633"/>
+              <rect x="9" y="10" width="2" height="2" fill="#ff6633"/>
+              <rect x="10" y="12" width="2" height="2" fill="#ff6633"/>
+              <!-- sparks -->
+              <rect x="12" y="3" width="1" height="1" fill="#7affd0"/>
+              <rect x="13" y="5" width="1" height="1" fill="#4aa4ff"/>
+              <rect x="11" y="2" width="1" height="1" fill="#ff3b7a"/>
+            </svg>
+            <h3>Engineering</h3>
+            <p>
+              Hands-on work on AI pipelines, developer tooling, typed
+              templates, reactive UI frameworks, and embedded creative-coding
+              systems. I say no to generic CRUD. I say yes to problems where
+              ten years of compiler and FP habits actually matter.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PROJECTS
+         Five projects. Tiny pixel-art icons (inline SVG).
+         ============================================================ -->
+    <section id="projects" aria-labelledby="projects-heading">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="tag">[02] Featured Projects</span>
+          <h2 id="projects-heading">Things I&rsquo;ve built. Still running.</h2>
+        </div>
+
+        <div class="projects">
+
+          <article class="project">
+            <!-- PXL Clock — a pixel-art clock face in a 16x16 box -->
+            <svg class="icon" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true">
+              <rect x="0" y="0" width="16" height="16" fill="#0e0e12"/>
+              <!-- frame -->
+              <rect x="1" y="1" width="14" height="14" fill="none" stroke="#ffd400"/>
+              <!-- numerals (tick LEDs) -->
+              <rect x="7" y="2"  width="2" height="1" fill="#ff3b7a"/>
+              <rect x="7" y="13" width="2" height="1" fill="#ff3b7a"/>
+              <rect x="2"  y="7" width="1" height="2" fill="#ff3b7a"/>
+              <rect x="13" y="7" width="1" height="2" fill="#ff3b7a"/>
+              <!-- hands -->
+              <rect x="7" y="4" width="2" height="4" fill="#7affd0"/>
+              <rect x="7" y="7" width="5" height="2" fill="#4aa4ff"/>
+              <!-- center -->
+              <rect x="7" y="7" width="2" height="2" fill="#ffd400"/>
+            </svg>
+            <div>
+              <h3>PXL Clock</h3>
+              <p>
+                A 24&times;24 programmable LED display you code in C# or F#.
+                VS Code extension, hot-reload simulator, over-the-air updates.
+              </p>
+              <div class="links">
+                <a href="https://www.pxlclock.com/?ref=RONALD" rel="noopener">pxlclock.com</a>
+                <span>· code <strong>RONALD</strong> for &euro;25 off</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <!-- FsHttp — globe + arrow -->
+            <svg class="icon" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true">
+              <rect x="0" y="0" width="16" height="16" fill="#0e0e12"/>
+              <!-- globe ring -->
+              <rect x="4" y="2" width="8" height="1" fill="#4aa4ff"/>
+              <rect x="2" y="4" width="12" height="1" fill="#4aa4ff"/>
+              <rect x="2" y="8" width="12" height="1" fill="#4aa4ff"/>
+              <rect x="2" y="12" width="12" height="1" fill="#4aa4ff"/>
+              <rect x="4" y="14" width="8" height="1" fill="#4aa4ff"/>
+              <!-- meridian -->
+              <rect x="7" y="2" width="2" height="13" fill="#4aa4ff"/>
+              <rect x="3" y="5" width="1" height="7" fill="#4aa4ff"/>
+              <rect x="12" y="5" width="1" height="7" fill="#4aa4ff"/>
+              <!-- arrow (request) -->
+              <rect x="9"  y="8" width="5" height="1" fill="#ffd400"/>
+              <rect x="13" y="7" width="1" height="3" fill="#ffd400"/>
+              <rect x="12" y="6" width="1" height="1" fill="#ffd400"/>
+              <rect x="12" y="10" width="1" height="1" fill="#ffd400"/>
+            </svg>
+            <div>
+              <h3>FsHttp</h3>
+              <p>
+                A hackable HTTP client for .NET. Reads like <code>.http</code>
+                files, scales to any edge case. 499&#9733; on GitHub,
+                128 dependent packages.
+              </p>
+              <div class="links">
+                <a href="https://github.com/fsprojects/FsHttp" rel="noopener">fsprojects/FsHttp</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <!-- TypeFighter — "T" with type signature braces -->
+            <svg class="icon" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true">
+              <rect x="0" y="0" width="16" height="16" fill="#0e0e12"/>
+              <!-- angle brackets < > -->
+              <rect x="2" y="3" width="1" height="1" fill="#7affd0"/>
+              <rect x="1" y="4" width="1" height="2" fill="#7affd0"/>
+              <rect x="2" y="6" width="1" height="1" fill="#7affd0"/>
+              <rect x="13" y="3" width="1" height="1" fill="#7affd0"/>
+              <rect x="14" y="4" width="1" height="2" fill="#7affd0"/>
+              <rect x="13" y="6" width="1" height="1" fill="#7affd0"/>
+              <!-- big T -->
+              <rect x="4" y="4" width="8" height="2" fill="#ff3b7a"/>
+              <rect x="7" y="6" width="2" height="8" fill="#ff3b7a"/>
+            </svg>
+            <div>
+              <h3>TypeFighter</h3>
+              <p>
+                An experimental language built around an inference-first,
+                structural type system: records match by shape, set-theoretic
+                unions, minimal annotations.
+              </p>
+              <div class="links">
+                <a href="https://github.com/SchlenkR/TypeFighter" rel="noopener">github.com/SchlenkR/TypeFighter</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <!-- TheBlunt — parser brackets + underscore -->
+            <svg class="icon" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true">
+              <rect x="0" y="0" width="16" height="16" fill="#0e0e12"/>
+              <!-- left paren -->
+              <rect x="4" y="3" width="1" height="1" fill="#ffd400"/>
+              <rect x="3" y="4" width="1" height="8" fill="#ffd400"/>
+              <rect x="4" y="12" width="1" height="1" fill="#ffd400"/>
+              <!-- right paren -->
+              <rect x="11" y="3" width="1" height="1" fill="#ffd400"/>
+              <rect x="12" y="4" width="1" height="8" fill="#ffd400"/>
+              <rect x="11" y="12" width="1" height="1" fill="#ffd400"/>
+              <!-- inner tokens -->
+              <rect x="6" y="7" width="2" height="2" fill="#ff6633"/>
+              <rect x="9" y="7" width="1" height="2" fill="#ff6633"/>
+              <rect x="10" y="7" width="1" height="1" fill="#7affd0"/>
+            </svg>
+            <div>
+              <h3>TheBlunt</h3>
+              <p>
+                A one-file recursive-descent parser-combinator library for
+                F# and Fable. Small surface, serious power.
+              </p>
+              <div class="links">
+                <a href="https://github.com/SchlenkR/TheBlunt" rel="noopener">github.com/SchlenkR/TheBlunt</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <!-- Trulla — template {{ }} -->
+            <svg class="icon" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true">
+              <rect x="0" y="0" width="16" height="16" fill="#0e0e12"/>
+              <!-- left {{ -->
+              <rect x="3" y="3" width="2" height="1" fill="#ff3b7a"/>
+              <rect x="2" y="4" width="1" height="3" fill="#ff3b7a"/>
+              <rect x="1" y="7" width="1" height="2" fill="#ff3b7a"/>
+              <rect x="2" y="9" width="1" height="3" fill="#ff3b7a"/>
+              <rect x="3" y="12" width="2" height="1" fill="#ff3b7a"/>
+              <!-- second left { (stacked) -->
+              <rect x="5" y="5" width="1" height="2" fill="#ff3b7a"/>
+              <rect x="5" y="9" width="1" height="2" fill="#ff3b7a"/>
+              <!-- right }} -->
+              <rect x="11" y="3" width="2" height="1" fill="#4aa4ff"/>
+              <rect x="13" y="4" width="1" height="3" fill="#4aa4ff"/>
+              <rect x="14" y="7" width="1" height="2" fill="#4aa4ff"/>
+              <rect x="13" y="9" width="1" height="3" fill="#4aa4ff"/>
+              <rect x="11" y="12" width="2" height="1" fill="#4aa4ff"/>
+              <rect x="10" y="5" width="1" height="2" fill="#4aa4ff"/>
+              <rect x="10" y="9" width="1" height="2" fill="#4aa4ff"/>
+              <!-- center dot -->
+              <rect x="7" y="7" width="2" height="2" fill="#ffd400"/>
+            </svg>
+            <div>
+              <h3>Trulla</h3>
+              <p>
+                Templates that are type-safe at compile time. Ships as an
+                F# Type Provider, a C# Source Generator, and a Node.js CLI.
+              </p>
+              <div class="links">
+                <a href="https://github.com/SchlenkR/Trulla" rel="noopener">github.com/SchlenkR/Trulla</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         THESES
+         Five numbered cartridges.
+         ============================================================ -->
+    <section id="theses" aria-labelledby="theses-heading">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="tag">[03] Theses</span>
+          <h2 id="theses-heading">Five cartridges. Load and run.</h2>
+        </div>
+
+        <div class="theses">
+          <article class="cart">
+            <span class="num">CART 01</span>
+            <h3>Composition beats objects.</h3>
+            <p>
+              Lego, not Playmobil. Pure functions compose forever; object
+              hierarchies are dead ends.
+            </p>
+          </article>
+
+          <article class="cart">
+            <span class="num">CART 02</span>
+            <h3>Syntax should match how you think.</h3>
+            <p>
+              If a language makes you fight notation to express intent, it&rsquo;s
+              the wrong language.
+            </p>
+          </article>
+
+          <article class="cart">
+            <span class="num">CART 03</span>
+            <h3>Types make code obvious.</h3>
+            <p>
+              Hindley-Milner inference plus structural records replace
+              paragraphs of documentation.
+            </p>
+          </article>
+
+          <article class="cart">
+            <span class="num">CART 04</span>
+            <h3>AI drifts &mdash; discipline pays.</h3>
+            <p>
+              Reproducible AI output comes from small tools, tight specs,
+              multi-turn loops, not heroic prompts.
+            </p>
+          </article>
+
+          <article class="cart">
+            <span class="num">CART 05</span>
+            <h3>Build the tool, don&rsquo;t buy the SaaS.</h3>
+            <p>
+              Three hundred lines of code that do exactly what you need beat
+              any feature-bloated platform.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ABOUT / CREDENTIALS
+         ============================================================ -->
+    <section id="about" aria-labelledby="about-heading">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="tag">[04] About</span>
+          <h2 id="about-heading">Credentials, in plain pixels.</h2>
+        </div>
+
+        <div class="about">
+          <div>
+            <ul>
+              <li>Recognized F# Expert &mdash; F# Foundation, <em>Applied F# 2019</em>.</li>
+              <li>Maintainer / creator on the <code>fsprojects</code> organization (FsHttp, LocSta).</li>
+              <li>Speaker at BobKonf 2024 (<em>Monads in the Wilderness</em>).</li>
+              <li>Co-founder of the PXL Clock &mdash; a 24&times;24 programmable LED display shipping through Cumin &amp; Potato GmbH.</li>
+              <li>YouTube channel <a href="https://youtube.com/@ThePureState" rel="noopener">@ThePureState</a>: language design, functional programming, AI workflows.</li>
+            </ul>
+          </div>
+          <div style="display:flex; align-items:center; justify-content:center;">
+            <div
+              id="mini-portrait"
+              class="mini-portrait"
+              role="img"
+              aria-label="Pixel-art RS monogram block in place of a portrait"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CTA
+         ============================================================ -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="tag">[05] Contact</span>
+          <h2 id="contact-heading">Ready player one?</h2>
+        </div>
+
+        <div class="cta-block">
+          <p>
+            Got a problem where AI, types, or a little DSL might actually
+            change the shape of the work? Start a conversation.
+          </p>
+          <a class="press-start" href="mailto:hello@schlenkr.dev">
+            <span>Press Start</span>
+            <span class="arrow" aria-hidden="true"></span>
+          </a>
+
+          <nav class="socials" aria-label="Elsewhere">
+            <a href="https://github.com/SchlenkR" rel="noopener">GitHub</a>
+            <a href="https://youtube.com/@ThePureState" rel="noopener">YouTube</a>
+            <a href="https://bsky.app/profile/schlenkr.bsky.social" rel="noopener">Bluesky</a>
+            <a href="https://x.com/schlenkr" rel="noopener">X</a>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <div class="wrap">
+      <div class="legal-links">
+        <a href="./impressum.html">Impressum</a>
+        <a href="./datenschutz.html">Datenschutz</a>
+        <a href="../index.html">Version overview</a>
+      </div>
+      <p class="credit">
+        Designed with Claude. Built with Vite. Self-contained.
+        Part of a design playground &mdash; variant <strong>v5 &middot; Pixel</strong>.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

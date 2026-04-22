@@ -1,6 +1,51 @@
 {
   "lanes": {
+    "v1": { "color": "#c78500" },
+    "v2": { "color": "#e7b55c" },
+    "v3": { "color": "#ff2a1f" },
+    "v4": { "color": "#E2001A" },
+    "v5": { "color": "#ff3b7a" }
   },
   "versions": {
+    "v1": {
+      "num": 1,
+      "title": "Editorial",
+      "desc": "Magazine-style consulting landing. Serif display, cream + ink + ochre. Substance over flash.",
+      "style": "Editorial",
+      "phaseTag": "Root",
+      "by": "Claude"
+    },
+    "v2": {
+      "num": 2,
+      "title": "Terminal",
+      "desc": "Monospace amber-CRT landing that reads like a well-organized tmux session.",
+      "style": "Terminal / Monospace",
+      "phaseTag": "Root",
+      "by": "Claude"
+    },
+    "v3": {
+      "num": 3,
+      "title": "Manifesto",
+      "desc": "Five theses, five full-viewport statements. Ultra-high contrast, electric red accent.",
+      "style": "Manifesto / Big Type",
+      "phaseTag": "Root",
+      "by": "Claude"
+    },
+    "v4": {
+      "num": 4,
+      "title": "Swiss Grid",
+      "desc": "Strict modernist grid, numbered sections, hairline rules. Restraint signals rigor.",
+      "style": "Swiss / Modernist",
+      "phaseTag": "Root",
+      "by": "Claude"
+    },
+    "v5": {
+      "num": 5,
+      "title": "Pixel",
+      "desc": "24x24 pixel motif borrowed from PXL Clock. Playful but credible, LED palette, CRT overlay.",
+      "style": "Pixel / Retro",
+      "phaseTag": "Root",
+      "by": "Claude"
+    }
   }
 }

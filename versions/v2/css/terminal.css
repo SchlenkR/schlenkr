@@ -1,0 +1,561 @@
+/* =============================================================
+   v2 — Terminal variant
+   Palette: Amber CRT
+   bg     #0c0c0c
+   text   #e7b55c
+   dim    #8a7145
+   link   #ffd487
+   accent #ff6a3d
+   Font:  JetBrains Mono (Google Fonts)
+   ============================================================= */
+
+:root {
+  --bg: #0c0c0c;
+  --bg-pane: #111111;
+  --bg-chrome: #1a1610;
+  --text: #e7b55c;
+  --dim: #8a7145;
+  --dimmer: #5a4a2d;
+  --link: #ffd487;
+  --accent: #ff6a3d;
+  --green: #7fd66a;
+  --rule: #3a2f1c;
+
+  --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  --col-ch: 80ch;
+  --gap: 1.2rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 15px;
+  line-height: 1.55;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Subtle CRT scanline overlay — respects prefers-reduced-motion */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.014) 0px,
+      rgba(255, 255, 255, 0.014) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  mix-blend-mode: overlay;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 101;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 55%,
+    rgba(0, 0, 0, 0.45) 100%
+  );
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--dim);
+  transition: color 120ms ease, border-color 120ms ease;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  outline: none;
+}
+
+a:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   Top title bar — "schlenkr@consult:~$"
+   ========================================================= */
+.titlebar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg-chrome);
+  border-bottom: 1px solid var(--rule);
+  backdrop-filter: blur(4px);
+}
+
+.titlebar-inner {
+  max-width: 96ch;
+  margin: 0 auto;
+  padding: 0.55rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+}
+
+.titlebar .traffic {
+  display: inline-flex;
+  gap: 0.4rem;
+  margin-right: 0.4rem;
+}
+.titlebar .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--dimmer);
+  display: inline-block;
+}
+.titlebar .dot.r { background: #ff5f56; }
+.titlebar .dot.y { background: #ffbd2e; }
+.titlebar .dot.g { background: #27c93f; }
+
+.titlebar .prompt {
+  color: var(--dim);
+}
+.titlebar .prompt .user { color: var(--green); }
+.titlebar .prompt .host { color: var(--link); }
+.titlebar .prompt .path { color: var(--text); }
+
+.titlebar nav {
+  margin-left: auto;
+  display: flex;
+  gap: 0.2rem 1.1rem;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+}
+
+.titlebar nav a {
+  color: var(--dim);
+  border: none;
+  padding: 0 0.15rem;
+}
+.titlebar nav a::before { content: ":"; color: var(--dimmer); margin-right: 0.1rem; }
+.titlebar nav a:hover { color: var(--link); }
+
+/* =========================================================
+   Main container — terminal pane
+   ========================================================= */
+main {
+  max-width: 96ch;
+  margin: 0 auto;
+  padding: 2.4rem 1.2rem 4rem;
+}
+
+section {
+  margin: 2.6rem 0;
+}
+
+/* Prompt lines */
+.prompt-line {
+  color: var(--dim);
+  display: block;
+  margin-top: 1.2rem;
+  word-break: break-word;
+}
+
+.prompt-line .sigil { color: var(--green); }
+.prompt-line .cmd   { color: var(--link); }
+.prompt-line .arg   { color: var(--text); }
+.prompt-line .flag  { color: var(--accent); }
+
+.out {
+  margin: 0.35rem 0 0 0;
+  padding: 0 0 0 0;
+  color: var(--text);
+  white-space: normal;
+}
+
+/* ASCII dividers */
+.ascii-rule {
+  color: var(--dimmer);
+  margin: 2.4rem 0 1.6rem;
+  font-size: 0.85rem;
+  white-space: pre;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.ascii-rule::-webkit-scrollbar { display: none; }
+
+.ascii-banner {
+  color: var(--accent);
+  font-size: 0.6rem;
+  line-height: 1.1;
+  white-space: pre;
+  overflow-x: auto;
+  margin: 0 0 0.8rem;
+  scrollbar-width: none;
+  text-shadow: 0 0 10px rgba(255, 106, 61, 0.25);
+}
+.ascii-banner::-webkit-scrollbar { display: none; }
+
+/* =========================================================
+   Hero
+   ========================================================= */
+.hero .identity {
+  font-size: 1.02rem;
+  color: var(--text);
+  margin: 0.3rem 0 0;
+}
+
+.hero .identity .sep { color: var(--dim); margin: 0 0.5ch; }
+
+.hero .positioning {
+  color: var(--text);
+  margin: 0.4rem 0 0;
+  max-width: 78ch;
+}
+
+.hero .tagline {
+  color: var(--accent);
+  margin: 0.4rem 0 0;
+  font-weight: 500;
+}
+
+/* Blinking caret */
+.caret {
+  display: inline-block;
+  width: 0.55ch;
+  height: 1em;
+  vertical-align: -0.15em;
+  margin-left: 0.15ch;
+  background: var(--text);
+  box-shadow: 0 0 6px rgba(231, 181, 92, 0.55);
+  animation: blink 1.05s steps(1, end) infinite;
+}
+
+@keyframes blink {
+  0%, 49%   { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .caret { animation: none; opacity: 1; }
+  body::before { display: none; }
+}
+
+/* =========================================================
+   ls -la services
+   ========================================================= */
+.listing {
+  margin: 0.4rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.listing .row {
+  display: grid;
+  grid-template-columns: 12ch 4ch 10ch 10ch 6ch 11ch 1fr;
+  column-gap: 0.75rem;
+  padding: 0.1rem 0;
+  align-items: baseline;
+  color: var(--dim);
+  font-size: 0.9rem;
+}
+
+.listing .row.head  { color: var(--dimmer); border-bottom: 1px solid var(--rule); padding-bottom: 0.35rem; margin-bottom: 0.2rem; }
+.listing .row .name { color: var(--link); font-weight: 500; }
+.listing .row .name a { color: var(--link); border: none; }
+.listing .row .name a:hover { color: var(--accent); }
+.listing .row .size { color: var(--text); }
+
+.listing details {
+  grid-column: 1 / -1;
+  margin: 0.25rem 0 0.9rem 14ch;
+  color: var(--text);
+  font-size: 0.95rem;
+  max-width: 74ch;
+}
+
+.listing details > summary {
+  color: var(--dim);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  padding: 0.1rem 0;
+}
+.listing details > summary::-webkit-details-marker { display: none; }
+.listing details > summary::before {
+  content: "▸ ";
+  color: var(--accent);
+  display: inline-block;
+  transition: transform 120ms ease;
+}
+.listing details[open] > summary::before {
+  content: "▾ ";
+}
+.listing details p {
+  margin: 0.45rem 0 0;
+  color: var(--text);
+}
+
+@media (max-width: 780px) {
+  .listing .row {
+    grid-template-columns: 10ch 8ch 1fr;
+  }
+  .listing .row .perm,
+  .listing .row .links,
+  .listing .row .owner,
+  .listing .row .group,
+  .listing .row .date { display: none; }
+  .listing details { margin-left: 0; }
+}
+
+/* =========================================================
+   Projects — tree output
+   ========================================================= */
+.tree {
+  white-space: pre-wrap;
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0.4rem 0 0;
+}
+
+.tree .branch { color: var(--dimmer); }
+.tree .node   { color: var(--link); font-weight: 500; }
+.tree .node a { color: var(--link); border: none; }
+.tree .node a:hover { color: var(--accent); }
+.tree .desc   { color: var(--dim); }
+.tree .tag    { color: var(--accent); }
+
+.tree-root {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* =========================================================
+   Theses — numbered manifest
+   ========================================================= */
+.theses {
+  counter-reset: thesis;
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+}
+
+.theses li {
+  counter-increment: thesis;
+  padding: 0.4rem 0 0.4rem 6ch;
+  position: relative;
+  border-left: 1px solid var(--rule);
+  padding-left: 1.2rem;
+  margin: 0.4rem 0 0.4rem 0.4ch;
+}
+
+.theses li::before {
+  content: "0" counter(thesis);
+  position: absolute;
+  left: -3.2ch;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.theses li strong {
+  color: var(--link);
+  font-weight: 500;
+}
+
+.theses li .body {
+  color: var(--text);
+}
+
+/* =========================================================
+   About block (cat about.md)
+   ========================================================= */
+.about-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.4rem 0 0;
+}
+.about-list li {
+  padding: 0.15rem 0 0.15rem 2.5ch;
+  position: relative;
+}
+.about-list li::before {
+  content: "-";
+  color: var(--accent);
+  position: absolute;
+  left: 0.5ch;
+}
+
+/* =========================================================
+   Contact
+   ========================================================= */
+.contact .cta {
+  display: inline-block;
+  margin: 0.6rem 0 0;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 120ms ease, color 120ms ease;
+}
+.contact .cta:hover,
+.contact .cta:focus-visible {
+  background: var(--accent);
+  color: var(--bg);
+  outline: none;
+}
+.contact .cta::before { content: "> "; }
+
+.contact-links {
+  list-style: none;
+  padding: 0;
+  margin: 0.4rem 0 0;
+}
+.contact-links li {
+  padding: 0.1rem 0 0.1rem 2ch;
+  position: relative;
+}
+.contact-links li::before {
+  content: "→";
+  color: var(--dim);
+  position: absolute;
+  left: 0;
+}
+.contact-links .label { color: var(--dim); display: inline-block; width: 10ch; }
+
+/* =========================================================
+   Footer
+   ========================================================= */
+footer {
+  border-top: 1px solid var(--rule);
+  margin-top: 3rem;
+  padding: 1.6rem 0 0;
+  color: var(--dim);
+  font-size: 0.85rem;
+}
+
+footer .prompt-line { margin-top: 0.3rem; }
+footer .out { color: var(--dim); }
+footer .out a { color: var(--link); border: none; }
+footer .out a:hover { color: var(--accent); }
+
+.credit {
+  color: var(--dimmer);
+  margin-top: 1.2rem;
+  font-style: italic;
+}
+
+/* =========================================================
+   Legal-page specific (impressum / datenschutz)
+   ========================================================= */
+.legal main {
+  padding-top: 1.6rem;
+}
+
+.legal h1 {
+  color: var(--accent);
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 1rem 0 0.4rem;
+}
+.legal h1::before { content: "# "; color: var(--dim); }
+
+.legal h2 {
+  color: var(--link);
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin: 2rem 0 0.4rem;
+}
+.legal h2::before { content: "## "; color: var(--dim); }
+
+.legal h3 {
+  color: var(--text);
+  font-size: 0.98rem;
+  font-weight: 500;
+  margin: 1.4rem 0 0.3rem;
+}
+.legal h3::before { content: "### "; color: var(--dim); }
+
+.legal p, .legal address {
+  color: var(--text);
+  max-width: 78ch;
+  margin: 0.4rem 0;
+  font-style: normal;
+}
+
+.legal address {
+  padding-left: 2ch;
+  border-left: 1px solid var(--rule);
+  color: var(--text);
+}
+
+.legal .back {
+  color: var(--dim);
+  margin: 0.6rem 0 0;
+}
+.legal .back a { color: var(--link); border: none; }
+.legal .back a::before { content: "cd "; color: var(--accent); }
+
+/* =========================================================
+   Small screens — 40-col "pane"
+   ========================================================= */
+@media (max-width: 480px) {
+  html, body { font-size: 13.5px; }
+  main { padding: 1.6rem 0.9rem 3rem; }
+  .ascii-banner { font-size: 0.48rem; }
+  .titlebar-inner { font-size: 0.78rem; padding: 0.5rem 0.9rem; }
+  .titlebar nav { gap: 0.2rem 0.8rem; }
+  .theses li { padding-left: 1rem; }
+  .theses li::before { left: -2.8ch; }
+}
+
+@media (max-width: 375px) {
+  html, body { font-size: 13px; }
+  .ascii-banner { font-size: 0.42rem; }
+}
+
+/* Skip link for accessibility */
+.skip {
+  position: absolute;
+  left: -9999px;
+}
+.skip:focus {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 0.4rem 0.8rem;
+  z-index: 200;
+}
+
+/* Utilities */
+.mono     { font-family: var(--mono); }
+.dim      { color: var(--dim); }
+.text     { color: var(--text); }
+.accent   { color: var(--accent); }
+.inline-code {
+  color: var(--green);
+  background: rgba(127, 214, 106, 0.08);
+  padding: 0 0.35ch;
+  border-radius: 2px;
+}

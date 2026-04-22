@@ -14,7 +14,11 @@
       --muted: #d6d2c4;
       --dim:   #9b978a;
       --line: #32323a;
-
+      --v1: #c78500;
+      --v2: #e7b55c;
+      --v3: #ff2a1f;
+      --v4: #E2001A;
+      --v5: #ff3b7a;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -372,7 +376,7 @@
       <strong>BARBARA&nbsp;SAILER</strong>
       <span>/ VERSIONS INDEX</span>
     </div>
-    <div class="deploy">Letzter Deploy · 22.04.2026 · 08:53</div>
+    <div class="deploy">Letzter Deploy · 22.04.2026 · 10:37</div>
   </header>
 
   <div class="title-row">
@@ -381,22 +385,149 @@
 
   <div class="view-toggle" role="tablist" aria-label="Ansicht wechseln">
     <button type="button" data-view="lanes" class="active" role="tab" aria-selected="true">Lanes</button>
-    <button type="button" data-view="flat" role="tab" aria-selected="false">Flach</button>
+    <button type="button" data-view="flat" role="tab" aria-selected="false">Flach · #05 → #01</button>
   </div>
 
   <div class="lanes">
 
+    <div class="lane" style="--accent: var(--v5);">
+      <div class="lane-num">05</div>
+      <div class="lane-body">
+        <a class="card" href="./v5/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="card-tag">#05 · v5 · Root</span>
+            <span class="arrow">→</span>
+          </div>
+          <h3 class="card-title">Pixel</h3>
+          <p class="card-desc">24x24 pixel motif borrowed from PXL Clock. Playful but credible, LED palette, CRT overlay.</p>
+          <span class="card-meta">Parent: — · Stil: Pixel / Retro · 2026-04-22</span>
+          <span class="card-by">Claude</span>
+        </a>
+      </div>
+    </div>
 
+    <div class="lane" style="--accent: var(--v4);">
+      <div class="lane-num">04</div>
+      <div class="lane-body">
+        <a class="card" href="./v4/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="card-tag">#04 · v4 · Root</span>
+            <span class="arrow">→</span>
+          </div>
+          <h3 class="card-title">Swiss Grid</h3>
+          <p class="card-desc">Strict modernist grid, numbered sections, hairline rules. Restraint signals rigor.</p>
+          <span class="card-meta">Parent: — · Stil: Swiss / Modernist · 2026-04-22</span>
+          <span class="card-by">Claude</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="lane" style="--accent: var(--v3);">
+      <div class="lane-num">03</div>
+      <div class="lane-body">
+        <a class="card" href="./v3/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="card-tag">#03 · v3 · Root</span>
+            <span class="arrow">→</span>
+          </div>
+          <h3 class="card-title">Manifesto</h3>
+          <p class="card-desc">Five theses, five full-viewport statements. Ultra-high contrast, electric red accent.</p>
+          <span class="card-meta">Parent: — · Stil: Manifesto / Big Type · 2026-04-22</span>
+          <span class="card-by">Claude</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="lane" style="--accent: var(--v2);">
+      <div class="lane-num">02</div>
+      <div class="lane-body">
+        <a class="card" href="./v2/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="card-tag">#02 · v2 · Root</span>
+            <span class="arrow">→</span>
+          </div>
+          <h3 class="card-title">Terminal</h3>
+          <p class="card-desc">Monospace amber-CRT landing that reads like a well-organized tmux session.</p>
+          <span class="card-meta">Parent: — · Stil: Terminal / Monospace · 2026-04-22</span>
+          <span class="card-by">Claude</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="lane" style="--accent: var(--v1);">
+      <div class="lane-num">01</div>
+      <div class="lane-body">
+        <a class="card" href="./v1/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <span class="card-tag">#01 · v1 · Root</span>
+            <span class="arrow">→</span>
+          </div>
+          <h3 class="card-title">Editorial</h3>
+          <p class="card-desc">Magazine-style consulting landing. Serif display, cream + ink + ochre. Substance over flash.</p>
+          <span class="card-meta">Parent: — · Stil: Editorial · 2026-04-22</span>
+          <span class="card-by">Claude</span>
+        </a>
+      </div>
+    </div>
 
   </div>
 
   <div class="flat-grid">
-
+      <a class="card flat-card" style="--accent: var(--v5);" href="./v5/" target="_blank" rel="noopener">
+        <div class="card-top">
+          <span class="card-tag">#05 · v5 · Root</span>
+          <span class="arrow">→</span>
+        </div>
+        <h3 class="card-title">Pixel</h3>
+        <p class="card-desc">24x24 pixel motif borrowed from PXL Clock. Playful but credible, LED palette, CRT overlay.</p>
+        <span class="card-meta">Root · Pixel / Retro · 2026-04-22</span>
+        <span class="card-by">Claude</span>
+      </a>
+      <a class="card flat-card" style="--accent: var(--v4);" href="./v4/" target="_blank" rel="noopener">
+        <div class="card-top">
+          <span class="card-tag">#04 · v4 · Root</span>
+          <span class="arrow">→</span>
+        </div>
+        <h3 class="card-title">Swiss Grid</h3>
+        <p class="card-desc">Strict modernist grid, numbered sections, hairline rules. Restraint signals rigor.</p>
+        <span class="card-meta">Root · Swiss / Modernist · 2026-04-22</span>
+        <span class="card-by">Claude</span>
+      </a>
+      <a class="card flat-card" style="--accent: var(--v3);" href="./v3/" target="_blank" rel="noopener">
+        <div class="card-top">
+          <span class="card-tag">#03 · v3 · Root</span>
+          <span class="arrow">→</span>
+        </div>
+        <h3 class="card-title">Manifesto</h3>
+        <p class="card-desc">Five theses, five full-viewport statements. Ultra-high contrast, electric red accent.</p>
+        <span class="card-meta">Root · Manifesto / Big Type · 2026-04-22</span>
+        <span class="card-by">Claude</span>
+      </a>
+      <a class="card flat-card" style="--accent: var(--v2);" href="./v2/" target="_blank" rel="noopener">
+        <div class="card-top">
+          <span class="card-tag">#02 · v2 · Root</span>
+          <span class="arrow">→</span>
+        </div>
+        <h3 class="card-title">Terminal</h3>
+        <p class="card-desc">Monospace amber-CRT landing that reads like a well-organized tmux session.</p>
+        <span class="card-meta">Root · Terminal / Monospace · 2026-04-22</span>
+        <span class="card-by">Claude</span>
+      </a>
+      <a class="card flat-card" style="--accent: var(--v1);" href="./v1/" target="_blank" rel="noopener">
+        <div class="card-top">
+          <span class="card-tag">#01 · v1 · Root</span>
+          <span class="arrow">→</span>
+        </div>
+        <h3 class="card-title">Editorial</h3>
+        <p class="card-desc">Magazine-style consulting landing. Serif display, cream + ink + ochre. Substance over flash.</p>
+        <span class="card-meta">Root · Editorial · 2026-04-22</span>
+        <span class="card-by">Claude</span>
+      </a>
   </div>
 
   <footer>
-    <span>0 Versionen · 0 Lanes</span>
-    <span>Deploy · 22.04.2026 · 08:53</span>
+    <span>5 Versionen · 5 Lanes</span>
+    <span>Deploy · 22.04.2026 · 10:37</span>
   </footer>
 
   <script>

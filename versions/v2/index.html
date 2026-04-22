@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ronald Schlenker · schlenkr@consult:~$</title>
+  <meta name="description" content="Independent tech consultant in Frankfurt. AI-era engineering, built on fifteen years of functional craft." />
+
+  <!--
+    v2 — Terminal variant
+    Palette: Amber CRT
+      bg     #0c0c0c
+      text   #e7b55c
+      dim    #8a7145
+      link   #ffd487
+      accent #ff6a3d
+    Font: JetBrains Mono (Google Fonts)
+    All copy is verbatim from ../../CONTENT.md — layout only.
+  -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="./css/terminal.css" />
+  <script type="module" src="./js/main.js"></script>
+</head>
+<body>
+
+  <a href="#main" class="skip">Skip to content</a>
+
+  <!-- Top title bar ============================================ -->
+  <header class="titlebar" role="banner">
+    <div class="titlebar-inner">
+      <span class="traffic" aria-hidden="true">
+        <span class="dot r"></span>
+        <span class="dot y"></span>
+        <span class="dot g"></span>
+      </span>
+      <span class="prompt" aria-label="shell prompt">
+        <span class="user">schlenkr</span><span>@</span><span class="host">consult</span><span>:</span><span class="path">~</span><span>$</span>
+      </span>
+      <nav aria-label="Primary">
+        <a href="#whoami">whoami</a>
+        <a href="#services">services</a>
+        <a href="#projects">projects</a>
+        <a href="#theses">theses</a>
+        <a href="#about">about</a>
+        <a href="#contact">contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Tiny ASCII banner ========================================= -->
+    <pre class="ascii-banner" aria-hidden="true">
+ ███████╗ ██████╗██╗  ██╗██╗     ███████╗███╗   ██╗██╗  ██╗██████╗
+ ██╔════╝██╔════╝██║  ██║██║     ██╔════╝████╗  ██║██║ ██╔╝██╔══██╗
+ ███████╗██║     ███████║██║     █████╗  ██╔██╗ ██║█████╔╝ ██████╔╝
+ ╚════██║██║     ██╔══██║██║     ██╔══╝  ██║╚██╗██║██╔═██╗ ██╔══██╗
+ ███████║╚██████╗██║  ██║███████╗███████╗██║ ╚████║██║  ██╗██║  ██║
+ ╚══════╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝  ╚═╝</pre>
+
+    <!-- Hero — command session ==================================== -->
+    <section id="whoami" class="hero" aria-label="Identity">
+
+      <div class="prompt-line">
+        <span class="sigil">$</span> <span class="cmd">whoami</span>
+      </div>
+      <p class="out identity">
+        Ronald Schlenker
+        <span class="sep">·</span>
+        Independent tech consultant
+        <span class="sep">·</span>
+        Frankfurt, Germany
+      </p>
+
+      <div class="prompt-line">
+        <span class="sigil">$</span> <span class="cmd">cat</span> <span class="arg">positioning.md</span>
+      </div>
+      <p class="out positioning">
+        I help technically ambitious teams build AI-assisted workflows that
+        stay reproducible, maintainable, and honest about their limits.
+        I bring F#, .NET, and compiler-level thinking to problems most people
+        try to solve with prompt templates. You get craft, not hype.
+      </p>
+
+      <div class="prompt-line">
+        <span class="sigil">$</span> <span class="cmd">echo</span> <span class="arg">"$TAGLINE"</span>
+      </div>
+      <p class="out tagline">
+        AI-era engineering, built on fifteen years of functional craft.<span class="caret" aria-hidden="true"></span>
+      </p>
+
+    </section>
+
+    <pre class="ascii-rule" aria-hidden="true">─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─</pre>
+
+    <!-- Services — ls -la ========================================= -->
+    <section id="services" aria-label="Services">
+
+      <div class="prompt-line">
+        <span class="sigil">$</span> <span class="cmd">ls</span> <span class="flag">-la</span> <span class="arg">./services/</span>
+      </div>
+
+      <ul class="listing" role="list">
+
+        <li class="row head" role="presentation">
+          <span class="perm">perm</span>
+          <span class="links">n</span>
+          <span class="owner">owner</span>
+          <span class="group">group</span>
+          <span class="size">size</span>
+          <span class="date">modified</span>
+          <span class="name">name</span>
+        </li>
+
+        <li class="row" role="listitem">
+          <span class="perm">-rwxr-xr-x</span>
+          <span class="links">1</span>
+          <span class="owner">schlenkr</span>
+          <span class="group">staff</span>
+          <span class="size">3.1K</span>
+          <span class="date">Apr 22 09:12</span>
+          <span class="name">training/</span>
+          <details>
+            <summary>about training/</summary>
+            <p>
+              Workshops, live-coding sessions, and conference talks on
+              AI-augmented development, functional programming in .NET, type inference,
+              and language-/DSL-design. Delivered in-house or remote.
+            </p>
+          </details>
+        </li>
+
+        <li class="row" role="listitem">
+          <span class="perm">-rwxr-xr-x</span>
+          <span class="links">1</span>
+          <span class="owner">schlenkr</span>
+          <span class="group">staff</span>
+          <span class="size">2.8K</span>
+          <span class="date">Apr 22 09:12</span>
+          <span class="name">consulting/</span>
+          <details>
+            <summary>about consulting/</summary>
+            <p>
+              Audits, architecture reviews, and sparring for teams deciding how (and
+              whether) to bring AI into their engineering process — or whether F# / a
+              functional architecture would pay off.
+            </p>
+          </details>
+        </li>
+
+        <li class="row" role="listitem">
+          <span class="perm">-rwxr-xr-x</span>
+          <span class="links">1</span>
+          <span class="owner">schlenkr</span>
+          <span class="group">staff</span>
+          <span class="size">4.2K</span>
+          <span class="date">Apr 22 09:12</span>
+          <span class="name">engineering/</span>
+          <details>
+            <summary>about engineering/</summary>
+            <p>
+              Hands-on work on AI pipelines, developer tooling, typed templates,
+              reactive UI frameworks, and embedded creative-coding systems. I say no
+              to generic CRUD. I say yes to problems where ten years of compiler and
+              FP habits actually matter.
+            </p>
+          </details>
+        </li>
+
+      </ul>
+    </section>
+
+    <pre class="ascii-rule" aria-hidden="true">─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─</pre>
+
+    <!-- Projects — tree ========================================== -->
+    <section id="projects" aria-label="Featured projects">
+
+      <div class="prompt-line">
+        <span class="sigil">$</span> <span class="cmd">tree</span> <span class="arg">./projects/</span>
+      </div>
+
+      <pre class="tree" role="list"><span class="tree-root">./projects/</span>
+<span class="branch">├── </span><span class="node"><a href="https://www.pxlclock.com/?ref=RONALD" rel="noopener">pxl-clock/</a></span>     <span class="desc">A 24×24 programmable LED display you code in C# or F#.</span>
+<span class="branch">│     </span><span class="desc">VS Code extension, hot-reload simulator, over-the-air updates.</span>
+<span class="branch">│     </span><span class="tag">[pxlclock.com · code `RONALD` for €25 off]</span>
+<span class="branch">│</span>
+<span class="branch">├── </span><span class="node"><a href="https://github.com/fsprojects/FsHttp" rel="noopener">fs-http/</a></span>       <span class="desc">A hackable HTTP client for .NET. Reads like `.http`</span>
+<span class="branch">│     </span><span class="desc">files, scales to any edge case.</span>
+<span class="branch">│     </span><span class="tag">[499★ · 128 dependent packages · fsprojects/FsHttp]</span>
+<span class="branch">│</span>
+<span class="branch">├── </span><span class="node"><a href="https://github.com/SchlenkR/TypeFighter" rel="noopener">type-fighter/</a></span>  <span class="desc">An experimental language built around an</span>
+<span class="branch">│     </span><span class="desc">inference-first, structural type system: records match by shape,</span>
+<span class="branch">│     </span><span class="desc">set-theoretic unions, minimal annotations.</span>
+<span class="branch">│     </span><span class="tag">[github.com/SchlenkR/TypeFighter]</span>
+<span class="branch">│</span>
+<span class="branch">├── </span><span class="node"><a href="https://github.com/SchlenkR/TheBlunt" rel="noopener">the-blunt/</a></span>     <span class="desc">A one-file recursive-descent parser-combinator</span>
+<span class="branch">│     </span><span class="desc">library for F# and Fable. Small surface, serious power.</span>
+<span class="branch">│     </span><span class="tag">[github.com/SchlenkR/TheBlunt]</span>
+<span class="branch">│</span>
+<span class="branch">└── </span><span class="node"><a href="https://github.com/SchlenkR/Trulla" rel="noopener">trulla/</a></span>        <span class="desc">Templates that are type-safe at compile time.</span>
+      <span class="desc">Ships as an F# Type Provider, a C# Source Generator, and a Node.js CLI.</span>
+      <span class="tag">[github.com/SchlenkR/Trulla]</span></pre>
+    </section>
+
+    <pre class="ascii-rule" aria-hidden="true">─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─</pre>
+
+    <!-- Theses — cat theses.md =================================== -->
+    <section id="theses" aria-label="Five theses">
+
+      <div class="prompt-line">
+        <span class="sigil">$</span> <span class="cmd">cat</span> <span class="arg">theses.md</span>
+      </div>
+
+      <ol class="theses" role="list">
+        <li>
+          <strong>Composition beats objects.</strong>
+          <span class="body">Lego, not Playmobil. Pure functions compose forever; object hierarchies are dead ends.</span>
+        </li>
+        <li>
+          <strong>Syntax should match how you think.</strong>
+          <span class="body">If a language makes you fight notation to express intent, it&rsquo;s the wrong language.</span>
+        </li>
+        <li>
+          <strong>Types make code obvious.</strong>
+          <span class="body">Hindley-Milner inference plus structural records replace paragraphs of documentation.</span>
+        </li>
+        <li>
+          <strong>AI drifts — discipline pays.</strong>
+          <span class="body">Reproducible AI output comes from small tools, tight specs, multi-turn loops, not heroic prompts.</span>
+        </li>
+        <li>
+          <strong>Build the tool, don&rsquo;t buy the SaaS.</strong>
+          <span class="body">Three hundred lines of code that do exactly what you need beat any feature-bloated platform.</span>
+        </li>
+      </ol>
+    </section>
+
+    <pre class="ascii-rule" aria-hidden="true">─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─</pre>
+
+    <!-- About — cat about.md ====================================== -->
+    <section id="about" aria-label="About">
+
+      <div class="prompt-line">
+        <span class="sigil">$</span> <span class="cmd">cat</span> <span class="arg">about.md</span>
+      </div>
+
+      <ul class="about-list" role="list">
+        <li>Recognized F# Expert — F# Foundation, <em>Applied F# 2019</em>.</li>
+        <li>Maintainer / creator on the <span class="inline-code">fsprojects</span> organization (FsHttp, LocSta).</li>
+        <li>Speaker at BobKonf 2024 (<em>Monads in the Wilderness</em>).</li>
+        <li>
+          Co-founder of the PXL Clock — a 24×24 programmable LED display
+          shipping through Cumin &amp; Potato GmbH.
+        </li>
+        <li>
+          YouTube channel
+          <a href="https://youtube.com/@ThePureState" rel="noopener">@ThePureState</a>:
+          language design, functional programming, AI workflows.
+        </li>
+      </ul>
+    </section>
+
+    <pre class="ascii-rule" aria-hidden="true">─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─</pre>
+
+    <!-- Contact =================================================== -->
+    <section id="contact" class="contact" aria-label="Contact">
+
+      <div class="prompt-line">
+        <span class="sigil">$</span> <span class="cmd">echo</span> <span class="arg">$CONTACT</span>
+      </div>
+
+      <p class="out">
+        <a class="cta" href="mailto:hello@schlenkr.dev">Start a conversation</a>
+      </p>
+
+      <div class="prompt-line">
+        <span class="sigil">$</span> <span class="cmd">cat</span> <span class="arg">~/.links</span>
+      </div>
+
+      <ul class="contact-links" role="list">
+        <li>
+          <span class="label">github</span>
+          <a href="https://github.com/SchlenkR" rel="noopener">github.com/SchlenkR</a>
+        </li>
+        <li>
+          <span class="label">youtube</span>
+          <a href="https://youtube.com/@ThePureState" rel="noopener">@ThePureState</a>
+        </li>
+        <li>
+          <span class="label">bluesky</span>
+          <a href="https://bsky.app/profile/schlenkr.bsky.social" rel="noopener">@schlenkr.bsky.social</a>
+        </li>
+        <li>
+          <span class="label">x</span>
+          <a href="https://x.com/schlenkr" rel="noopener">@schlenkr</a>
+        </li>
+        <li>
+          <span class="label">mail</span>
+          <a href="mailto:hello@schlenkr.dev">hello@schlenkr.dev</a>
+        </li>
+      </ul>
+
+    </section>
+
+    <!-- Footer ==================================================== -->
+    <footer role="contentinfo">
+
+      <div class="prompt-line">
+        <span class="sigil">$</span> <span class="cmd">ls</span> <span class="arg">./legal/</span>
+      </div>
+      <p class="out">
+        <a href="./impressum.html">impressum.html</a>
+        &nbsp;&nbsp;
+        <a href="./datenschutz.html">datenschutz.html</a>
+      </p>
+
+      <p class="credit">
+        &mdash; Designed with Claude. Built with Vite. Self-contained. &mdash;<br />
+        Part of a design playground &mdash; see the
+        <a href="../index.html">version overview</a>.
+      </p>
+
+    </footer>
+
+  </main>
+
+</body>
+</html>
