@@ -135,12 +135,42 @@ this round:
 - `v3-industry/` (parent v3): Manifesto shell + Scrum-industry content.
 - `v4-catalog/` (parent v4): Swiss grid + customer-frame catalog.
 
+### Batch 3 — Wild scroll + Maker story (2026-04-22)
+
+Two threads fused in one batch. Most variants use
+[`CONTENT-CUSTOMER.md`](./CONTENT-CUSTOMER.md). The maker-story variant
+uses [`MAKER_STORY.md`](./MAKER_STORY.md) as its dedicated content
+source — the PXL Clock journey as proof-of-craft.
+
+Scroll-library toolkit (all CDN-only, verified 2026-04-22):
+
+- GSAP 3.15 + ScrollTrigger + SplitText + DrawSVG + MorphSVG
+  (all free since 3.13 in April 2025).
+- Lenis 1.3.23 for inertial smooth scroll.
+- Native CSS scroll-driven animations (`animation-timeline: scroll()`/
+  `view()`) where supported — Baseline across Chromium / Safari 26 /
+  Firefox 144.
+
+Hard constraint: every effect ships a `prefers-reduced-motion: reduce`
+fallback AND a mobile / `pointer: coarse` opt-out. No scroll-hijacking
+that breaks keyboard PageDown or native scrollbar position.
+
+| Folder | Parent | Idea · Twist |
+|---|---|---|
+| `v14/` | — (root) | **The Making.** PXL Clock maker-journey as the landing. Content from `MAKER_STORY.md`. Vertical scroll-driven timeline, milestone-by-milestone, with image placeholders sourced from `Produkt/Produktbilder/merchant/`. Closes with the customer-first reframe: *"This is what the consulting pitch looks like in practice."* |
+| `v15/` | — (root) | **Horizontal Tour.** Vertical scroll pins a viewport, 5 engagement shapes slide horizontally past. GSAP ScrollTrigger pin + translateX on inner track. Mobile falls back to native `scroll-snap-type: x mandatory`. |
+| `v16/` | — (root) | **Image Sequence.** Canvas scroll-scrubbed hero. 60 frames drawn from a rotating product / engineering sequence keyed to scroll progress. Apple-style. Rest of page calm and customer-first. |
+| `v17/` | — (root) | **Type Atlas.** A full-page SVG manifesto stroke-drawn as you scroll. The six customer-frames rendered as huge type; DrawSVG scrubbed by ScrollTrigger. Headline morphs via MorphSVG at section boundaries. |
+| `v18/` | — (root) | **Scrub Video.** Pinned 10–15 s hero video whose `currentTime` is bound to scroll progress — a dolly-in or stop-motion workshop scene. Rest customer-first. Fallback: static poster + auto-play once on scroll-in. |
+| `v19/` | — (root) | **Reverse Typewriter.** Full-viewport chapters that de-assemble and re-assemble character-by-character between the six frames. GSAP SplitText + ScrollTrigger per-chapter; screen-reader-safe hidden copy. |
+| `v20/` | — (root) | **Cursor Diorama.** 5–6 stacked PNG/SVG layers forming a 2.5D scene of Ronald's workshop. Cursor drives XY parallax; scroll drives Z dolly. Hotspots open case-study pages via View Transitions. Gated on `(min-width: 1024px) and (pointer: fine)`. |
+
+---
+
 ### Upcoming batches
 
-- Batch 3: sub-variants v3-industry, v4-catalog, v5-pixel-toy, plus
-  v13 "Two Weeks Later" (GSAP-animated timeline).
-- Phase 3 storytelling: Case-study-first landings that open with a
-  specific customer situation (AI-Tutorial-Pipeline as concrete story).
+- Phase 3 extended storytelling: AI-Tutorial-Pipeline as a concrete
+  customer story; TypeFighter research narrative.
 - Phase 4 interactive: TypeFighter AST visualizer, PXL-Clock live
   pixel toy, audio-reactive visualiser.
 
