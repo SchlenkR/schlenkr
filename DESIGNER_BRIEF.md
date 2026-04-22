@@ -174,12 +174,44 @@ that breaks keyboard PageDown or native scrollbar position.
 
 ---
 
-### Upcoming batches
+### Batch 4 — Lead-gen rebalance + YouTube + fresh designs (2026-04-22)
+
+Content directives updated in
+[`CONTENT-DIRECTIVES-V3.md`](./CONTENT-DIRECTIVES-V3.md) — override
+`CONTENT-CUSTOMER.md` where they conflict. Key shifts:
+
+- **PXL Clock demoted** from the main proof block to an end-of-page
+  "curiosity trail" — it's a *"who is this guy?"* reveal, not a
+  headline. `v14 The Making` remains the PXL deep-dive exception.
+- **YouTube @ThePureState** is first-class — explicit link in every
+  variant; embeds welcome (lazy-loaded).
+- **Lead-gen CTA discipline** — visible above the fold, service-
+  matched where useful, one repeated CTA, no newsletter / PDF / Calendly.
+- **Services language** — canonical three-word menu `Training ·
+  Consulting · Engineering` must be scannable in five seconds.
+
+Design diversity pass: none of these six mains repeat a palette or
+layout pattern already used in Batches 1–3.
+
+| Folder | Parent | Idea · Twist |
+|---|---|---|
+| `v21/` | — (root) | **Direct Conversion.** Tight Google-Ads-style landing. Bento grid layout. Single service focus ("Consulting" or "AI Adoption Review"). CTA visible above the fold with service-matched mailto subject. ~400 words visible. |
+| `v22/` | — (root) | **The Channel.** @ThePureState YouTube-centric. Sticky lazy-loaded video embed (click-to-activate), named-video list as proof. Customer-pain hero still first. |
+| `v23/` | — (root) | **Three Paths.** Basecamp-style split hero: *"I want training / consulting / engineering."* Clicking a path scrolls to a path-specific flow with its own service-matched CTA. |
+| `v24/` | — (root) | **Long Essay.** Stripe Press / New Yorker long-form personal essay on *"The Pragmatic Path"*. Sidenotes + footnotes. Customer pain in the first paragraph. Curiosity trail in the final section. |
+| `v25/` | — (root) | **Field Notes.** Composite hypothetical scenarios in a field-notebook aesthetic. Four vignettes: each is a situation type Ronald sees, how it usually ends, what he'd do differently. Clearly labelled hypothetical. |
+| `v26/` | — (root) | **Minimal.** Ruthless one-pager, ~250 visible words. Single centered column. B&W + one accent. The entire case compressed. Everything on one screen on desktop. |
+| `v6-curiosity/` | v6 | Sub-variant of Pragmatic Core with Batch-4 directives applied: PXL demoted to curiosity trail, @ThePureState explicit, TypeFighter named once as "he makes programming languages", above-fold CTA. Same shell, new emphasis. |
+
+### Upcoming batches (future)
 
 - Phase 3 extended storytelling: AI-Tutorial-Pipeline as a concrete
-  customer story; TypeFighter research narrative.
+  customer case.
 - Phase 4 interactive: TypeFighter AST visualizer, PXL-Clock live
   pixel toy, audio-reactive visualiser.
+- Strategic backlog from [`STRATEGY_PIVOT.md §Backlog`](./STRATEGY_PIVOT.md)
+  (B1–B6: network, prototype-is-product, soft software, AI myth, etc.) —
+  integrate when Ronald cues.
 
 ---
 
