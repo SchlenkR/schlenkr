@@ -224,11 +224,11 @@ ${body}
     .join('\n');
 
   const html = `<!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Barbara Sailer · Versions</title>
+  <title>Ronald Schlenker · Versions</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,400;9..144,600;9..144,800&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -594,19 +594,19 @@ ${laneVars}
 
   <header>
     <div class="brand">
-      <strong>BARBARA&nbsp;SAILER</strong>
+      <strong>RONALD&nbsp;SCHLENKER</strong>
       <span>/ VERSIONS INDEX</span>
     </div>
-    <div class="deploy">Letzter Deploy · ${deployStamp}</div>
+    <div class="deploy">Last deploy · ${deployStamp}</div>
   </header>
 
   <div class="title-row">
-    <h1>Versionen <em>&amp; Branches</em>.</h1>
+    <h1>Versions <em>&amp; Branches</em>.</h1>
   </div>
 
-  <div class="view-toggle" role="tablist" aria-label="Ansicht wechseln">
+  <div class="view-toggle" role="tablist" aria-label="Switch view">
     <button type="button" data-view="lanes" class="active" role="tab" aria-selected="true">Lanes</button>
-    <button type="button" data-view="flat" role="tab" aria-selected="false">${flatOrder.length > 0 ? `Flach · #${pad2(Math.max(...flatOrder.map((n) => manifest.versions[n].num)))} → #01` : 'Flach'}</button>
+    <button type="button" data-view="flat" role="tab" aria-selected="false">${flatOrder.length > 0 ? `Flat · #${pad2(Math.max(...flatOrder.map((n) => manifest.versions[n].num)))} → #01` : 'Flat'}</button>
   </div>
 
   <div class="lanes">
@@ -620,13 +620,13 @@ ${flatHtml}
   </div>
 
   <footer>
-    <span>${folders.length} Versionen · ${laneEntries.length} Lanes</span>
+    <span>${folders.length} versions · ${laneEntries.length} lanes</span>
     <span>Deploy · ${deployStamp}</span>
   </footer>
 
   <script>
     (function() {
-      const KEY = 'bs-overview-view';
+      const KEY = 'rs-overview-view';
       const buttons = document.querySelectorAll('.view-toggle button');
       const body = document.body;
       const apply = (v) => {
