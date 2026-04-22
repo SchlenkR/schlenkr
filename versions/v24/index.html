@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Pragmatic Path — Ronald Schlenker</title>
+  <meta name="description" content="A long-form essay on why most software engagements fail the customer, and what works instead: in-house capability, structures that hold, and engineering judgement rented short-term." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&family=Inter:wght@300;500&family=JetBrains+Mono:wght@400&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+  <header class="masthead" role="banner">
+    <div class="masthead-inner">
+      <a class="brand" href="./index.html">
+        Ronald Schlenker<span class="brand-dot">.</span>
+      </a>
+      <a class="cta-top" href="mailto:hello@schlenkr.dev?subject=Pragmatic%20Path%20inquiry">
+        Start a conversation
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <article class="essay" itemscope itemtype="https://schema.org/Article">
+
+      <header class="essay-header section">
+        <div class="eyebrow">An essay · software, teams, customers</div>
+        <h1 class="title" itemprop="headline">The Pragmatic Path</h1>
+        <p class="dateline" itemprop="author">Ronald Schlenker · Frankfurt, 2026</p>
+      </header>
+
+      <div class="essay-body">
+
+        <!-- ─────────────── Part 1 — Opening pain ─────────────── -->
+        <section class="section">
+          <p class="opening">
+            You have shipped the prototype. It works on your laptop. On the
+            customer's laptop it is a different story — the demo that won the
+            room last quarter now takes ninety seconds to load, the dashboard
+            drifts by a cent per thousand rows, and the engineer who wrote the
+            worst of it has just handed in their notice. You are not lazy,
+            not stupid, not under-resourced in any way that would be legible
+            to a board. You are simply in the part of the project where the
+            cost of what was deferred arrives in full.
+          </p>
+
+          <p>
+            The conversations begin to sound familiar. There is the product
+            lead who can no longer distinguish a three-day task from a
+            three-month one, because the team has stopped giving honest
+            estimates and started giving safe ones.<a href="#sn-1" class="sidenote-ref" id="ref-1">1</a>
+            There is the CTO who hired a well-known consultancy and received,
+            in return, an immaculate slide deck and a junior engineer billed
+            at a rate that makes the CFO flinch. There is the founder who
+            ran one two-week sprint with an external squad, saw a beautiful
+            burndown chart, and then watched the codebase quietly decay once
+            the squad had left.
+          </p>
+          <aside class="sidenote" id="sn-1" role="doc-footnote">
+            <span class="sidenote-number">1</span>
+            Ron Jeffries, one of the original signatories of the
+            Agile Manifesto, has written candidly about how estimation
+            became a ritual of self-protection rather than a tool for
+            honest planning.
+          </aside>
+
+          <p>
+            And there is, almost always, the feeling that no one in the room
+            can say the obvious thing: that the stack is not the problem,
+            the methodology is not the problem, the people are mostly not
+            the problem. The problem is that the structures which would let
+            a small, honest team hold the line have been quietly dismantled
+            — by process theatre, by staffing fashions, by a decade of
+            outsourcing the act of thinking.
+          </p>
+
+          <p>
+            This essay is about what to do instead. It is written for the
+            CTO who wants her team to grow into the shape of the problem,
+            not around it; for the founder who has had enough of
+            consultancies that sell hours instead of judgement; and for the
+            engineering manager who suspects, correctly, that another
+            framework is not what will save them.
+          </p>
+        </section>
+
+        <!-- ─────────────── Part 2 — Why the usual moves fail ─────────────── -->
+        <section class="section">
+          <h2><span class="part">Part II</span>Why the usual moves fail</h2>
+
+          <p>
+            The first failure mode is the <em>Agile Industrial Complex</em>.
+            An entire economy has grown up around the delivery of methodology
+            as a product — certifications, coaches, tool licences, transformation
+            programmes, two-day kick-offs that leave behind a Miro board and
+            an invoice.<a href="#sn-2" class="sidenote-ref" id="ref-2">2</a>
+            The customer did not want a methodology. The customer wanted
+            software that works and a team that can keep shipping it. What
+            they received was a taxonomy of ceremonies.
+          </p>
+          <aside class="sidenote" id="sn-2" role="doc-footnote">
+            <span class="sidenote-number">2</span>
+            Martin Fowler coined the phrase to describe exactly this drift.
+            See <em>The State of Agile Software in 2018</em>,
+            <a href="https://martinfowler.com/articles/agile-aus-2018.html" rel="noopener">martinfowler.com/articles/agile-aus-2018.html</a>.
+          </aside>
+
+          <p>
+            The second failure mode is the <em>body-shop trap</em>. You
+            hire the consultancy with the recognisable logo and the thick
+            case-study book. What arrives is not the partner who sold the
+            engagement but a rotating cast of engineers whose commercial
+            incentive is to still be there next quarter. Their senior
+            attention is a scarce resource rationed across twenty other
+            clients. The juniors on the ground are competent and earnest
+            and have never built anything from scratch that outlasted a
+            contract. When the engagement ends, the institutional memory
+            leaves with them. Your team inherits a codebase they did not
+            write, cannot love, and must now maintain.
+          </p>
+
+          <p>
+            The third is the <em>two-week shine</em>. An external pair
+            parachutes in for a sprint, produces a dazzling artefact — a
+            working prototype, a migration plan, a polished dashboard —
+            and departs. The artefact is genuine. The capability it
+            implies is not. Without the same pair at the next sprint, the
+            prototype does not evolve, the migration plan is not executed,
+            the dashboard rots. Shine is a lagging indicator of understanding,
+            and understanding does not transfer in two weeks.
+          </p>
+
+          <p>
+            The fourth is <em>metrics of a dying project</em>. When a
+            project is genuinely in trouble, the dashboards grow.
+            Velocity is reported to two decimal places. Burndown charts
+            acquire forecasts. Standups lengthen. Retrospectives
+            multiply. None of this produces code. The surest sign that a
+            team has stopped delivering is that it has started measuring
+            its delivery with increasing precision.<a href="#sn-3" class="sidenote-ref" id="ref-3">3</a>
+          </p>
+          <aside class="sidenote" id="sn-3" role="doc-footnote">
+            <span class="sidenote-number">3</span>
+            Dave Thomas, co-author of <em>The Pragmatic Programmer</em>,
+            put it plainly in his 2014 talk: <em>Agile is dead. Long live
+            agility.</em> The noun calcified; the adjective still has work
+            to do.
+          </aside>
+        </section>
+
+        <!-- ─────────────── Part 3 — What actually works ─────────────── -->
+        <section class="section">
+          <h2><span class="part">Part III</span>What actually works — the pragmatic path</h2>
+
+          <p>
+            The counter-narrative is unfashionably simple. Keep the work
+            in-house. Let the people who will live with the software build
+            the software. Invest in the structures — the codebase, the
+            build, the test harness, the review culture, the mental models
+            of the team — that make in-house work possible over years, not
+            months. Rent engineering judgement when you need it, for as
+            short a time as will do; keep what you learn from it forever.
+          </p>
+
+          <p>
+            In practice that resolves into three kinds of engagement, and
+            I offer exactly those three.
+          </p>
+
+          <h3>Training</h3>
+          <p>
+            A team that cannot reason about its own code will not reason
+            about anyone else's advice. Training is the highest-leverage
+            intervention I know of: a week spent raising the floor of a
+            team's shared understanding pays out for the life of the
+            codebase. I run workshops on functional programming in .NET,
+            on type-driven design, on building robust domain models, on
+            LLM engineering grounded in something more than prompt
+            folklore. Small groups, real code from your repository,
+            outcomes you can point to.
+          </p>
+
+          <h3>Consulting</h3>
+          <p>
+            Second opinions from someone who has no incentive to still be
+            there next quarter. I read your architecture, your hiring
+            plan, your build pipeline, your estimation culture; I tell
+            you what I think and why; I write it down. Days or weeks, not
+            quarters. The deliverable is a document and a conversation,
+            and the goal is that you no longer need me.
+          </p>
+
+          <h3>Engineering</h3>
+          <p>
+            Occasionally the right thing is to sit down and write code
+            alongside your team. I take on focused pieces — a new
+            subsystem, a difficult migration, an LLM integration that has
+            to be correct and cheap at the same time — with a clear
+            scope, a clear exit, and a strong preference for pairing
+            with whoever will own it afterwards.
+          </p>
+        </section>
+
+        <!-- ─────────────── Part 4 — How engagements take shape ─────────────── -->
+        <section class="section">
+          <h2><span class="part">Part IV</span>How engagements take shape</h2>
+
+          <p>
+            Five shapes recur. The <em>diagnostic</em> is a short, sharp
+            read of a situation — usually one to two weeks — that produces
+            a written verdict and a list of moves ordered by cost and
+            risk. It is the cheapest engagement I offer and often the
+            most useful.
+          </p>
+
+          <p>
+            The <em>workshop series</em> is a rhythm of training sessions
+            interleaved with real work: a cohort of engineers meets for
+            half-days across several weeks, each session grounded in a
+            piece of their own code. By the end the cohort has a shared
+            vocabulary and a shared bar, and the codebase has moved too.
+          </p>
+
+          <p>
+            The <em>architecture sparring partner</em> is a months-long,
+            part-time engagement. I am available for a standing weekly
+            session and for asynchronous review of proposals as they
+            arise. Your architects stay your architects; they simply have
+            someone to argue with who has seen the failure mode before.
+          </p>
+
+          <p>
+            The <em>focused build</em> is a piece of engineering work with
+            a defined edge — typically six to twelve weeks. I write code,
+            your team reviews and pairs, and we are done when the piece
+            is in production and maintained by people who are not me.
+          </p>
+
+          <p>
+            The <em>LLM engagement</em> is a hybrid: diagnostic, workshop,
+            and focused build, shaped around a generative-AI problem that
+            needs to be solved correctly rather than merely demonstrated.
+            Evaluation, retrieval, cost discipline, the things that
+            separate a demo from a product.
+          </p>
+        </section>
+
+        <!-- ─────────────── Part 5 — About the author ─────────────── -->
+        <section class="section">
+          <h2><span class="part">Part V</span>About the author</h2>
+
+          <p>
+            Ronald Schlenker is a Frankfurt-based consultant who has spent
+            the better part of two decades writing software in .NET, most
+            of it in F#, most of it with teams who had to keep maintaining
+            it after he left. He is a Recognized F# Expert, a maintainer in
+            the <a href="https://github.com/fsprojects" rel="noopener">fsprojects</a>
+            organisation, and the author of several open-source libraries in
+            daily use in production systems.<a href="#sn-4" class="sidenote-ref" id="ref-4">4</a>
+            He spoke at BobKonf 2024 in Berlin on incremental computation
+            and on building LLM-powered agents from primitives.<a href="#sn-5" class="sidenote-ref" id="ref-5">5</a>
+            Alongside the consulting practice he builds one hardware product
+            with a friend — the PXL Clock — and shares technical essays and
+            videos under <em>The Pure State</em>.
+          </p>
+          <aside class="sidenote" id="sn-4" role="doc-footnote">
+            <span class="sidenote-number">4</span>
+            Vide (incremental computation), FsHttp (a fluent HTTP DSL),
+            Trulla (templating), TheBlunt (parser combinators). Combined
+            they have several thousand GitHub stars and are in production
+            use in a range of .NET shops.
+          </aside>
+          <aside class="sidenote" id="sn-5" role="doc-footnote">
+            <span class="sidenote-number">5</span>
+            <a href="https://bobkonf.de/2024/schlenker.html" rel="noopener">bobkonf.de/2024/schlenker.html</a>
+          </aside>
+        </section>
+
+        <!-- ─────────────── Part 6 — Curiosity trail ─────────────── -->
+        <section class="section">
+          <div class="curiosity" aria-label="Further reading and watching">
+            <h3>Further reading and watching</h3>
+            <ul>
+              <li>
+                <span class="label">Video</span>
+                <a href="https://www.youtube.com/@ThePureState" rel="noopener">
+                  @ThePureState on YouTube
+                </a>
+                — essays on F#, LLM engineering, and incremental computation.
+                Start with <em>"Why F# is the pragmatic choice for LLM
+                engineering"</em> and <em>"Building agents from primitives"</em>.
+              </li>
+              <li>
+                <span class="label">Code</span>
+                <a href="https://github.com/SchlenkR" rel="noopener">github.com/SchlenkR</a>
+                — Vide, FsHttp, Trulla, TheBlunt, and the ongoing work
+                in <a href="https://github.com/fsprojects" rel="noopener">fsprojects</a>.
+              </li>
+              <li>
+                <span class="label">Type-fighter</span>
+                A small pedagogical project on type inference; good reading
+                if you like languages from the inside.
+              </li>
+              <li>
+                <span class="label">Hardware</span>
+                <a href="https://www.pxlclock.com/?ref=RONALD" rel="noopener">PXL Clock</a>
+                — a 24×24 RGB pixel display programmable in C#. A side
+                project, mentioned here because people ask.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ─────────────── Closing CTA ─────────────── -->
+        <div class="closing section">
+          <p>If any of this argues your situation — talk.</p>
+          <a class="cta-main" href="mailto:hello@schlenkr.dev?subject=Pragmatic%20Path%20inquiry">
+            hello@schlenkr.dev &nbsp;→
+          </a>
+        </div>
+
+        <!-- ─────────────── Mobile notes list (sidenote collapse) ─────────────── -->
+        <aside class="notes-list" aria-label="Notes">
+          <h3>Notes</h3>
+          <ol>
+            <li id="note-1">
+              Ron Jeffries, one of the original signatories of the Agile
+              Manifesto, has written candidly about how estimation became
+              a ritual of self-protection rather than a tool for honest
+              planning.
+              <a href="#ref-1">↩</a>
+            </li>
+            <li id="note-2">
+              Martin Fowler coined the phrase <em>Agile Industrial Complex</em>.
+              See
+              <a href="https://martinfowler.com/articles/agile-aus-2018.html" rel="noopener">
+                martinfowler.com/articles/agile-aus-2018.html
+              </a>.
+              <a href="#ref-2">↩</a>
+            </li>
+            <li id="note-3">
+              Dave Thomas, co-author of <em>The Pragmatic Programmer</em>,
+              put it plainly in his 2014 talk: <em>Agile is dead. Long live
+              agility.</em>
+              <a href="#ref-3">↩</a>
+            </li>
+            <li id="note-4">
+              Vide, FsHttp, Trulla, TheBlunt — open-source libraries in
+              daily production use across .NET shops; thousands of GitHub
+              stars combined.
+              <a href="#ref-4">↩</a>
+            </li>
+            <li id="note-5">
+              BobKonf 2024, Berlin:
+              <a href="https://bobkonf.de/2024/schlenker.html" rel="noopener">
+                bobkonf.de/2024/schlenker.html
+              </a>.
+              <a href="#ref-5">↩</a>
+            </li>
+          </ol>
+        </aside>
+
+      </div><!-- /.essay-body -->
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <span>© 2026 Ronald Schlenker · Frankfurt am Main</span>
+      <span>
+        <a href="./impressum.html">Impressum</a>
+        <a href="./datenschutz.html">Datenschutz</a>
+      </span>
+    </div>
+  </footer>
+
+  <!-- Fix cross-note anchor behaviour in mobile -->
+  <script>
+    // nothing heavier than what the essay needs
+  </script>
+  <script type="module" src="./js/essay.js"></script>
+</body>
+</html>

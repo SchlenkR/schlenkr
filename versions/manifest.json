@@ -18,7 +18,13 @@
     "v17": { "color": "#6d28d9" },
     "v18": { "color": "#10b981" },
     "v19": { "color": "#15803d" },
-    "v20": { "color": "#d48f3b" }
+    "v20": { "color": "#d48f3b" },
+    "v21": { "color": "#3730a3" },
+    "v22": { "color": "#ef4444" },
+    "v23": { "color": "#b4401b" },
+    "v24": { "color": "#14532d" },
+    "v25": { "color": "#802d25" },
+    "v26": { "color": "#e11d48" }
   },
   "versions": {
     "v1": {
@@ -181,6 +187,63 @@
       "style": "Parallax / Illustration",
       "phaseTag": "Phase 2",
       "by": "Claude"
+    },
+    "v21": {
+      "num": 21,
+      "title": "Direct Conversion",
+      "desc": "Google-Ads-tight bento grid. Single-service focus (AI Adoption Review), above-fold CTA, service-matched mailto.",
+      "style": "Bento / Lead-Gen",
+      "phaseTag": "Phase 4",
+      "by": "Claude"
+    },
+    "v22": {
+      "num": 22,
+      "title": "The Channel",
+      "desc": "YouTube-centric. @ThePureState video titles as proof, privacy-first click-to-load embed, customer-first hero.",
+      "style": "Video-Forward / Dark",
+      "phaseTag": "Phase 4",
+      "by": "Claude"
+    },
+    "v23": {
+      "num": 23,
+      "title": "Three Paths",
+      "desc": "Split hero: Training / Consulting / Engineering. Three self-qualified paths, three service-matched CTAs.",
+      "style": "Path-Split / Warm Neutral",
+      "phaseTag": "Phase 4",
+      "by": "Claude"
+    },
+    "v24": {
+      "num": 24,
+      "title": "Long Essay",
+      "desc": "Stripe Press-style 1600-word personal essay The Pragmatic Path with desktop sidenotes and mobile numbered references.",
+      "style": "Long-Form Essay",
+      "phaseTag": "Phase 4",
+      "by": "Claude"
+    },
+    "v25": {
+      "num": 25,
+      "title": "Field Notes",
+      "desc": "Four composite scenario entries in a field-notebook aesthetic. Handwritten margin notes, ruled-paper baselines.",
+      "style": "Notebook / Composite Scenarios",
+      "phaseTag": "Phase 4",
+      "by": "Claude"
+    },
+    "v26": {
+      "num": 26,
+      "title": "Minimal",
+      "desc": "Ruthless one-pager: 147 visible words, single column, one accent, everything on one desktop viewport.",
+      "style": "Minimal / One-Page",
+      "phaseTag": "Phase 4",
+      "by": "Claude"
+    },
+    "v6-curiosity": {
+      "num": 27,
+      "title": "Pragmatic · Curiosity",
+      "desc": "v6 Pragmatic Core shell with Batch-4 rebalance: PXL demoted to curiosity trail, YouTube prominently linked, above-fold CTA.",
+      "style": "Editorial / Customer-First",
+      "phaseTag": "Phase 4",
+      "by": "Claude",
+      "parent": "v6"
     }
   }
 }

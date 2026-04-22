@@ -1,0 +1,287 @@
+/* v26 — Minimal
+ * Inter only. Near-monochrome. One accent: rose #e11d48.
+ * Entire page fits on 1440x900 desktop viewport.
+ * No motion. */
+
+:root {
+  --ink: #0a0a0a;
+  --muted: #888888;
+  --rule: #e5e5e5;
+  --bg: #ffffff;
+  --accent: #e11d48;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--rule);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  text-decoration-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Page shell
+ * On desktop, the main content fits within ~95vh.
+ * We use a grid with fixed-ish row rhythm and generous side padding. */
+.page {
+  min-height: 100vh;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 40px 48px 32px;
+  display: grid;
+  grid-template-rows: auto 1fr auto auto auto auto auto;
+  gap: 28px;
+}
+
+/* Masthead */
+.masthead {
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: 0.01em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: baseline;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.masthead span:first-child {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.sep {
+  color: var(--rule);
+}
+
+/* Hero */
+.hero {
+  padding-top: 4px;
+}
+
+.hero h1 {
+  font-size: clamp(28px, 4.2vw, 44px);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  margin: 0 0 20px;
+  max-width: 20ch;
+}
+
+.hero p {
+  font-size: 17px;
+  line-height: 1.55;
+  margin: 0 0 20px;
+  max-width: 60ch;
+  color: var(--ink);
+}
+
+.cta-row {
+  margin-top: 8px;
+  margin-bottom: 0 !important;
+}
+
+.cta {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--bg);
+  background: var(--accent);
+  padding: 12px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 1px solid var(--accent);
+}
+
+.cta:hover {
+  color: var(--accent);
+  background: var(--bg);
+}
+
+/* Services — three inline blocks, equal weight */
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--rule);
+}
+
+.service {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.service strong {
+  color: var(--ink);
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+.service span {
+  display: inline;
+}
+
+/* Theses — three one-liners */
+.theses {
+  display: grid;
+  gap: 4px;
+  padding-top: 4px;
+}
+
+.theses p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.theses p::before {
+  content: "— ";
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Proof + curiosity */
+.proof p,
+.curiosity p {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.proof {
+  padding-top: 8px;
+  border-top: 1px solid var(--rule);
+}
+
+/* Footer */
+.foot {
+  font-size: 13px;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule);
+}
+
+.foot a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.foot a:hover {
+  color: var(--accent);
+}
+
+/* Legal page styles — re-used by impressum/datenschutz */
+.legal {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 32px 64px;
+}
+
+.legal h1 {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0 0 24px;
+}
+
+.legal h2 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 32px 0 8px;
+}
+
+.legal h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 20px 0 6px;
+}
+
+.legal p,
+.legal address {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink);
+  font-style: normal;
+  margin: 0 0 12px;
+}
+
+.legal .back {
+  font-size: 13px;
+  color: var(--muted);
+  display: inline-block;
+  margin-bottom: 16px;
+  text-decoration: none;
+}
+
+.legal .back:hover {
+  color: var(--accent);
+}
+
+/* Mobile — allow scroll, stack */
+@media (max-width: 720px) {
+  .page {
+    padding: 28px 20px 28px;
+    gap: 22px;
+  }
+  .hero h1 {
+    font-size: 28px;
+  }
+  .hero p {
+    font-size: 16px;
+  }
+  .services {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding-top: 16px;
+  }
+  .theses p {
+    font-size: 15px;
+  }
+  .masthead {
+    font-size: 12px;
+  }
+  .foot {
+    font-size: 12px;
+  }
+}
+
+/* Reduced motion — trivially honored, no animations to disable. */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

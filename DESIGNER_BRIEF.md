@@ -91,6 +91,13 @@ All shipped variants, sorted by stable `num`.
 |  18 | `v18/` | —      | Scroll-Scrub Type          | Phase 2 | **Scrub Video** — pinned hero scrubs five customer-pain phrases via CSS custom property. No real video. |
 |  19 | `v19/` | —      | SplitText Chapters         | Phase 2 | **Reverse Typewriter** — six full-viewport chapters scatter out and assemble in between frames. GSAP SplitText. |
 |  20 | `v20/` | —      | Parallax / Illustration    | Phase 2 | **Cursor Diorama** — 2.5D workshop in six stacked SVG layers, cursor XY parallax + scroll Z dolly. Desktop-only. |
+|  21 | `v21/` | —      | Bento / Lead-Gen           | Phase 4 | **Direct Conversion** — bento-grid single-service landing (AI Adoption Review); above-fold CTA; Google-Ads-tight. |
+|  22 | `v22/` | —      | Video-Forward / Dark       | Phase 4 | **The Channel** — @ThePureState YouTube as the proof; 7 named videos; click-to-load embed. |
+|  23 | `v23/` | —      | Path-Split / Warm Neutral  | Phase 4 | **Three Paths** — split hero Training/Consulting/Engineering; three service-matched CTAs. |
+|  24 | `v24/` | —      | Long-Form Essay            | Phase 4 | **Long Essay** — Stripe-Press-style 1600-word personal essay with desktop sidenotes. |
+|  25 | `v25/` | —      | Notebook / Composite       | Phase 4 | **Field Notes** — four hypothetical entries (clearly marked composite) in a field-notebook aesthetic. |
+|  26 | `v26/` | —      | Minimal / One-Page         | Phase 4 | **Minimal** — 147 visible words, one viewport, one accent. |
+|  27 | `v6-curiosity/` | v6 | Editorial / Customer-First | Phase 4 | **Pragmatic · Curiosity** — v6 shell rebalanced: PXL demoted to curiosity trail, YouTube prominent, above-fold CTA. |
 
 ---
 
