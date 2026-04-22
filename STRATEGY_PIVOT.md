@@ -257,6 +257,32 @@ Candidate headings:
   scheduled yet."*
 (2026-04-22, Ronald)
 
+### B7 — Code matters. Implementation is not optional.
+
+**Counter-position** to the line currently sitting in
+[`versions/v22/index.html:77`](./versions/v22/index.html#L77):
+*"The problem is almost never the code."*
+
+Ronald's pitch, rough: **Code matters.** Anyone who thinks you just
+draw beautiful architecture diagrams and the rest resolves itself is
+wrong. Implementation is as important as strategic advice. A good
+architectural decision that never gets built cleanly is worth the
+same as no decision at all. The consultant who ships code shoulder-
+to-shoulder with your team is operating on a different plane from the
+consultant who ships slide decks.
+
+Not yet formulated — hold this as raw voice, sharpen when integrating.
+Direct conflict with v22's current H2 — when integrating B7, either
+rewrite v22 to drop that line or fold both into a *"both matter"*
+framing. The current strong-form "code almost never is the problem"
+is wrong for Ronald's positioning.
+
+Candidate headings (rough):
+- *"Code matters."*
+- *"Diagrams don't ship. Code does."*
+- *"Strategy without implementation is decoration."*
+(2026-04-22, Ronald)
+
 ---
 
 ### Connecting threads (for the eventual integration pass)
