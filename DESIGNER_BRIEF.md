@@ -97,13 +97,44 @@ Each becomes its own main version with its own lane.
 | `v4/` | — (root) | **Swiss grid.** Strict modernist grid, Helvetica-like sans, numbered sections, abundant whitespace, tiny body type. Twist: treat Ronald's services and projects as a rigorous catalog — the design restraint signals the rigor of the work. |
 | `v5/` | — (root) | **Pixel.** 24×24-pixel motif borrowed from PXL Clock. Chunky CSS-box pixel headlines, retro-game palette, playful but still credible. Twist: the brand ties directly to Ronald's own hardware product without being juvenile — a modern pixel-art landing that hints at what you can build on his clock. |
 
-### Upcoming batches (not yet committed)
+### Batch 2 — Customer-first pivot (2026-04-22)
 
-- Phase 2 mechanics (progressive disclosure, scroll-linked, sticky
-  sidebar) — one per root.
-- Phase 3 case-study: AI-Tutorial-Pipeline as opening story.
-- Phase 4 interactive: Monaco-embedded F# snippet, TypeFighter AST
-  visualizer, PXL-Clock live pixel toy.
+Radical content rewrite: the customer is the hero, Ronald is the guide.
+All variants in this batch use [`CONTENT-CUSTOMER.md`](./CONTENT-CUSTOMER.md)
+(NOT the Phase-1 `CONTENT.md`). The rote Faden is *"The Pragmatic
+Path"* with six customer-frames: AI-transfer gap, team-at-the-edge,
+body-shop trap, two-week shine, metrics-on-a-dying-project, and the
+Scrum-industry inversion.
+
+Strategic sources: [`STRATEGY_PIVOT.md`](./STRATEGY_PIVOT.md) (Ronald's
+raw voice), research findings folded into `CONTENT-CUSTOMER.md`
+(Agile-manifesto signatories, Basecamp/Thoughtworks/Clearleft copy
+models, visual-library shortlist).
+
+| Folder | Parent | Idea · Twist |
+|---|---|---|
+| `v6/`  | — (root) | **Pragmatic Core.** Customer-first reference implementation. Basecamp-structural: question hero, empathy block, reframe, engagement shapes, proof-as-artefacts, about last. Calm, confident, disciplined. The golden-path Phase-2 root. |
+| `v7/`  | — (root) | **Industrial Complex.** Provocative manifesto against the Scrum industry. Pull-quotes from Fowler, Jeffries, Thomas, Hunt as full-viewport statements. Dark palette, razor-sharp type. Owns the Agile critique as differentiator. |
+| `v8/`  | — (root) | **AI Foundations.** Thoughtworks-style, AI-focused landing. Opener: "Leaders want AI by next Tuesday. You need three foundations first." Positions the AI-adoption review engagement. Technically minded, diagram-heavy. |
+| `v9/`  | — (root) | **In-House Muscle.** Clearleft-inspired empowerment pitch. "Your team. Sharper. Kept." Soft, confident palette, craft-emphasis. Positions the upskilling-sprint engagement. Anti-body-shop hero. |
+| `v10/` | — (root) | **Questions.** Whole page is the customer asking and Ronald answering. Interactive disclosures. Questions as hero. Low-design, high-copy — the anti-portfolio page. |
+| `v11/` | — (root) | **Live Playground.** Monaco-editor embedded in the hero. Visitor edits a line of F#/C#; the page responds with live type-inference, or a rendered pixel toy. Demonstrates capability through the reader's fingers, not Ronald's claims. |
+| `v12/` | — (root) | **Mesh.** Cursor-attracted WebGL fluid gradient hero (Three.js + GLSL shader, Lusion-style). Visual statement layered with customer-first copy. Proves we can do crazy without losing the thread. |
+| `v1-pragmatic/` | v1 | **Sub-variant of Editorial.** Same magazine-style shell (Fraunces + Inter, cream + ochre), but content is swapped to the customer-first pragmatic-path narrative. Tests the principle: same design, better copy. |
+
+Two more sub-variants are already queued for Batch 3, but not built in
+this round:
+- `v3-industry/` (parent v3): Manifesto shell + Scrum-industry content.
+- `v4-catalog/` (parent v4): Swiss grid + customer-frame catalog.
+
+### Upcoming batches
+
+- Batch 3: sub-variants v3-industry, v4-catalog, v5-pixel-toy, plus
+  v13 "Two Weeks Later" (GSAP-animated timeline).
+- Phase 3 storytelling: Case-study-first landings that open with a
+  specific customer situation (AI-Tutorial-Pipeline as concrete story).
+- Phase 4 interactive: TypeFighter AST visualizer, PXL-Clock live
+  pixel toy, audio-reactive visualiser.
 
 ---
 
