@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Foundations — PureState IT Consulting</title>
+  <meta name="description" content="Trying to put AI in your product and finding it harder than the keynotes suggested? Three foundations most teams need to get right first — and none of them are on the conference slides." />
+
+  <!-- Fonts: IBM Plex Sans + Serif + Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+  <!-- =========================== 1. MASTHEAD =========================== -->
+  <header class="masthead" role="banner">
+    <div class="wrap masthead-row">
+      <a class="mast-mark" href="./index.html" aria-label="PureState IT Consulting — home">
+        <!-- Tri-slab mark, echoing the foundations motif -->
+        <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true">
+          <rect x="2" y="14" width="18" height="4" fill="#111319"></rect>
+          <rect x="4" y="9"  width="14" height="4" fill="#5b5bd6"></rect>
+          <rect x="6" y="4"  width="10" height="4" fill="#111319"></rect>
+        </svg>
+        <span class="mast-name">PureState</span>
+        <span class="mast-sub">— IT Consulting</span>
+      </a>
+      <nav class="mast-nav" aria-label="Primary">
+        <a href="#foundations">Foundations</a>
+        <a href="#frames">Frames</a>
+        <a href="#engagements">Engagements</a>
+        <a href="#proof">Proof</a>
+        <a class="keep" href="mailto:hello@schlenkr.dev">Talk</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- =========================== 2. HERO — OPENER A =========================== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-col reveal">
+          <p class="eyebrow">An assessment page, not a pitch</p>
+          <h1 id="hero-title">
+            Trying to put AI in your product and finding it <em>harder than the keynotes suggested?</em>
+          </h1>
+          <p class="hero-lede">
+            Leaders want AI to work by next Tuesday. Most teams need to get
+            three foundations right first — and none of them are on the
+            conference slides. You've shipped a ChatGPT wrapper nobody uses.
+            Management wants AI in the product by Q3 and hasn't said what
+            problem it solves. The vendor demos keep promising the same
+            three things.
+          </p>
+          <p class="hero-lede">
+            What's actually missing is the bridge — from "AI is capable" to
+            AI that delivers measurable value <em>in your product</em>, on
+            your codebase, maintained by your team. The bridge is engineering,
+            not a platform.
+          </p>
+          <a class="hero-cta" href="mailto:hello@schlenkr.dev?subject=AI%20Adoption%20Review">
+            <span>Let's talk through your situation</span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <div class="hero-meta">
+            <span>AI Adoption Review</span>
+            <span>In-house transfer</span>
+            <span>No retainer trap</span>
+          </div>
+        </div>
+
+        <!-- Hero diagram: inline SVG tri-pillar -->
+        <aside class="hero-diagram reveal" aria-label="Foundations diagram">
+          <svg viewBox="0 0 320 260" role="img" aria-labelledby="hero-diag-title hero-diag-desc">
+            <title id="hero-diag-title">Three foundations diagram</title>
+            <desc id="hero-diag-desc">Three stacked slabs representing problem fit, codebase fit, and team ownership.</desc>
+
+            <!-- grid -->
+            <g stroke="#d9dce0" stroke-width="1">
+              <line x1="0" y1="40"  x2="320" y2="40"  stroke-dasharray="2 4" />
+              <line x1="0" y1="100" x2="320" y2="100" stroke-dasharray="2 4" />
+              <line x1="0" y1="160" x2="320" y2="160" stroke-dasharray="2 4" />
+              <line x1="0" y1="220" x2="320" y2="220" />
+            </g>
+
+            <!-- slab 3 (top) -->
+            <g>
+              <rect x="80" y="50" width="160" height="44" fill="#111319"></rect>
+              <text x="90" y="78" fill="#fafaf8" font-family="IBM Plex Sans, sans-serif" font-size="13" font-weight="500">03 · Team</text>
+              <text x="230" y="78" fill="#b9b9f5" font-family="IBM Plex Mono, monospace" font-size="10" text-anchor="end">owns the result</text>
+            </g>
+
+            <!-- slab 2 (middle) -->
+            <g>
+              <rect x="50" y="110" width="220" height="44" fill="#5b5bd6"></rect>
+              <text x="60" y="138" fill="#fafaf8" font-family="IBM Plex Sans, sans-serif" font-size="13" font-weight="500">02 · Codebase</text>
+              <text x="260" y="138" fill="#e6e6fb" font-family="IBM Plex Mono, monospace" font-size="10" text-anchor="end">AI can work in</text>
+            </g>
+
+            <!-- slab 1 (bottom) -->
+            <g>
+              <rect x="20" y="170" width="280" height="44" fill="#111319"></rect>
+              <text x="30" y="198" fill="#fafaf8" font-family="IBM Plex Sans, sans-serif" font-size="13" font-weight="500">01 · Problem</text>
+              <text x="290" y="198" fill="#b9b9f5" font-family="IBM Plex Mono, monospace" font-size="10" text-anchor="end">AI actually solves</text>
+            </g>
+
+            <!-- annotation -->
+            <g font-family="IBM Plex Mono, monospace" font-size="10" fill="#5a6070">
+              <text x="0" y="34">before</text>
+              <text x="320" y="34" text-anchor="end">keynote promise</text>
+              <text x="0" y="236">after</text>
+              <text x="320" y="236" text-anchor="end">production value</text>
+            </g>
+          </svg>
+        </aside>
+      </div>
+    </section>
+
+    <!-- =========================== 3. THE THREE FOUNDATIONS =========================== -->
+    <section id="foundations" class="foundations" aria-labelledby="foundations-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2 id="foundations-title">The three <em>foundations</em></h2>
+          <p class="section-deck">
+            Before an AI feature becomes an AI product, three things have to
+            be honest. Every engagement starts by testing which of these is
+            shaky. Usually at least one is.
+          </p>
+        </div>
+
+        <!-- Foundations-stacking animation -->
+        <figure class="foundations-viz reveal" aria-label="Foundations stacking diagram">
+          <svg viewBox="0 0 900 280" role="img">
+            <!-- axis -->
+            <line x1="40" y1="240" x2="860" y2="240" stroke="#b5b9c0" stroke-width="1" />
+            <text x="40" y="258" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5a6070">ground — "AI is capable"</text>
+            <text x="860" y="258" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5a6070" text-anchor="end">"AI delivers value in your product"</text>
+
+            <!-- slab 1 -->
+            <g class="slab slab-1">
+              <rect x="60"  y="180" width="780" height="50" fill="#111319" />
+              <text x="76"  y="212" fill="#fafaf8" font-family="IBM Plex Sans, sans-serif" font-size="16" font-weight="500">
+                01 · A problem AI actually solves in your product
+              </text>
+              <text x="824" y="212" fill="#b9b9f5" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="end">Frame 1</text>
+            </g>
+
+            <!-- slab 2 -->
+            <g class="slab slab-2">
+              <rect x="100" y="115" width="700" height="50" fill="#5b5bd6" />
+              <text x="116" y="147" fill="#fafaf8" font-family="IBM Plex Sans, sans-serif" font-size="16" font-weight="500">
+                02 · A codebase the AI can work in
+              </text>
+              <text x="784" y="147" fill="#e6e6fb" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="end">Frame 5</text>
+            </g>
+
+            <!-- slab 3 -->
+            <g class="slab slab-3">
+              <rect x="160" y="50" width="580" height="50" fill="#111319" />
+              <text x="176" y="82"  fill="#fafaf8" font-family="IBM Plex Sans, sans-serif" font-size="16" font-weight="500">
+                03 · A team that can own the result
+              </text>
+              <text x="724" y="82"  fill="#b9b9f5" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="end">Frames 2, 3, 4</text>
+            </g>
+
+            <!-- connecting line to peak -->
+            <line class="slab-line" x1="450" y1="50" x2="450" y2="20" stroke="#5b5bd6" stroke-width="1.5" stroke-dasharray="3 3" />
+            <circle class="slab-line" cx="450" cy="18" r="4" fill="#5b5bd6" />
+            <text class="slab-line" x="460" y="22" font-family="IBM Plex Mono, monospace" font-size="11" fill="#3a3aa6">production</text>
+          </svg>
+        </figure>
+
+        <div class="foundation-list">
+          <article class="foundation reveal">
+            <div class="f-num">01 · Problem</div>
+            <h3>A problem that <em>benefits from AI</em>.</h3>
+            <p>
+              Not every LLM demo maps onto your product. The real question
+              is narrow: which workflow, for which user, carries a cost that
+              AI cuts by enough to matter — and which carries a risk AI
+              absolutely must not own?
+            </p>
+            <p>
+              We answer that with a shortlist of AI moves that fit your
+              product, your stack, your team — each with an effort estimate
+              and a risk you can defend in the next board meeting.
+            </p>
+            <div class="f-tag">Source: Frame 1 — the AI-transfer gap</div>
+          </article>
+
+          <article class="foundation reveal">
+            <div class="f-num">02 · Codebase</div>
+            <h3>A codebase the <em>AI can work in</em>.</h3>
+            <p>
+              Metrics on a dying project don't revive it. Coverage is a green
+              light on a dead engine. Before you point a model at your code,
+              the code has to have seams — legible boundaries, testable
+              interfaces, a deployment story that isn't folklore.
+            </p>
+            <p>
+              The pragmatic question is always the same: does this change
+              produce value now, or over time? If neither — cut it. Same for
+              AI features. Same for architecture.
+            </p>
+            <div class="f-tag">Source: Frame 5 — the dying-project problem</div>
+          </article>
+
+          <article class="foundation reveal">
+            <div class="f-num">03 · Team</div>
+            <h3>A team that <em>owns the result</em>.</h3>
+            <p>
+              Your developers build the product that pays the bills. They
+              don't have ten hours a week to read about vector databases,
+              agent frameworks, and evals. So the gap widens: the tools
+              move, the team holds the fort.
+            </p>
+            <p>
+              You don't need a replacement team. You need know-how transfer
+              into the team you already have — so your product carries your
+              team's fingerprints, not a consultant's.
+            </p>
+            <div class="f-tag">Source: Frames 2, 3, 4 — team, body-shop, two-week shine</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================== 4. SOUND FAMILIAR? =========================== -->
+    <section class="familiar" aria-labelledby="familiar-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2 id="familiar-title">Sound <em>familiar?</em></h2>
+          <p class="section-deck">
+            Three patterns we see across product teams under AI pressure.
+            None of these are failures of engineering talent. They're
+            failures of foundation.
+          </p>
+        </div>
+        <div class="familiar-grid">
+          <article class="familiar-card reveal">
+            <div class="f-label">Pattern 01</div>
+            <h4>"We shipped a ChatGPT wrapper. Nobody uses it."</h4>
+            <p>
+              The feature works. The demo is fine. It solves a problem
+              nobody in the product's real user base was actually blocked
+              on. Foundation 01 was skipped.
+            </p>
+          </article>
+          <article class="familiar-card reveal">
+            <div class="f-label">Pattern 02</div>
+            <h4>"Every vendor demo promises the same three things."</h4>
+            <p>
+              RAG over your docs. A chatbot. A copilot. The slides change,
+              the deck doesn't. Buying a platform doesn't answer which AI
+              move fits <em>your</em> product.
+            </p>
+          </article>
+          <article class="familiar-card reveal">
+            <div class="f-label">Pattern 03</div>
+            <h4>"Q3 says 'add AI'. Nobody has written the problem statement."</h4>
+            <p>
+              Mandate without a problem is how ChatGPT wrappers get born.
+              An Adoption Review produces the missing page-one document —
+              before a sprint gets scheduled against vapour.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================== 5. THE SIX FRAMES =========================== -->
+    <section id="frames" class="frames" aria-labelledby="frames-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2 id="frames-title">Six <em>frames</em> we keep seeing</h2>
+          <p class="section-deck">
+            Every engagement starts with a pain the customer recognises.
+            These are the six we meet most often. Frame 1 is why this page
+            exists. The other five are how it stays honest.
+          </p>
+        </div>
+
+        <!-- Frame 1 -->
+        <article class="frame reveal">
+          <div class="f-head">
+            <div class="f-num">Frame 01</div>
+            <h3>The AI-Transfer Gap</h3>
+          </div>
+          <div class="f-body">
+            <p class="f-quote">
+              "AI is obviously important. We just don't know how to use it
+              for us."
+            </p>
+            <p>
+              You've shipped a ChatGPT wrapper nobody uses. Management wants
+              AI in the product by Q3 and hasn't said what problem it
+              solves. The vendor demos keep promising the same three things.
+            </p>
+            <p>
+              <strong>What's missing is the bridge</strong> — from "AI is
+              capable" to "AI delivers measurable value in your product, on
+              your codebase, maintained by your team." The bridge is
+              engineering, not a platform.
+            </p>
+          </div>
+        </article>
+
+        <!-- Frame 2 -->
+        <article class="frame reveal">
+          <div class="f-head">
+            <div class="f-num">Frame 02</div>
+            <h3>The Team-at-the-Edge Problem</h3>
+          </div>
+          <div class="f-body">
+            <p class="f-quote">
+              "Our people are good. They just can't keep up in daily
+              business."
+            </p>
+            <p>
+              Your developers build the product that pays the bills. They
+              don't have ten hours a week to read about vector databases,
+              agent frameworks, or computation expressions. So the gap
+              widens: the tools move, the team holds the fort.
+            </p>
+            <p>
+              <strong>You don't need a replacement team.</strong> You need
+              know-how transfer into the team you already have — so your
+              product carries your team's fingerprints, not a consultant's.
+            </p>
+          </div>
+        </article>
+
+        <!-- Frame 3 -->
+        <article class="frame reveal">
+          <div class="f-head">
+            <div class="f-num">Frame 03</div>
+            <h3>The Body-Shop Trap</h3>
+          </div>
+          <div class="f-body">
+            <p class="f-quote">
+              "Fifty cheap developers won't solve this."
+            </p>
+            <p>
+              You've seen the offshore model. You've seen the staffing
+              agency. You end up managing more contracts than code. Quality
+              is a lottery. The knowledge leaves with the contract.
+            </p>
+            <p>
+              <strong>In-house stays. Boost is brought in.</strong> Software
+              craftsmanship is not an arbitrage play. Pair-program with
+              senior help for a quarter, keep the result forever.
+            </p>
+          </div>
+        </article>
+
+        <!-- Frame 4 -->
+        <article class="frame reveal">
+          <div class="f-head">
+            <div class="f-num">Frame 04</div>
+            <h3>The Two-Week Shine</h3>
+          </div>
+          <div class="f-body">
+            <p class="f-quote">
+              "The expensive consultant worked. For two weeks."
+            </p>
+            <p>
+              You paid. Everyone was inspired. There was a deck. Then the
+              normal gravity resumed and you were back where you started —
+              minus a budget line.
+            </p>
+            <p>
+              <strong>A useful engagement ends with something your team
+              owns</strong> — an architectural decision they can defend, a
+              tooling chain they can rerun, a piece of code they wrote with
+              help and now maintain alone. Not a certificate. Not slide 42.
+            </p>
+          </div>
+        </article>
+
+        <!-- Frame 5 -->
+        <article class="frame reveal">
+          <div class="f-head">
+            <div class="f-num">Frame 05</div>
+            <h3>Metrics on a Dying Project</h3>
+          </div>
+          <div class="f-body">
+            <p class="f-quote">
+              "We added tests, coverage, analyzers. The project is still
+              broken."
+            </p>
+            <p>
+              Automated tests on a cold project don't revive it. Coverage
+              dashboards are a green light on a dead engine. Unit tests
+              around broken architecture preserve the breakage.
+            </p>
+            <p>
+              <strong>When a project has fallen in the well, ropes from
+              above are the answer</strong> — not more metrics. The
+              pragmatic question is always the same: does this change
+              produce value now, or over time? If neither — cut it.
+            </p>
+          </div>
+        </article>
+
+        <!-- Frame 6 -->
+        <article class="frame reveal">
+          <div class="f-head">
+            <div class="f-num">Frame 06</div>
+            <h3>The Scrum-Industry Inversion</h3>
+          </div>
+          <div class="f-body">
+            <p class="f-quote">
+              "We're agile. Why doesn't it feel like it?"
+            </p>
+            <p>
+              The Agile Manifesto was seventeen developers saying one thing:
+              trust motivated people and let understanding emerge from the
+              work. The industry that grew on top of it sells the opposite —
+              rigid ceremonies, certified process police, velocity
+              dashboards stamped onto teams that don't fit them.
+            </p>
+            <p>
+              <strong>Schema-F Scrum is not agile.</strong> That is the
+              mistake being repeated for forty years in German engineering
+              teams. Consulting for agility. Not for the Agile Industrial
+              Complex.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =========================== 6. ENGAGEMENT SHAPES =========================== -->
+    <section id="engagements" class="engagements" aria-labelledby="engagements-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2 id="engagements-title">How we <em>work together</em></h2>
+          <p class="section-deck">
+            Five engagement shapes. Each is an outcome, not a deliverable.
+            Most AI-curious teams start with the Adoption Review — it
+            produces the page-one document everything else depends on.
+          </p>
+        </div>
+
+        <div class="engagement-list">
+          <article class="engagement lead reveal">
+            <div class="e-num">01 · Lead engagement</div>
+            <h3>AI Adoption <em>Review</em></h3>
+            <p>
+              A diagnostic engagement for product teams that know AI belongs
+              in the roadmap but aren't sure where. Output: a shortlist of
+              AI moves that fit your product, your stack, your team — with
+              effort and risk estimates you can defend in the next board
+              meeting.
+            </p>
+          </article>
+
+          <article class="engagement reveal">
+            <div class="e-num">02</div>
+            <h3>In-House Upskilling Sprints</h3>
+            <p>
+              A short, high-bandwidth engagement that leaves your own
+              developers able to ship the next thing without outside help.
+              Pair-programming, reviews, dedicated spikes around a real
+              problem — not a workshop deck. Delivered on your codebase,
+              with your people.
+            </p>
+          </article>
+
+          <article class="engagement reveal">
+            <div class="e-num">03</div>
+            <h3>Architecture Second Opinion</h3>
+            <p>
+              A neutral, time-boxed read of where your system is heading.
+              You get a written argument — what's working, what's decaying,
+              what moves next — plus a conversation with a senior voice who
+              is neither selling you a replatform nor defending the status
+              quo.
+            </p>
+          </article>
+
+          <article class="engagement reveal">
+            <div class="e-num">04</div>
+            <h3>Pragmatic Delivery Review</h3>
+            <p>
+              For teams stuck in ceremony theater. We identify the two or
+              three practices that actually produce value and recommend
+              what to drop — starting from the Agile Manifesto, not the
+              framework textbook.
+            </p>
+          </article>
+
+          <article class="engagement reveal">
+            <div class="e-num">05</div>
+            <h3>Hands-on Engineering (selective)</h3>
+            <p>
+              When the problem is so nested — AI + functional architecture
+              + DSL + developer tooling — that a tool-hire makes sense, I
+              take on the build, pair with your team, and hand it back
+              fully documented.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================== 7. PROOF — ARTEFACTS =========================== -->
+    <section id="proof" class="proof" aria-labelledby="proof-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2 id="proof-title">Proof — <em>artefacts, not testimonials</em></h2>
+          <p class="section-deck">
+            Things already built and shipped — because showing beats
+            claiming. Every item below is public and dated. No invented
+            quotes. No fake logos.
+          </p>
+        </div>
+
+        <p class="proof-intro reveal">
+          "The consulting I sell is the opposite of buzzword compliance.
+          Here's the receipts."
+        </p>
+
+        <div class="artefacts reveal">
+          <a class="artefact" href="https://foundation.fsharp.org/results_applied_fsharp_2019" rel="noopener">
+            <span class="a-kind">Recognition · 2019</span>
+            <span class="a-title">Recognized F# Expert — F# Software Foundation</span>
+            <span class="a-note">Applied F# 2019.</span>
+          </a>
+          <a class="artefact" href="https://github.com/fsprojects/FsHttp" rel="noopener">
+            <span class="a-kind">OSS · invited</span>
+            <span class="a-title">FsHttp — invited by Don Syme to fsprojects</span>
+            <span class="a-note">HTTP DSL in F#. Used as a dependency by many downstream packages.</span>
+          </a>
+          <a class="artefact" href="https://github.com/SchlenkR/TypeFighter" rel="noopener">
+            <span class="a-kind">Research · OSS</span>
+            <span class="a-title">TypeFighter — structural types, inference-first</span>
+            <span class="a-note">A research language exploring type inference ergonomics.</span>
+          </a>
+          <a class="artefact" href="https://www.pxlclock.com/?ref=RONALD" rel="noopener">
+            <span class="a-kind">Hardware · shipping</span>
+            <span class="a-title">PXL Clock — a 24×24 programmable display</span>
+            <span class="a-note">Shipping via Cumin &amp; Potato GmbH. Real hardware, real firmware, real customers.</span>
+          </a>
+          <a class="artefact" href="https://bobkonf.de/2024/schaefer-schlenker.html" rel="noopener">
+            <span class="a-kind">Talk · 2024</span>
+            <span class="a-title">Computation Expressions in F# — BobKonf 2024</span>
+            <span class="a-note">Full tutorial track.</span>
+          </a>
+          <a class="artefact" href="https://github.com/SchlenkR" rel="noopener">
+            <span class="a-kind">Community</span>
+            <span class="a-title">F# Weekly · Amplifying F# · G-Research OSS</span>
+            <span class="a-note">Recurring features and community co-host work.</span>
+          </a>
+        </div>
+
+        <!-- Small code sample illustrating an AI-safe seam. Lightly hand-coloured, no Shiki dep -->
+        <pre class="code-sample reveal" aria-label="Code sample — one seam the AI can work in"><code><span class="c">// A pragmatic seam: the AI touches a small, pure function</span>
+<span class="c">// with typed inputs, typed outputs, and a test.</span>
+
+<span class="k">public static class</span> <span class="t">SupportTriage</span> {
+    <span class="k">public record</span> <span class="t">Ticket</span>(<span class="t">string</span> Subject, <span class="t">string</span> Body);
+    <span class="k">public record</span> <span class="t">Routing</span>(<span class="t">string</span> Queue, <span class="t">double</span> Confidence);
+
+    <span class="k">public static async</span> Task&lt;<span class="t">Routing</span>&gt; Classify(
+        <span class="t">Ticket</span> ticket,
+        <span class="t">ILlmClient</span> llm,
+        CancellationToken ct) =&gt;
+        <span class="c">// one model call, one schema, one fallback.</span>
+        <span class="k">await</span> llm.StructuredCall&lt;<span class="t">Routing</span>&gt;(Prompt.<span class="s">"triage.v3"</span>, ticket, ct)
+            ?? <span class="k">new</span>(<span class="s">"queue/general"</span>, <span class="s">0.0</span>);
+}</code></pre>
+      </div>
+    </section>
+
+    <!-- =========================== 8. ABOUT =========================== -->
+    <section class="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2 id="about-title">About — <em>why me for this problem</em></h2>
+          <p class="section-deck">
+            Placed last. Ronald shows up in your story as a guide, not the
+            hero of this page.
+          </p>
+        </div>
+        <div class="about-grid reveal">
+          <div class="about-mono" aria-hidden="true">RS</div>
+          <div>
+            <p>
+              <strong>Ronald Schlenker</strong> — fifteen years in .NET,
+              creator of FsHttp, TypeFighter, and several other OSS
+              libraries the F# community uses. Recognized F# Expert (F#
+              Foundation, 2019). Co-founder of the PXL Clock — a
+              programmable hardware product that is itself a working
+              example of pragmatic engineering: small team, in-house
+              discipline, shipped without a framework textbook.
+            </p>
+            <p>
+              The reason this page is written the way it is: every time I
+              see a dying software project, it died the same way — buzzword
+              compliance replacing engineering judgement. The consulting I
+              sell is the opposite of that.
+            </p>
+            <p>
+              Based in Frankfurt. Work with DACH and remote-EU teams.
+              Trading as <strong>PureState IT Consulting</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================== 9. CTA REPEAT =========================== -->
+    <section class="cta-repeat" aria-labelledby="cta-title">
+      <div class="wrap">
+        <p class="eyebrow" style="color:#b9b9f5;">Next step</p>
+        <h2 id="cta-title">Let's talk through <em>your situation</em>.</h2>
+        <p>
+          Tell me what you're trying to ship, what's stuck, and what you've
+          already tried. A short email is enough — I'll reply with whether
+          this is a good fit, and if not, who might be.
+        </p>
+        <a class="hero-cta" href="mailto:hello@schlenkr.dev?subject=AI%20Adoption%20Review">
+          <span>hello@schlenkr.dev</span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================== 10. FOOTER =========================== -->
+  <footer class="foot" role="contentinfo">
+    <div class="wrap">
+      <div class="foot-row">
+        <div>
+          <strong style="color:var(--ink);font-weight:500;">PureState IT Consulting</strong>
+          — Ronald Schlenker · Frankfurt · DACH &amp; remote-EU
+        </div>
+        <nav class="foot-links" aria-label="Secondary">
+          <a href="https://github.com/SchlenkR" rel="noopener">GitHub</a>
+          <a href="https://youtube.com/@ThePureState" rel="noopener">YouTube</a>
+          <a href="https://bsky.app/profile/schlenkr.bsky.social" rel="noopener">Bluesky</a>
+          <a href="https://x.com/schlenkr" rel="noopener">X</a>
+          <a href="./impressum.html">Impressum</a>
+          <a href="./datenschutz.html">Datenschutz</a>
+        </nav>
+      </div>
+      <p class="foot-meta">
+        © <span id="year">2026</span> PureState IT Consulting. v8 — AI Foundations.
+        No tracking cookies.
+      </p>
+    </div>
+  </footer>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

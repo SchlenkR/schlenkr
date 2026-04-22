@@ -4,7 +4,14 @@
     "v2": { "color": "#e7b55c" },
     "v3": { "color": "#ff2a1f" },
     "v4": { "color": "#E2001A" },
-    "v5": { "color": "#ff3b7a" }
+    "v5": { "color": "#ff3b7a" },
+    "v6": { "color": "#d97035" },
+    "v7": { "color": "#a91f1f" },
+    "v8": { "color": "#5b5bd6" },
+    "v9": { "color": "#2f6e5e" },
+    "v10": { "color": "#b13d2b" },
+    "v11": { "color": "#2563eb" },
+    "v12": { "color": "#d946ef" }
   },
   "versions": {
     "v1": {
@@ -46,6 +53,71 @@
       "style": "Pixel / Retro",
       "phaseTag": "Root",
       "by": "Claude"
+    },
+    "v6": {
+      "num": 6,
+      "title": "Pragmatic Core",
+      "desc": "Customer-first reference implementation. Basecamp-structural: question hero, empathy, reframe, engagement shapes, proof, about last.",
+      "style": "Editorial / Customer-First",
+      "phaseTag": "Phase 2",
+      "by": "Claude"
+    },
+    "v7": {
+      "num": 7,
+      "title": "Industrial Complex",
+      "desc": "Anti-Scrum-industry manifesto. Fowler, Jeffries, Thomas, Hunt, Holub pull-quotes. Razor-sharp dark type.",
+      "style": "Manifesto / Critique",
+      "phaseTag": "Phase 2",
+      "by": "Claude"
+    },
+    "v8": {
+      "num": 8,
+      "title": "AI Foundations",
+      "desc": "AI-focused customer-first landing. Three foundations diagram. Thoughtworks tone, diagram-forward.",
+      "style": "Diagnostic / Diagram",
+      "phaseTag": "Phase 2",
+      "by": "Claude"
+    },
+    "v9": {
+      "num": 9,
+      "title": "In-House Muscle",
+      "desc": "Clearleft-inspired empowerment pitch. Warm sage + moss + teal. Your team. Sharper. Kept.",
+      "style": "Craft / Empowerment",
+      "phaseTag": "Phase 2",
+      "by": "Claude"
+    },
+    "v10": {
+      "num": 10,
+      "title": "Questions",
+      "desc": "The whole page is the customer asking questions. Answers open on disclosure. Low design, high copy.",
+      "style": "Q&A / Disclosure",
+      "phaseTag": "Phase 2",
+      "by": "Claude"
+    },
+    "v11": {
+      "num": 11,
+      "title": "Live Playground",
+      "desc": "CodeMirror 6 editor in the hero. Visitor edits code; inferred shape renders live. Capability by demonstration.",
+      "style": "Interactive / Dev",
+      "phaseTag": "Phase 2",
+      "by": "Claude"
+    },
+    "v12": {
+      "num": 12,
+      "title": "Mesh",
+      "desc": "Three.js cursor-attracted WebGL mesh gradient hero. Lusion-style wildness with customer-first copy.",
+      "style": "WebGL / Shader",
+      "phaseTag": "Phase 2",
+      "by": "Claude"
+    },
+    "v1-pragmatic": {
+      "num": 13,
+      "title": "Editorial · Pragmatic",
+      "desc": "v1's magazine shell with the customer-first pragmatic-path content. Same designer, different article.",
+      "style": "Editorial / Customer-First",
+      "phaseTag": "Phase 2",
+      "by": "Claude",
+      "parent": "v1"
     }
   }
 }

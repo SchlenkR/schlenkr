@@ -76,6 +76,14 @@ All shipped variants, sorted by stable `num`.
 |   3 | `v3/`  | —      | Manifesto / Big Type | Root | Five theses as full-viewport statements, electric red accent. |
 |   4 | `v4/`  | —      | Swiss / Modernist | Root | Strict 12-col grid, numbered sections, Swiss red marker. |
 |   5 | `v5/`  | —      | Pixel / Retro     | Root | 24×24 pixel motif from PXL Clock, LED palette, CRT overlay. |
+|   6 | `v6/`  | —      | Editorial / Customer-First | Phase 2 | **Pragmatic Core** — Basecamp-structural reference implementation. Question hero, empathy, six frames, engagement shapes, proof-as-artefacts, about last. |
+|   7 | `v7/`  | —      | Manifesto / Critique       | Phase 2 | **Industrial Complex** — anti-Scrum-industry manifesto with Fowler/Jeffries/Thomas/Hunt/Holub pull-quotes. Dark, sharp, provocative. |
+|   8 | `v8/`  | —      | Diagnostic / Diagram       | Phase 2 | **AI Foundations** — AI-focused landing, three-foundations diagram, Thoughtworks tone. |
+|   9 | `v9/`  | —      | Craft / Empowerment        | Phase 2 | **In-House Muscle** — warm sage/moss/teal, Clearleft-inspired, your-team-stays-sharp pitch. |
+|  10 | `v10/` | —      | Q&A / Disclosure           | Phase 2 | **Questions** — whole page is the customer asking, Ronald answering. `<details>` disclosure. |
+|  11 | `v11/` | —      | Interactive / Dev          | Phase 2 | **Live Playground** — CodeMirror 6 editor hero, live inferred-shape panel. |
+|  12 | `v12/` | —      | WebGL / Shader             | Phase 2 | **Mesh** — Three.js cursor-attracted WebGL fluid gradient hero, customer-first copy layered. |
+|  13 | `v1-pragmatic/` | v1 | Editorial / Customer-First | Phase 2 | **Editorial · Pragmatic** — v1's magazine shell, new customer-first content. Same designer, different article. |
 
 ---
 
