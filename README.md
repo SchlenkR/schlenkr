@@ -24,7 +24,7 @@
 >
 > Based in Frankfurt. Work across DACH and remote EU.
 
-📫 Reach out on [Bluesky](https://bsky.app/profile/schlenkr.bsky.social) - or open a conversation through any landing variant on the playground below.
+📫 Reach out on [Bluesky](https://bsky.app/profile/schlenkr.bsky.social) or LinkedIn.
 
 ---
 
@@ -41,7 +41,7 @@ work (Vite MPA, CDN-only, no framework lock-in).
 
 With Sefa I co-founded the **PXL Clock** - a 24×24 programmable LED display
 you code in C# or F#. 576 RGB-LEDs behind real glass, hand-assembled in
-Frankfurt, limited batches. Use code `RONALD` for €25 off.
+Frankfurt, limited batches.
 
 <table>
 <tr>
@@ -50,7 +50,7 @@ Frankfurt, limited batches. Use code `RONALD` for €25 off.
 </tr>
 </table>
 
-🔗 [pxlclock.com](https://www.pxlclock.com/?ref=RONALD) &nbsp;·&nbsp; [Repo](https://github.com/SchlenkR/pxl-clock) &nbsp;·&nbsp; [Discord](https://discord.gg/KDbVdKQh5j) &nbsp;·&nbsp; [YouTube: Programming PXL Clock](https://www.youtube.com/watch?v=siH60NSN1XA) &nbsp;·&nbsp; [Unboxing](https://www.youtube.com/watch?v=_fpIXysgdls)
+🔗 [pxlclock.com](https://www.pxlclock.com) &nbsp;·&nbsp; [Repo](https://github.com/SchlenkR/pxl-clock) &nbsp;·&nbsp; [Discord](https://discord.gg/KDbVdKQh5j) &nbsp;·&nbsp; [YouTube: Programming PXL Clock](https://www.youtube.com/watch?v=siH60NSN1XA) &nbsp;·&nbsp; [Unboxing](https://www.youtube.com/watch?v=_fpIXysgdls)
 
 ---
 
