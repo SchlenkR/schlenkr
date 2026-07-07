@@ -24,7 +24,7 @@
 >
 > Based in Frankfurt. Work across DACH and remote EU.
 
-📫 Reach out on [Bluesky](https://bsky.app/profile/schlenkr.bsky.social) - or open a conversation through any landing variant on the playground below.
+📫 Reach out on [Bluesky](https://bsky.app/profile/schlenkr.bsky.social) or LinkedIn.
 
 ---
 
