@@ -1,4 +1,4 @@
-<h1 align="center">Hi — I'm Ronald 👋</h1>
+<h1 align="center">Hi - I'm Ronald 👋</h1>
 <h4 align="center">Pragmatic engineering consulting · F#, .NET, AI workflows · Frankfurt & Remote EU</h4>
 
 <p align="center">
@@ -19,19 +19,19 @@
 
 > **Training · Consulting · Engineering.**
 > I help technically ambitious teams build AI-assisted workflows that stay
-> reproducible, maintainable, and honest about their limits — with fifteen
+> reproducible, maintainable, and honest about their limits - with fifteen
 > years of functional-programming habit in the back pocket.
 >
 > Based in Frankfurt. Work across DACH and remote EU.
 
-📫 [hello@schlenkr.dev](mailto:hello@schlenkr.dev) — or open a conversation through any landing variant on the playground below.
+📫 [hello@schlenkr.dev](mailto:hello@schlenkr.dev) - or open a conversation through any landing variant on the playground below.
 
 ---
 
 ## 🧪 Homepage playground
 
 Rather than a single landing page, I've been exploring **27 variants** of a
-consulting homepage in parallel — same content, wildly different design and
+consulting homepage in parallel - same content, wildly different design and
 structure theses. It's a live demonstration of how I iterate with AI on real
 work (Vite MPA, CDN-only, no framework lock-in).
 
@@ -39,7 +39,7 @@ work (Vite MPA, CDN-only, no framework lock-in).
 
 ## 🕒 PXL Clock
 
-With Sefa I co-founded the **PXL Clock** — a 24×24 programmable LED display
+With Sefa I co-founded the **PXL Clock** - a 24×24 programmable LED display
 you code in C# or F#. Hand-assembled in Frankfurt, limited batches.
 Use code `RONALD` for €25 off.
 
@@ -53,7 +53,7 @@ Use code `RONALD` for €25 off.
 
 #### FsHttp
 
-A hackable HTTP client for .NET (F# / C#) — write and run requests directly
+A hackable HTTP client for .NET (F# / C#) - write and run requests directly
 in F# Interactive or C# scripts, no Postman required. Used by **128+**
 dependent packages in the .NET ecosystem.
 
@@ -68,7 +68,7 @@ dependent packages in the .NET ecosystem.
 #### Vide
 
 State-aware function composition for building UIs (web, desktop, mobile) and
-for digital signal processing — the same core idea drives both a
+for digital signal processing - the same core idea drives both a
 component tree and a sample-accurate audio pipeline.
 
 🔗 [Repo](https://github.com/SchlenkR/Vide) ·
@@ -81,7 +81,7 @@ component tree and a sample-accurate audio pipeline.
 
 #### Trulla
 
-Type-safe text templates — like Handlebars or Mustache, but statically
+Type-safe text templates - like Handlebars or Mustache, but statically
 checked against your data at compile time. Ships as an F# Type Provider, a
 C# Source Generator, and a Node CLI.
 
@@ -95,7 +95,7 @@ C# Source Generator, and a Node CLI.
 
 #### TheBlunt
 
-A one-file recursive-descent parser-combinator library for F# and Fable —
+A one-file recursive-descent parser-combinator library for F# and Fable -
 drop it into any project, no package dependency graph to manage, and build
 real parsers (including a full JSON parser) from a handful of combinators.
 
@@ -109,10 +109,10 @@ real parsers (including a full JSON parser) from a handful of combinators.
 
 #### LocSta
 
-**Loc**al **Sta**te — stateful stream processing for F#. Each block (latch,
+**Loc**al **Sta**te - stateful stream processing for F#. Each block (latch,
 EMA, biquad filter, RMS, ...) is a pure function that threads its own state
 automatically, so you compose signal pipelines like you compose ordinary
-functions — from simple counters to full audio DSP chains.
+functions - from simple counters to full audio DSP chains.
 
 🔗 [Repo](https://github.com/fsprojects/LocSta) · [Live Demo](https://fsprojects.github.io/LocSta/) ·
 ![GitHub Repo stars](https://img.shields.io/github/stars/fsprojects/LocSta?style=flat-square&label=stars)
@@ -135,7 +135,7 @@ functions — from simple counters to full audio DSP chains.
 
 #### TypeFighter
 
-An experimental programming language — **inference-first**, with structural
+An experimental programming language - **inference-first**, with structural
 records, set-theoretic union types, row polymorphism, and classical
 polymorphic functions, almost all figured out by the type checker without
 annotations. Includes a browser playground with live compilation to
@@ -162,7 +162,7 @@ Smaller experiments and utilities outside the F# core.
 
 ### stil-recherche
 
-A moodboard site collecting illustration and design-trend research — style
+A moodboard site collecting illustration and design-trend research - style
 references sorted by theme (post-AI authenticity, neo-traditionalism,
 grainy textures, bold minimalism, ...), each with source and a short note
 on what defines it. Used as a shared reference point when briefing design
@@ -175,7 +175,7 @@ work.
 ### arbeit-vs-buergergeld
 
 A calculator comparing net income from employment against Bürgergeld
-(Germany, 2026 rules) — household composition, housing costs and region
+(Germany, 2026 rules) - household composition, housing costs and region
 feed into a side-by-side comparison with a Sankey breakdown of where the
 money actually goes on each side.
 
@@ -185,7 +185,7 @@ money actually goes on each side.
 
 ### barbarasailer2
 
-Design playground for a client site — self-contained layout variants,
+Design playground for a client site - self-contained layout variants,
 iterated the same way as the homepage playground above.
 
 🔗 [Repo](https://github.com/SchlenkR/barbarasailer2)
@@ -194,11 +194,11 @@ iterated the same way as the homepage playground above.
 
 ## 🎙️ Talks & content
 
-- **BobKonf 2024** — *Computation Expressions in F#* (with David Schaefer).
-- **BobKonf 2024** — *Monads in the Wilderness*.
-- [*Type Inference Explained*](https://www.youtube.com/watch?v=fSRTVrjvo70) — building TypeFighter's type checker from scratch.
-- *This is My Result Type* — F# discriminated unions demystified.
-- *A Hackable Frame* (Pt. 1) — PXL Clock hands-on intro.
+- **BobKonf 2024** - *Computation Expressions in F#* (with David Schaefer).
+- **BobKonf 2024** - *Monads in the Wilderness*.
+- [*Type Inference Explained*](https://www.youtube.com/watch?v=fSRTVrjvo70) - building TypeFighter's type checker from scratch.
+- *This is My Result Type* - F# discriminated unions demystified.
+- *A Hackable Frame* (Pt. 1) - PXL Clock hands-on intro.
 - Long-form on YouTube: [@ThePureState](https://youtube.com/@ThePureState).
 
 ---
