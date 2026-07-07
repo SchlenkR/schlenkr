@@ -39,6 +39,12 @@ Frankfurt, limited batches.
 
 🔗 [pxlclock.com](https://www.pxlclock.com) &nbsp;·&nbsp; [Repo](https://github.com/SchlenkR/pxl-clock) &nbsp;·&nbsp; [Discord](https://discord.gg/KDbVdKQh5j) &nbsp;·&nbsp; [YouTube: Programming PXL Clock](https://www.youtube.com/watch?v=siH60NSN1XA) &nbsp;·&nbsp; [Unboxing](https://www.youtube.com/watch?v=_fpIXysgdls)
 
+**[studio.pxlclock.com](https://studio.pxlclock.com)** - describe an animation in plain
+English and have an LLM write and compile the pixogram for you, previewed
+live on a virtual PXL Clock.
+
+<img src="./img/pxlclock/studio.png" width="700" alt="PXL Clock Studio: prompting a pulsing heart animation, previewed live" />
+
 ---
 
 ## 📦 Open Source (selected)
@@ -157,13 +163,6 @@ money actually goes on each side.
 <img src="./img/screenshots/arbeit-vs-buergergeld.png" alt="arbeit-vs-buergergeld calculator" width="700" />
 
 🔗 [Live](https://schlenkr.github.io/arbeit-vs-buergergeld/) · [Repo](https://github.com/SchlenkR/arbeit-vs-buergergeld)
-
-### barbarasailer2
-
-Design playground for a client site - self-contained layout variants,
-iterated the same way as the homepage playground above.
-
-🔗 [Repo](https://github.com/SchlenkR/barbarasailer2)
 
 ---
 
