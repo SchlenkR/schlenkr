@@ -63,6 +63,16 @@ records, set-theoretic unions, minimal annotations.
 | [LocSta](https://github.com/fsprojects/LocSta) | Stateful stream processing for F#. Composable signal blocks. | ![★](https://img.shields.io/github/stars/fsprojects/LocSta?style=flat&label=) |
 | [TypeFighter](https://github.com/SchlenkR/TypeFighter) | Research language with modern inference-first type system. | ![★](https://img.shields.io/github/stars/SchlenkR/TypeFighter?style=flat&label=) |
 
+## 🎨 Design & Tools
+
+Smaller experiments and utilities outside the F# core:
+
+| Project | What it is |
+|---|---|
+| [stil-recherche](https://github.com/SchlenkR/stil-recherche) | Design-trend & drawing-style moodboard — [live](https://schlenkr.github.io/stil-recherche/) |
+| [barbarasailer2](https://github.com/SchlenkR/barbarasailer2) | Design playground for a client site — self-contained variants |
+| [arbeit-vs-buergergeld](https://github.com/SchlenkR/arbeit-vs-buergergeld) | Income calculator: employment vs. Bürgergeld (Germany, 2026) — [live](https://schlenkr.github.io/arbeit-vs-buergergeld/) |
+
 ## 🎙️ Talks & content
 
 - **BobKonf 2024** — *Computation Expressions in F#* (with David Schaefer).
