@@ -99,9 +99,13 @@ records, set-theoretic unions, minimal annotations.
 <br clear="left"/>
 <br/>
 
-**[TypeFighter](https://github.com/SchlenkR/TypeFighter)** ⚙️ — Research language with a modern, inference-first type system.
+<img src="./img/TypeFighter_logo.svg" alt="TypeFighter logo" width="120" align="left" />
+
+**[TypeFighter](https://github.com/SchlenkR/TypeFighter)** — Research language with a modern, inference-first type system.
 <br/>
 ![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/TypeFighter?style=flat-square&label=)
+
+<br clear="left"/>
 
 ## 🎨 Design & Tools
 
