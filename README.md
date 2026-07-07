@@ -43,35 +43,53 @@ Frankfurt, limited batches.
 
 ## 📦 Open Source (selected)
 
-#### <img src="./img/FsHttp_logo.png" width="28" valign="middle" alt="" /> FsHttp
+<img src="./img/FsHttp_logo.png" width="72" alt="FsHttp logo" />
+
+### FsHttp
 
 Hackable HTTP client for .NET (F# / C#) - write and run requests in F#
 Interactive or C# scripts. **128+** dependent packages.
 
 🔗 [Repo](https://github.com/fsprojects/FsHttp) &nbsp;·&nbsp; ![GitHub Repo stars](https://img.shields.io/github/stars/fsprojects/FsHttp?style=flat-square&label=stars)
 
-#### <img src="./img/Vide_logo.png" width="28" valign="middle" alt="" /> Vide
+---
+
+<img src="./img/Vide_logo.png" width="72" alt="Vide logo" />
+
+### Vide
 
 State-aware function composition for UIs and digital signal processing -
 one core idea, two very different outputs.
 
 🔗 [Repo](https://github.com/SchlenkR/Vide) &nbsp;·&nbsp; ![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/Vide?style=flat-square&label=stars)
 
-#### <img src="./img/Trulla_logo.png" width="28" valign="middle" alt="" /> Trulla
+---
+
+<img src="./img/Trulla_logo.png" width="72" alt="Trulla logo" />
+
+### Trulla
 
 Type-safe text templates, statically checked at compile time. Ships as an
 F# Type Provider, a C# Source Generator, and a Node CLI.
 
 🔗 [Repo](https://github.com/SchlenkR/Trulla) &nbsp;·&nbsp; ![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/Trulla?style=flat-square&label=stars)
 
-#### <img src="./img/TheBlunt_logo.png" width="28" valign="middle" alt="" /> TheBlunt
+---
+
+<img src="./img/TheBlunt_logo.png" width="72" alt="TheBlunt logo" />
+
+### TheBlunt
 
 One-file recursive-descent parser-combinator library for F# and Fable. No
 dependency graph to manage.
 
 🔗 [Repo](https://github.com/SchlenkR/TheBlunt) &nbsp;·&nbsp; ![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/TheBlunt?style=flat-square&label=stars)
 
-#### <img src="./img/LocSta_logo.png" width="28" valign="middle" alt="" /> LocSta
+---
+
+<img src="./img/LocSta_logo.png" width="72" alt="LocSta logo" />
+
+### LocSta
 
 **Loc**al **Sta**te - stateful stream processing for F#. Composable signal
 blocks with automatic state threading, from simple counters to full audio
@@ -85,7 +103,11 @@ DSP chains.
 <img src="./img/screenshots/locsta-biquadlowpass.png" width="19%" alt="LocSta BiquadLowPass example" />
 <img src="./img/screenshots/locsta-rms.png" width="19%" alt="LocSta Rms example" />
 
-#### <img src="./img/TypeFighter_logo.svg" width="28" valign="middle" alt="" /> TypeFighter
+---
+
+<img src="./img/TypeFighter_logo.svg" width="72" alt="TypeFighter logo" />
+
+### TypeFighter
 
 Experimental inference-first programming language - structural records,
 set-theoretic union types, row polymorphism, almost no annotations needed.
