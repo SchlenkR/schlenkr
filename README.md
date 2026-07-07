@@ -35,7 +35,7 @@ consulting homepage in parallel — same content, wildly different design and
 structure theses. It's a live demonstration of how I iterate with AI on real
 work (Vite MPA, CDN-only, no framework lock-in).
 
-🔗 **Live**: [schlenkr.github.io/schlenkr](https://schlenkr.github.io/schlenkr/)
+🔗 **Live**: [schlenkr.github.io/schlenkr](https://schlenkr.github.io/schlenkr/) · [Repo](https://github.com/SchlenkR/schlenkr)
 
 ## 🕒 PXL Clock
 
@@ -43,85 +43,140 @@ With Sefa I co-founded the **PXL Clock** — a 24×24 programmable LED display
 you code in C# or F#. Hand-assembled in Frankfurt, limited batches.
 Use code `RONALD` for €25 off.
 
-🔗 [pxlclock.com](https://www.pxlclock.com/?ref=RONALD) · [GitHub](https://github.com/SchlenkR/pxl-clock) · [Discord](https://discord.gg/KDbVdKQh5j)
+🔗 [pxlclock.com](https://www.pxlclock.com/?ref=RONALD) · [Repo](https://github.com/SchlenkR/pxl-clock) · [Discord](https://discord.gg/KDbVdKQh5j)
 
-## ⚙️ TypeFighter
-
-An experimental programming language — **inference-first**, structural
-records, set-theoretic unions, minimal annotations.
-
-🔗 [github.com/SchlenkR/TypeFighter](https://github.com/SchlenkR/TypeFighter)
+---
 
 ## 📦 Open Source (selected)
 
-<img src="./img/FsHttp_logo.png" alt="FsHttp logo" width="120" align="left" />
+### <img src="./img/FsHttp_logo.png" alt="" width="24" valign="middle" /> FsHttp
 
-**[FsHttp](https://github.com/fsprojects/FsHttp)** — Hackable HTTP client for .NET (F# / C#), used by 128+ dependent packages.
-<br/>
-![GitHub Repo stars](https://img.shields.io/github/stars/fsprojects/FsHttp?style=flat-square&label=)
+A hackable HTTP client for .NET (F# / C#) — write and run requests directly
+in F# Interactive or C# scripts, no Postman required. Used by **128+**
+dependent packages in the .NET ecosystem.
 
-<br clear="left"/>
-<br/>
+🔗 [Repo](https://github.com/fsprojects/FsHttp) ·
+![GitHub Repo stars](https://img.shields.io/github/stars/fsprojects/FsHttp?style=flat-square&label=stars)
 
-<img src="./img/Vide_logo.png" alt="Vide logo" width="120" align="left" />
-
-**[Vide](https://github.com/SchlenkR/Vide)** — State-aware function composition, from reactive UIs to digital signal processing.
-<br/>
-![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/Vide?style=flat-square&label=)
-
-<br clear="left"/>
 <br/>
 
-<img src="./img/Trulla_logo.png" alt="Trulla logo" width="120" align="left" />
+### <img src="./img/Vide_logo.png" alt="" width="24" valign="middle" /> Vide
 
-**[Trulla](https://github.com/SchlenkR/Trulla)** — Type-safe text templates: F# Type Provider, C# Source Generator, Node CLI.
-<br/>
-![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/Trulla?style=flat-square&label=)
+State-aware function composition for building UIs (web, desktop, mobile) and
+for digital signal processing — the same core idea drives both a
+component tree and a sample-accurate audio pipeline.
 
-<br clear="left"/>
-<br/>
+🔗 [Repo](https://github.com/SchlenkR/Vide) ·
+![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/Vide?style=flat-square&label=stars)
 
-<img src="./img/TheBlunt_logo.png" alt="TheBlunt logo" width="120" align="left" />
-
-**[TheBlunt](https://github.com/SchlenkR/TheBlunt)** — One-file recursive-descent parser-combinator library for F# and Fable.
-<br/>
-![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/TheBlunt?style=flat-square&label=)
-
-<br clear="left"/>
 <br/>
 
-<img src="./img/LocSta_logo.png" alt="LocSta logo" width="120" align="left" />
+### <img src="./img/Trulla_logo.png" alt="" width="24" valign="middle" /> Trulla
 
-**[LocSta](https://github.com/fsprojects/LocSta)** — Stateful stream processing for F#. Composable signal blocks with automatic state threading.
+Type-safe text templates — like Handlebars or Mustache, but statically
+checked against your data at compile time. Ships as an F# Type Provider, a
+C# Source Generator, and a Node CLI.
+
+🔗 [Repo](https://github.com/SchlenkR/Trulla) ·
+![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/Trulla?style=flat-square&label=stars)
+
 <br/>
-![GitHub Repo stars](https://img.shields.io/github/stars/fsprojects/LocSta?style=flat-square&label=)
 
-<br clear="left"/>
+### <img src="./img/TheBlunt_logo.png" alt="" width="24" valign="middle" /> TheBlunt
+
+A one-file recursive-descent parser-combinator library for F# and Fable —
+drop it into any project, no package dependency graph to manage, and build
+real parsers (including a full JSON parser) from a handful of combinators.
+
+🔗 [Repo](https://github.com/SchlenkR/TheBlunt) ·
+![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/TheBlunt?style=flat-square&label=stars)
+
 <br/>
 
-<img src="./img/TypeFighter_logo.svg" alt="TypeFighter logo" width="120" align="left" />
+### <img src="./img/LocSta_logo.png" alt="" width="24" valign="middle" /> LocSta
 
-**[TypeFighter](https://github.com/SchlenkR/TypeFighter)** — Research language with a modern, inference-first type system.
+**Loc**al **Sta**te — stateful stream processing for F#. Each block (latch,
+EMA, biquad filter, RMS, ...) is a pure function that threads its own state
+automatically, so you compose signal pipelines like you compose ordinary
+functions — from simple counters to full audio DSP chains.
+
+<table>
+<tr>
+<td width="20%"><img src="./img/screenshots/locsta-latch.png" alt="LocSta Latch example" /><br/><sub>Latch</sub></td>
+<td width="20%"><img src="./img/screenshots/locsta-ema.png" alt="LocSta Ema example" /><br/><sub>Ema</sub></td>
+<td width="20%"><img src="./img/screenshots/locsta-timesince.png" alt="LocSta TimeSince example" /><br/><sub>TimeSince</sub></td>
+<td width="20%"><img src="./img/screenshots/locsta-biquadlowpass.png" alt="LocSta BiquadLowPass example" /><br/><sub>BiquadLowPass</sub></td>
+<td width="20%"><img src="./img/screenshots/locsta-rms.png" alt="LocSta Rms example" /><br/><sub>Rms</sub></td>
+</tr>
+</table>
+
+🔗 [Repo](https://github.com/fsprojects/LocSta) · [Live Demo](https://fsprojects.github.io/LocSta/) ·
+![GitHub Repo stars](https://img.shields.io/github/stars/fsprojects/LocSta?style=flat-square&label=stars)
+
 <br/>
-![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/TypeFighter?style=flat-square&label=)
 
-<br clear="left"/>
+### <img src="./img/TypeFighter_logo.svg" alt="" width="24" valign="middle" /> TypeFighter
+
+An experimental programming language — **inference-first**, with structural
+records, set-theoretic union types, row polymorphism, and classical
+polymorphic functions, almost all figured out by the type checker without
+annotations. Includes a browser playground with live compilation to
+JavaScript and a step-by-step constraint-solver visualizer that shows how
+type inference actually converges.
+
+<table>
+<tr>
+<td width="50%"><img src="./img/screenshots/typefighter-playground.png" alt="TypeFighter playground" /><br/><sub>Playground: F#-like source, compiled live to JavaScript</sub></td>
+<td width="50%"><img src="./img/screenshots/typefighter-solver.png" alt="TypeFighter constraint solver" /><br/><sub>Constraint solver: type inference, step by step</sub></td>
+</tr>
+</table>
+
+🔗 [Repo](https://github.com/SchlenkR/TypeFighter) · [YouTube: Type Inference Explained](https://www.youtube.com/watch?v=fSRTVrjvo70) ·
+![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/TypeFighter?style=flat-square&label=stars)
+
+---
 
 ## 🎨 Design & Tools
 
-Smaller experiments and utilities outside the F# core:
+Smaller experiments and utilities outside the F# core.
 
-| Project | What it is |
-|---|---|
-| [stil-recherche](https://github.com/SchlenkR/stil-recherche) | Design-trend & drawing-style moodboard — [live](https://schlenkr.github.io/stil-recherche/) |
-| [barbarasailer2](https://github.com/SchlenkR/barbarasailer2) | Design playground for a client site — self-contained variants |
-| [arbeit-vs-buergergeld](https://github.com/SchlenkR/arbeit-vs-buergergeld) | Income calculator: employment vs. Bürgergeld (Germany, 2026) — [live](https://schlenkr.github.io/arbeit-vs-buergergeld/) |
+### stil-recherche
+
+A moodboard site collecting illustration and design-trend research — style
+references sorted by theme (post-AI authenticity, neo-traditionalism,
+grainy textures, bold minimalism, ...), each with source and a short note
+on what defines it. Used as a shared reference point when briefing design
+work.
+
+<img src="./img/screenshots/stil-recherche.png" alt="stil-recherche moodboard" width="700" />
+
+🔗 [Live](https://schlenkr.github.io/stil-recherche/) · [Repo](https://github.com/SchlenkR/stil-recherche)
+
+### arbeit-vs-buergergeld
+
+A calculator comparing net income from employment against Bürgergeld
+(Germany, 2026 rules) — household composition, housing costs and region
+feed into a side-by-side comparison with a Sankey breakdown of where the
+money actually goes on each side.
+
+<img src="./img/screenshots/arbeit-vs-buergergeld.png" alt="arbeit-vs-buergergeld calculator" width="700" />
+
+🔗 [Live](https://schlenkr.github.io/arbeit-vs-buergergeld/) · [Repo](https://github.com/SchlenkR/arbeit-vs-buergergeld)
+
+### barbarasailer2
+
+Design playground for a client site — self-contained layout variants,
+iterated the same way as the homepage playground above.
+
+🔗 [Repo](https://github.com/SchlenkR/barbarasailer2)
+
+---
 
 ## 🎙️ Talks & content
 
 - **BobKonf 2024** — *Computation Expressions in F#* (with David Schaefer).
 - **BobKonf 2024** — *Monads in the Wilderness*.
-- *How To Make a Programming Language* — type inference from scratch (the TypeFighter video).
+- [*Type Inference Explained*](https://www.youtube.com/watch?v=fSRTVrjvo70) — building TypeFighter's type checker from scratch.
 - *This is My Result Type* — F# discriminated unions demystified.
 - *A Hackable Frame* (Pt. 1) — PXL Clock hands-on intro.
 - Long-form on YouTube: [@ThePureState](https://youtube.com/@ThePureState).
