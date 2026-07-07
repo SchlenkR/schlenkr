@@ -40,10 +40,17 @@ work (Vite MPA, CDN-only, no framework lock-in).
 ## 🕒 PXL Clock
 
 With Sefa I co-founded the **PXL Clock** - a 24×24 programmable LED display
-you code in C# or F#. Hand-assembled in Frankfurt, limited batches.
-Use code `RONALD` for €25 off.
+you code in C# or F#. 576 RGB-LEDs behind real glass, hand-assembled in
+Frankfurt, limited batches. Use code `RONALD` for €25 off.
 
-🔗 [pxlclock.com](https://www.pxlclock.com/?ref=RONALD) · [Repo](https://github.com/SchlenkR/pxl-clock) · [Discord](https://discord.gg/KDbVdKQh5j)
+<table>
+<tr>
+<td width="50%"><img src="./img/pxlclock/lifestyle.jpg" alt="PXL Clock on a sideboard" /></td>
+<td width="50%"><img src="./img/pxlclock/product.png" alt="PXL Clock product shot" /></td>
+</tr>
+</table>
+
+🔗 [pxlclock.com](https://www.pxlclock.com/?ref=RONALD) &nbsp;·&nbsp; [Repo](https://github.com/SchlenkR/pxl-clock) &nbsp;·&nbsp; [Discord](https://discord.gg/KDbVdKQh5j) &nbsp;·&nbsp; [YouTube: Programming PXL Clock](https://www.youtube.com/watch?v=siH60NSN1XA) &nbsp;·&nbsp; [Unboxing](https://www.youtube.com/watch?v=_fpIXysgdls)
 
 ---
 
@@ -51,97 +58,64 @@ Use code `RONALD` for €25 off.
 
 <table>
 <tr>
-<td width="96" valign="top"><img src="./img/FsHttp_logo.png" width="72" alt="FsHttp logo" /></td>
-<td valign="top">
+<td width="50%" valign="top">
+<img src="./img/FsHttp_logo.png" width="44" alt="FsHttp logo" /><br/>
 
 #### FsHttp
 
-A hackable HTTP client for .NET (F# / C#) - write and run requests directly
-in F# Interactive or C# scripts, no Postman required. Used by **128+**
-dependent packages in the .NET ecosystem.
+Hackable HTTP client for .NET (F# / C#) - write and run requests in F#
+Interactive or C# scripts. **128+** dependent packages.
 
 🔗 [Repo](https://github.com/fsprojects/FsHttp) &nbsp;·&nbsp; ![GitHub Repo stars](https://img.shields.io/github/stars/fsprojects/FsHttp?style=flat-square&label=stars)
 
 </td>
-</tr>
-</table>
-
----
-
-<table>
-<tr>
-<td width="96" valign="top"><img src="./img/Vide_logo.png" width="72" alt="Vide logo" /></td>
-<td valign="top">
+<td width="50%" valign="top">
+<img src="./img/Vide_logo.png" width="44" alt="Vide logo" /><br/>
 
 #### Vide
 
-State-aware function composition for building UIs (web, desktop, mobile) and
-for digital signal processing - the same core idea drives both a
-component tree and a sample-accurate audio pipeline.
+State-aware function composition for UIs and digital signal processing -
+one core idea, two very different outputs.
 
 🔗 [Repo](https://github.com/SchlenkR/Vide) &nbsp;·&nbsp; ![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/Vide?style=flat-square&label=stars)
 
 </td>
 </tr>
-</table>
-
----
-
-<table>
 <tr>
-<td width="96" valign="top"><img src="./img/Trulla_logo.png" width="72" alt="Trulla logo" /></td>
-<td valign="top">
+<td width="50%" valign="top">
+<img src="./img/Trulla_logo.png" width="44" alt="Trulla logo" /><br/>
 
 #### Trulla
 
-Type-safe text templates - like Handlebars or Mustache, but statically
-checked against your data at compile time. Ships as an F# Type Provider, a
-C# Source Generator, and a Node CLI.
+Type-safe text templates, statically checked at compile time. Ships as an
+F# Type Provider, a C# Source Generator, and a Node CLI.
 
 🔗 [Repo](https://github.com/SchlenkR/Trulla) &nbsp;·&nbsp; ![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/Trulla?style=flat-square&label=stars)
 
 </td>
-</tr>
-</table>
-
----
-
-<table>
-<tr>
-<td width="96" valign="top"><img src="./img/TheBlunt_logo.png" width="72" alt="TheBlunt logo" /></td>
-<td valign="top">
+<td width="50%" valign="top">
+<img src="./img/TheBlunt_logo.png" width="44" alt="TheBlunt logo" /><br/>
 
 #### TheBlunt
 
-A one-file recursive-descent parser-combinator library for F# and Fable -
-drop it into any project, no package dependency graph to manage, and build
-real parsers (including a full JSON parser) from a handful of combinators.
+One-file recursive-descent parser-combinator library for F# and Fable. No
+dependency graph to manage.
 
 🔗 [Repo](https://github.com/SchlenkR/TheBlunt) &nbsp;·&nbsp; ![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/TheBlunt?style=flat-square&label=stars)
 
 </td>
 </tr>
-</table>
-
----
-
-<table>
 <tr>
-<td width="96" valign="top"><img src="./img/LocSta_logo.png" width="72" alt="LocSta logo" /></td>
-<td valign="top">
+<td colspan="2" valign="top">
+<img src="./img/LocSta_logo.png" width="44" alt="LocSta logo" /><br/>
 
 #### LocSta
 
-**Loc**al **Sta**te - stateful stream processing for F#. Each block (latch,
-EMA, biquad filter, RMS, ...) is a pure function that threads its own state
-automatically, so you compose signal pipelines like you compose ordinary
-functions - from simple counters to full audio DSP chains.
+**Loc**al **Sta**te - stateful stream processing for F#. Composable signal
+blocks with automatic state threading, from simple counters to full audio
+DSP chains.
 
 🔗 [Repo](https://github.com/fsprojects/LocSta) &nbsp;·&nbsp; [Live Demo](https://fsprojects.github.io/LocSta/) &nbsp;·&nbsp; ![GitHub Repo stars](https://img.shields.io/github/stars/fsprojects/LocSta?style=flat-square&label=stars)
-
-</td>
-</tr>
-</table>
 
 <table>
 <tr>
@@ -153,32 +127,29 @@ functions - from simple counters to full audio DSP chains.
 </tr>
 </table>
 
----
-
-<table>
+</td>
+</tr>
 <tr>
-<td width="96" valign="top"><img src="./img/TypeFighter_logo.svg" width="72" alt="TypeFighter logo" /></td>
-<td valign="top">
+<td colspan="2" valign="top">
+<img src="./img/TypeFighter_logo.svg" width="44" alt="TypeFighter logo" /><br/>
 
 #### TypeFighter
 
-An experimental programming language - **inference-first**, with structural
-records, set-theoretic union types, row polymorphism, and classical
-polymorphic functions, almost all figured out by the type checker without
-annotations. Includes a browser playground with live compilation to
-JavaScript and a step-by-step constraint-solver visualizer that shows how
-type inference actually converges.
+Experimental inference-first programming language - structural records,
+set-theoretic union types, row polymorphism, almost no annotations needed.
+Browser playground with live compilation to JavaScript, plus a
+step-by-step constraint-solver visualizer.
 
-🔗 [Repo](https://github.com/SchlenkR/TypeFighter) &nbsp;·&nbsp; [YouTube: Type Inference Explained](https://www.youtube.com/watch?v=fSRTVrjvo70) &nbsp;·&nbsp; ![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/TypeFighter?style=flat-square&label=stars)
-
-</td>
-</tr>
-</table>
+🔗 [Repo](https://github.com/SchlenkR/TypeFighter) &nbsp;·&nbsp; [YouTube: Static Types Without the Hassle](https://www.youtube.com/watch?v=fSRTVrjvo70) &nbsp;·&nbsp; ![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/TypeFighter?style=flat-square&label=stars)
 
 <table>
 <tr>
 <td width="50%"><img src="./img/screenshots/typefighter-playground.png" alt="TypeFighter playground" /><br/><sub>Playground: F#-like source, compiled live to JavaScript</sub></td>
 <td width="50%"><img src="./img/screenshots/typefighter-solver.png" alt="TypeFighter constraint solver" /><br/><sub>Constraint solver: type inference, step by step</sub></td>
+</tr>
+</table>
+
+</td>
 </tr>
 </table>
 
@@ -222,11 +193,11 @@ iterated the same way as the homepage playground above.
 
 ## 🎙️ Talks & content
 
-- **BobKonf 2024** - *Computation Expressions in F#* (with David Schaefer).
-- **BobKonf 2024** - *Monads in the Wilderness*.
-- [*Type Inference Explained*](https://www.youtube.com/watch?v=fSRTVrjvo70) - building TypeFighter's type checker from scratch.
-- *This is My Result Type* - F# discriminated unions demystified.
-- *A Hackable Frame* (Pt. 1) - PXL Clock hands-on intro.
+- [*Computation Expressions in F#*](https://www.youtube.com/watch?v=qzvRjUdFF8Q) - BobKonf 2024.
+- [*Pipe Forward: 4 Ingredients for a Kick-Start into Functional Programming*](https://www.youtube.com/watch?v=VJ0gxoxf-iU)
+- [*Static Types Without the Hassle: Type Inference Demystified*](https://www.youtube.com/watch?v=fSRTVrjvo70) - building TypeFighter's type checker from scratch.
+- [*FsHttp: The Programmable Alternative to Postman and VSCode Rest Client*](https://www.youtube.com/watch?v=F508wQu7ET0)
+- [*Amplifying F#: The Essential Lectures Announcement*](https://www.youtube.com/watch?v=tIb98KzgaRQ)
 - Long-form on YouTube: [@ThePureState](https://youtube.com/@ThePureState).
 
 ---
