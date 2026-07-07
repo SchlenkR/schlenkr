@@ -49,7 +49,10 @@ Use code `RONALD` for €25 off.
 
 ## 📦 Open Source (selected)
 
-<img src="./img/FsHttp_logo.png" alt="FsHttp logo" width="84" align="left" />
+<table>
+<tr>
+<td width="96" valign="top"><img src="./img/FsHttp_logo.png" width="72" alt="FsHttp logo" /></td>
+<td valign="top">
 
 #### FsHttp
 
@@ -57,13 +60,18 @@ A hackable HTTP client for .NET (F# / C#) - write and run requests directly
 in F# Interactive or C# scripts, no Postman required. Used by **128+**
 dependent packages in the .NET ecosystem.
 
-🔗 [Repo](https://github.com/fsprojects/FsHttp) ·
-![GitHub Repo stars](https://img.shields.io/github/stars/fsprojects/FsHttp?style=flat-square&label=stars)
+🔗 [Repo](https://github.com/fsprojects/FsHttp) &nbsp;·&nbsp; ![GitHub Repo stars](https://img.shields.io/github/stars/fsprojects/FsHttp?style=flat-square&label=stars)
 
-<br clear="left"/>
-<br/>
+</td>
+</tr>
+</table>
 
-<img src="./img/Vide_logo.png" alt="Vide logo" width="84" align="left" />
+---
+
+<table>
+<tr>
+<td width="96" valign="top"><img src="./img/Vide_logo.png" width="72" alt="Vide logo" /></td>
+<td valign="top">
 
 #### Vide
 
@@ -71,13 +79,18 @@ State-aware function composition for building UIs (web, desktop, mobile) and
 for digital signal processing - the same core idea drives both a
 component tree and a sample-accurate audio pipeline.
 
-🔗 [Repo](https://github.com/SchlenkR/Vide) ·
-![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/Vide?style=flat-square&label=stars)
+🔗 [Repo](https://github.com/SchlenkR/Vide) &nbsp;·&nbsp; ![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/Vide?style=flat-square&label=stars)
 
-<br clear="left"/>
-<br/>
+</td>
+</tr>
+</table>
 
-<img src="./img/Trulla_logo.png" alt="Trulla logo" width="84" align="left" />
+---
+
+<table>
+<tr>
+<td width="96" valign="top"><img src="./img/Trulla_logo.png" width="72" alt="Trulla logo" /></td>
+<td valign="top">
 
 #### Trulla
 
@@ -85,13 +98,18 @@ Type-safe text templates - like Handlebars or Mustache, but statically
 checked against your data at compile time. Ships as an F# Type Provider, a
 C# Source Generator, and a Node CLI.
 
-🔗 [Repo](https://github.com/SchlenkR/Trulla) ·
-![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/Trulla?style=flat-square&label=stars)
+🔗 [Repo](https://github.com/SchlenkR/Trulla) &nbsp;·&nbsp; ![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/Trulla?style=flat-square&label=stars)
 
-<br clear="left"/>
-<br/>
+</td>
+</tr>
+</table>
 
-<img src="./img/TheBlunt_logo.png" alt="TheBlunt logo" width="84" align="left" />
+---
+
+<table>
+<tr>
+<td width="96" valign="top"><img src="./img/TheBlunt_logo.png" width="72" alt="TheBlunt logo" /></td>
+<td valign="top">
 
 #### TheBlunt
 
@@ -99,13 +117,18 @@ A one-file recursive-descent parser-combinator library for F# and Fable -
 drop it into any project, no package dependency graph to manage, and build
 real parsers (including a full JSON parser) from a handful of combinators.
 
-🔗 [Repo](https://github.com/SchlenkR/TheBlunt) ·
-![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/TheBlunt?style=flat-square&label=stars)
+🔗 [Repo](https://github.com/SchlenkR/TheBlunt) &nbsp;·&nbsp; ![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/TheBlunt?style=flat-square&label=stars)
 
-<br clear="left"/>
-<br/>
+</td>
+</tr>
+</table>
 
-<img src="./img/LocSta_logo.png" alt="LocSta logo" width="84" align="left" />
+---
+
+<table>
+<tr>
+<td width="96" valign="top"><img src="./img/LocSta_logo.png" width="72" alt="LocSta logo" /></td>
+<td valign="top">
 
 #### LocSta
 
@@ -114,10 +137,11 @@ EMA, biquad filter, RMS, ...) is a pure function that threads its own state
 automatically, so you compose signal pipelines like you compose ordinary
 functions - from simple counters to full audio DSP chains.
 
-🔗 [Repo](https://github.com/fsprojects/LocSta) · [Live Demo](https://fsprojects.github.io/LocSta/) ·
-![GitHub Repo stars](https://img.shields.io/github/stars/fsprojects/LocSta?style=flat-square&label=stars)
+🔗 [Repo](https://github.com/fsprojects/LocSta) &nbsp;·&nbsp; [Live Demo](https://fsprojects.github.io/LocSta/) &nbsp;·&nbsp; ![GitHub Repo stars](https://img.shields.io/github/stars/fsprojects/LocSta?style=flat-square&label=stars)
 
-<br clear="left"/>
+</td>
+</tr>
+</table>
 
 <table>
 <tr>
@@ -129,9 +153,12 @@ functions - from simple counters to full audio DSP chains.
 </tr>
 </table>
 
-<br/>
+---
 
-<img src="./img/TypeFighter_logo.svg" alt="TypeFighter logo" width="84" align="left" />
+<table>
+<tr>
+<td width="96" valign="top"><img src="./img/TypeFighter_logo.svg" width="72" alt="TypeFighter logo" /></td>
+<td valign="top">
 
 #### TypeFighter
 
@@ -142,10 +169,11 @@ annotations. Includes a browser playground with live compilation to
 JavaScript and a step-by-step constraint-solver visualizer that shows how
 type inference actually converges.
 
-🔗 [Repo](https://github.com/SchlenkR/TypeFighter) · [YouTube: Type Inference Explained](https://www.youtube.com/watch?v=fSRTVrjvo70) ·
-![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/TypeFighter?style=flat-square&label=stars)
+🔗 [Repo](https://github.com/SchlenkR/TypeFighter) &nbsp;·&nbsp; [YouTube: Type Inference Explained](https://www.youtube.com/watch?v=fSRTVrjvo70) &nbsp;·&nbsp; ![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/TypeFighter?style=flat-square&label=stars)
 
-<br clear="left"/>
+</td>
+</tr>
+</table>
 
 <table>
 <tr>
