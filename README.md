@@ -54,14 +54,54 @@ records, set-theoretic unions, minimal annotations.
 
 ## 📦 Open Source (selected)
 
-| Project | What it is | Stars |
-|---|---|---|
-| [FsHttp](https://github.com/fsprojects/FsHttp) | Hackable HTTP client for .NET (F# / C#). 128 dependent packages. | ![★](https://img.shields.io/github/stars/fsprojects/FsHttp?style=flat&label=) |
-| [Vide](https://github.com/SchlenkR/Vide) | State-aware function composition — UIs + digital signal processing. | ![★](https://img.shields.io/github/stars/SchlenkR/Vide?style=flat&label=) |
-| [Trulla](https://github.com/SchlenkR/Trulla) | Type-safe templates (F# Type Provider, C# Source Generator, Node CLI). | ![★](https://img.shields.io/github/stars/SchlenkR/Trulla?style=flat&label=) |
-| [TheBlunt](https://github.com/SchlenkR/TheBlunt) | One-file recursive-descent parser-combinator library for F# / Fable. | ![★](https://img.shields.io/github/stars/SchlenkR/TheBlunt?style=flat&label=) |
-| [LocSta](https://github.com/fsprojects/LocSta) | Stateful stream processing for F#. Composable signal blocks. | ![★](https://img.shields.io/github/stars/fsprojects/LocSta?style=flat&label=) |
-| [TypeFighter](https://github.com/SchlenkR/TypeFighter) | Research language with modern inference-first type system. | ![★](https://img.shields.io/github/stars/SchlenkR/TypeFighter?style=flat&label=) |
+<img src="./img/FsHttp_logo.png" alt="FsHttp logo" width="120" align="left" />
+
+**[FsHttp](https://github.com/fsprojects/FsHttp)** — Hackable HTTP client for .NET (F# / C#), used by 128+ dependent packages.
+<br/>
+![GitHub Repo stars](https://img.shields.io/github/stars/fsprojects/FsHttp?style=flat-square&label=)
+
+<br clear="left"/>
+<br/>
+
+<img src="./img/Vide_logo.png" alt="Vide logo" width="120" align="left" />
+
+**[Vide](https://github.com/SchlenkR/Vide)** — State-aware function composition, from reactive UIs to digital signal processing.
+<br/>
+![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/Vide?style=flat-square&label=)
+
+<br clear="left"/>
+<br/>
+
+<img src="./img/Trulla_logo.png" alt="Trulla logo" width="120" align="left" />
+
+**[Trulla](https://github.com/SchlenkR/Trulla)** — Type-safe text templates: F# Type Provider, C# Source Generator, Node CLI.
+<br/>
+![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/Trulla?style=flat-square&label=)
+
+<br clear="left"/>
+<br/>
+
+<img src="./img/TheBlunt_logo.png" alt="TheBlunt logo" width="120" align="left" />
+
+**[TheBlunt](https://github.com/SchlenkR/TheBlunt)** — One-file recursive-descent parser-combinator library for F# and Fable.
+<br/>
+![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/TheBlunt?style=flat-square&label=)
+
+<br clear="left"/>
+<br/>
+
+<img src="./img/LocSta_logo.png" alt="LocSta logo" width="120" align="left" />
+
+**[LocSta](https://github.com/fsprojects/LocSta)** — Stateful stream processing for F#. Composable signal blocks with automatic state threading.
+<br/>
+![GitHub Repo stars](https://img.shields.io/github/stars/fsprojects/LocSta?style=flat-square&label=)
+
+<br clear="left"/>
+<br/>
+
+**[TypeFighter](https://github.com/SchlenkR/TypeFighter)** ⚙️ — Research language with a modern, inference-first type system.
+<br/>
+![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/TypeFighter?style=flat-square&label=)
 
 ## 🎨 Design & Tools
 
