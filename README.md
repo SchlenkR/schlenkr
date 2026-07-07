@@ -43,7 +43,7 @@ Frankfurt, limited batches.
 
 ## 📦 Open Source (selected)
 
-<img src="./img/FsHttp_logo.png" width="72" alt="FsHttp logo" />
+<img src="./img/FsHttp_logo.png" width="90" align="left" alt="FsHttp logo" />
 
 ### FsHttp
 
@@ -52,9 +52,11 @@ Interactive or C# scripts. **128+** dependent packages.
 
 🔗 [Repo](https://github.com/fsprojects/FsHttp) &nbsp;·&nbsp; ![GitHub Repo stars](https://img.shields.io/github/stars/fsprojects/FsHttp?style=flat-square&label=stars)
 
+<br clear="left"/>
+
 ---
 
-<img src="./img/Vide_logo.png" width="72" alt="Vide logo" />
+<img src="./img/Vide_logo.png" width="90" align="left" alt="Vide logo" />
 
 ### Vide
 
@@ -63,9 +65,11 @@ one core idea, two very different outputs.
 
 🔗 [Repo](https://github.com/SchlenkR/Vide) &nbsp;·&nbsp; ![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/Vide?style=flat-square&label=stars)
 
+<br clear="left"/>
+
 ---
 
-<img src="./img/Trulla_logo.png" width="72" alt="Trulla logo" />
+<img src="./img/Trulla_logo.png" width="90" align="left" alt="Trulla logo" />
 
 ### Trulla
 
@@ -74,9 +78,11 @@ F# Type Provider, a C# Source Generator, and a Node CLI.
 
 🔗 [Repo](https://github.com/SchlenkR/Trulla) &nbsp;·&nbsp; ![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/Trulla?style=flat-square&label=stars)
 
+<br clear="left"/>
+
 ---
 
-<img src="./img/TheBlunt_logo.png" width="72" alt="TheBlunt logo" />
+<img src="./img/TheBlunt_logo.png" width="90" align="left" alt="TheBlunt logo" />
 
 ### TheBlunt
 
@@ -85,9 +91,11 @@ dependency graph to manage.
 
 🔗 [Repo](https://github.com/SchlenkR/TheBlunt) &nbsp;·&nbsp; ![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/TheBlunt?style=flat-square&label=stars)
 
+<br clear="left"/>
+
 ---
 
-<img src="./img/LocSta_logo.png" width="72" alt="LocSta logo" />
+<img src="./img/LocSta_logo.png" width="90" align="left" alt="LocSta logo" />
 
 ### LocSta
 
@@ -97,15 +105,15 @@ DSP chains.
 
 🔗 [Repo](https://github.com/fsprojects/LocSta) &nbsp;·&nbsp; [Live Demo](https://fsprojects.github.io/LocSta/) &nbsp;·&nbsp; ![GitHub Repo stars](https://img.shields.io/github/stars/fsprojects/LocSta?style=flat-square&label=stars)
 
-<img src="./img/screenshots/locsta-latch.png" width="19%" alt="LocSta Latch example" />
-<img src="./img/screenshots/locsta-ema.png" width="19%" alt="LocSta Ema example" />
-<img src="./img/screenshots/locsta-timesince.png" width="19%" alt="LocSta TimeSince example" />
-<img src="./img/screenshots/locsta-biquadlowpass.png" width="19%" alt="LocSta BiquadLowPass example" />
-<img src="./img/screenshots/locsta-rms.png" width="19%" alt="LocSta Rms example" />
+<br clear="left"/>
+
+<img src="./img/screenshots/locsta-latch.png" width="32%" alt="LocSta Latch example" />
+<img src="./img/screenshots/locsta-biquadlowpass.png" width="32%" alt="LocSta BiquadLowPass example" />
+<img src="./img/screenshots/locsta-rms.png" width="32%" alt="LocSta Rms example" />
 
 ---
 
-<img src="./img/TypeFighter_logo.svg" width="72" alt="TypeFighter logo" />
+<img src="./img/TypeFighter_logo.svg" width="90" align="left" alt="TypeFighter logo" />
 
 ### TypeFighter
 
@@ -115,6 +123,8 @@ Browser playground with live compilation to JavaScript, plus a
 step-by-step constraint-solver visualizer.
 
 🔗 [Repo](https://github.com/SchlenkR/TypeFighter) &nbsp;·&nbsp; [YouTube: Static Types Without the Hassle](https://www.youtube.com/watch?v=fSRTVrjvo70) &nbsp;·&nbsp; ![GitHub Repo stars](https://img.shields.io/github/stars/SchlenkR/TypeFighter?style=flat-square&label=stars)
+
+<br clear="left"/>
 
 <img src="./img/screenshots/typefighter-playground.png" width="49%" alt="TypeFighter playground" />
 <img src="./img/screenshots/typefighter-solver.png" width="49%" alt="TypeFighter constraint solver" />
