@@ -41,9 +41,8 @@ work (Vite MPA, CDN-only, no framework lock-in).
 
 With Sefa I co-founded the **PXL Clock** - a 24×24 programmable LED display
 you code in C# or F#. Hand-assembled in Frankfurt, limited batches.
-Use code `RONALD` for €25 off.
 
-🔗 [pxlclock.com](https://www.pxlclock.com/?ref=RONALD) · [Repo](https://github.com/SchlenkR/pxl-clock) · [Discord](https://discord.gg/KDbVdKQh5j)
+🔗 [pxlclock.com](https://www.pxlclock.com) · [Repo](https://github.com/SchlenkR/pxl-clock) · [Discord](https://discord.gg/KDbVdKQh5j)
 
 ---
 
