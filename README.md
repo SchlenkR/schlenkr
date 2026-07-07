@@ -28,15 +28,6 @@
 
 ---
 
-## 🧪 Homepage playground
-
-Rather than a single landing page, I've been exploring **27 variants** of a
-consulting homepage in parallel - same content, wildly different design and
-structure theses. It's a live demonstration of how I iterate with AI on real
-work (Vite MPA, CDN-only, no framework lock-in).
-
-🔗 **Live**: [schlenkr.github.io/schlenkr](https://schlenkr.github.io/schlenkr/) · [Repo](https://github.com/SchlenkR/schlenkr)
-
 ## 🕒 PXL Clock
 
 With Sefa I co-founded the **PXL Clock** - a 24×24 programmable LED display
